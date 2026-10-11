@@ -448,11 +448,128 @@ views:
   title: Human Telemetry
   path: human-telemetry
   icon: mdi:human
-  sections:
-  - type: grid
-    cards: []
   show_icon_and_title: true
   cards: []
+  header:
+    card:
+      type: custom:mushroom-title-card
+      title: Human Telemetry
+      subtitle: Primary Crew Biometrics
+  badges:
+  - type: custom:mushroom-chips-card
+    alignment: center
+    chips:
+    - type: entity
+      entity: sensor.withings_weight
+      icon: mdi:scale-bathroom
+    - type: entity
+      entity: sensor.withings_fat_ratio
+      icon: mdi:percent-outline
+    - type: template
+      icon: mdi:flag-checkered
+      icon_color: '{% set d = states(''sensor.withings_weight'')|float(0) - states(''sensor.withings_weight_goal'')|float(0)
+        %} {{ ''green'' if d|abs <= 0.5 else ''amber'' }}'
+      content: '{% set d = states(''sensor.withings_weight'')|float(0) - states(''sensor.withings_weight_goal'')|float(0)
+        %} {{ ''Objective: ACHIEVED'' if d|abs <= 0.5 else ''Objective: '' ~ (d|abs)|round(1) ~ '' kg to go'' }}'
+  sections:
+  - type: grid
+    cards:
+    - type: vertical-stack
+      cards:
+      - type: custom:mushroom-title-card
+        title: Body Composition
+        subtitle: Latest scan
+      - type: custom:mushroom-entity-card
+        entity: sensor.withings_weight
+        name: Total Mass
+        icon: mdi:scale-bathroom
+        layout: horizontal
+      - type: custom:mushroom-entity-card
+        entity: sensor.withings_fat_ratio
+        name: Fat Ratio
+        icon: mdi:percent-outline
+        layout: horizontal
+      - type: custom:mushroom-entity-card
+        entity: sensor.withings_fat_mass
+        name: Fat Mass
+        icon: mdi:water-outline
+        layout: horizontal
+      - type: custom:mushroom-entity-card
+        entity: sensor.withings_muscle_mass
+        name: Muscle Mass
+        icon: mdi:arm-flex
+        layout: horizontal
+      - type: custom:mushroom-entity-card
+        entity: sensor.withings_bone_mass
+        name: Bone Mass
+        icon: mdi:bone
+        layout: horizontal
+      - type: custom:mushroom-entity-card
+        entity: sensor.withings_fat_free_mass
+        name: Fat-Free Mass
+        icon: mdi:human
+        layout: horizontal
+  - type: grid
+    cards:
+    - type: vertical-stack
+      cards:
+      - type: custom:mushroom-title-card
+        title: Mission Objective
+        subtitle: Weight target
+      - type: custom:mushroom-template-card
+        primary: 'Target: {{ states(''sensor.withings_weight_goal'') }} kg'
+        secondary: '{% set w = states(''sensor.withings_weight'')|float(0) %} {% set d = w - states(''sensor.withings_weight_goal'')|float(0)
+          %} Current: {{ w|round(1) }} kg | Remaining: {{ (d|abs)|round(1) }} kg | Status: {{ ''ACHIEVED'' if d|abs <= 0.5
+          else ''ON APPROACH'' }}'
+        icon: mdi:flag-checkered
+        icon_color: '{{ ''green'' if (states(''sensor.withings_weight'')|float(0) - states(''sensor.withings_weight_goal'')|float(0))|abs
+          <= 0.5 else ''amber'' }}'
+        layout: horizontal
+        multiline_secondary: true
+      - type: custom:mushroom-title-card
+        title: Cardiovascular
+        subtitle: Body Scan readings
+      - type: custom:mushroom-entity-card
+        entity: sensor.withings_heart_pulse
+        name: Heart Rate
+        icon: mdi:heart-pulse
+        layout: horizontal
+      - type: custom:mushroom-entity-card
+        entity: sensor.withings_pulse_wave_velocity
+        name: Pulse Wave Velocity
+        icon: mdi:heart-flash
+        layout: horizontal
+  - type: grid
+    cards:
+    - type: custom:mushroom-title-card
+      title: Mass Trends
+      subtitle: 30-day telemetry
+    - type: history-graph
+      title: Mass Trends
+      hours_to_show: 720
+      entities:
+      - entity: sensor.withings_weight
+        name: Total Mass
+      - entity: sensor.withings_weight_goal
+        name: Target
+    - type: history-graph
+      title: Composition Trends
+      hours_to_show: 720
+      entities:
+      - entity: sensor.withings_fat_ratio
+        name: Fat Ratio
+  - type: grid
+    cards:
+    - type: vertical-stack
+      cards:
+      - type: custom:mushroom-title-card
+        title: Power Diagnostics
+        subtitle: Hardware telemetry
+      - type: custom:mushroom-entity-card
+        entity: sensor.body_scan_battery
+        name: Body Scan Scale
+        icon: mdi:battery
+        layout: horizontal
   background:
     opacity: 10
     alignment: center

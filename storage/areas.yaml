@@ -4,13 +4,11 @@
   name: Gym
 - area_id: hallway
   name: Hallway
+- area_id: innovation_hub
+  name: Innovation Hub
 - area_id: kitchen
   name: Kitchen
 - area_id: living_room
   name: Living Room
 - area_id: office
   name: Office
-- area_id: pfuusruum
-  name: Pfuusruum
-- area_id: unnamed_room
-  name: Unnamed Room

@@ -172,3 +172,10 @@
   state: loaded
   pref_disable_new_entities: false
   pref_disable_polling: false
+- domain: withings
+  title: Withings
+  entry_id: 01M4NGJJBQNVRJ2YF65AB3YP9T
+  source: user
+  state: loaded
+  pref_disable_new_entities: false
+  pref_disable_polling: false

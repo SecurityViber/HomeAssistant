@@ -69,6 +69,15 @@
   identifiers:
   - - hacs
     - '456201687'
+- id: 6b9bc8bb9ddae2aac60d2e30ac7a3b9a
+  name: Polar
+  manufacturer: Aohzan
+  model: integration
+  integrations:
+  - hacs
+  identifiers:
+  - - hacs
+    - '580152298'
 - id: 331634acb2fa9da4d7aa5ead1479b6ab
   name: AirSonos
   manufacturer: Home Assistant Community Apps
@@ -230,13 +239,13 @@
   - hue
   identifiers:
   - - hue
-    - 001788fffe2b562f
-  - - hue
     - 5f8d718b-7354-4090-8fd0-5e09fedfa5aa
+  - - hue
+    - 001788fffe2b562f
   connections:
   - - mac
     - 00:17:88:2b:56:2f
-  - - mac
+  - - zigbee
     - 00:17:88:01:01:6b:56:2f
 - id: 15ccfc9d46c265620164e67a866465ca
   name: Hue dimmer switch 1
@@ -248,7 +257,7 @@
   - - hue
     - ea3d50e3-0433-4182-99bb-a6a16b9d7482
   connections:
-  - - mac
+  - - zigbee
     - 00:17:88:01:0b:d8:1d:3f
   via_device_id: 0c7cbc97987734d03b73fa863d2204e9
 - id: 9aacc95b244d81c075f23584cb921cab
@@ -263,7 +272,7 @@
   - - hue
     - 82cb3931-3d3e-4c62-aea9-59d9017af1e7
   connections:
-  - - mac
+  - - zigbee
     - 00:17:88:01:0b:d8:17:75
   via_device_id: 0c7cbc97987734d03b73fa863d2204e9
 - id: 73002c26ad3b5417145e1577fd48e3b3
@@ -276,21 +285,22 @@
   - - hue
     - 9686288f-2878-430a-82ce-c46942d7223c
   connections:
-  - - mac
+  - - zigbee
     - 00:17:88:01:0e:1d:4b:e9
   via_device_id: 0c7cbc97987734d03b73fa863d2204e9
 - id: c10d0925fe648f52aeda1989ece285f8
   name: Pfuus lampe
+  name_by_user: Bedroom Lamp
   manufacturer: Signify Netherlands B.V.
   model: Hue Iris
   integrations:
   - hue
-  area_id: pfuusruum
+  area_id: bedroom
   identifiers:
   - - hue
     - 40820c1f-109e-4cf3-a4e9-02e41abf62ef
   connections:
-  - - mac
+  - - zigbee
     - 00:17:88:01:0b:42:72:6e
   via_device_id: 0c7cbc97987734d03b73fa863d2204e9
 - id: 996a173713a630309b181bcac52a1c70
@@ -299,7 +309,7 @@
   model: Room
   integrations:
   - hue
-  area_id: pfuusruum
+  area_id: bedroom
   identifiers:
   - - hue
     - 6db3f396-4f9e-4766-98f5-75cf67b16116
@@ -316,7 +326,7 @@
   - - hue
     - 2eccf8ea-e1d7-4051-a7eb-1f245eea7dfd
   connections:
-  - - mac
+  - - zigbee
     - 00:17:88:01:0d:19:39:e9
   via_device_id: 0c7cbc97987734d03b73fa863d2204e9
 - id: 096198bfe4d44ee15d957ef3884df204
@@ -342,7 +352,7 @@
   - - hue
     - 57d6e023-2343-4018-b4d2-3cad9a399b5f
   connections:
-  - - mac
+  - - zigbee
     - 00:17:88:01:0c:bb:3a:33
   via_device_id: 0c7cbc97987734d03b73fa863d2204e9
 - id: 37f38220a6b9299b68f47f80813259c5
@@ -617,11 +627,12 @@
     - zigbee2mqtt_bridge_0x00124b0031dd7675
 - id: 3fa21279b11d93f2c50b415738c000d1
   name: Family Room
+  name_by_user: Innovation Hub
   manufacturer: Sonos
   model: Era 100
   integrations:
   - sonos
-  area_id: unnamed_room
+  area_id: innovation_hub
   identifiers:
   - - sonos
     - RINCON_74CA6074823801400
@@ -679,9 +690,9 @@
     - 21C0TER3SBBDK
   connections:
   - - mac
-    - 90:09:d0:0e:1b:0a
-  - - mac
     - 90:09:d0:0e:1b:09
+  - - mac
+    - 90:09:d0:0e:1b:0a
 - id: 1ef518a7654ea132d248e76cabfc6e19
   name: ChrisiNas (Cache device 1)
   manufacturer: Silicon Motion
@@ -732,3 +743,22 @@
   - - synology_dsm
     - 21C0TER3SBBDK_volume_1
   via_device_id: cb3a61298226638b10543b3614dbd36f
+- id: 0fea69ad8e41872d2cdb02310d80a339
+  name: Body Scan
+  manufacturer: Withings
+  model: Body Scan
+  integrations:
+  - withings
+  identifiers:
+  - - withings
+    - 400f6acefc08afca704b4e29319fa6126a693f59
+  via_device_id: 6694f9a70570c5cde0742552890aefb2
+- id: 6694f9a70570c5cde0742552890aefb2
+  name: Withings
+  manufacturer: Withings
+  integrations:
+  - withings
+  area_id: bedroom
+  identifiers:
+  - - withings
+    - '47373279'

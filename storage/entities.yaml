@@ -270,17 +270,6 @@
   options:
     conversation:
       should_expose: false
-- entity_id: binary_sensor.family_room_microphone
-  id: 57c09dfc5e0c346a9d6ef71638fed086
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-microphone
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Microphone
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
 - entity_id: binary_sensor.file_editor_running
   id: c024236a7dd0db9110a93180e344d4d3
   platform: hassio
@@ -296,6 +285,17 @@
   unique_id: 0x00158d008bc3d235_occupancy_zigbee2mqtt
   device_id: 3a94836cef7376d31ee03078aabafab4
   original_name: Occupancy
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: binary_sensor.innovation_hub_microphone
+  id: 57c09dfc5e0c346a9d6ef71638fed086
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-microphone
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Microphone
   aliases:
   - null
   options:
@@ -531,6 +531,15 @@
   options:
     conversation:
       should_expose: false
+- entity_id: button.innovation_hub_cancel_announcement
+  id: 34b86db650384de840f9e822a93b8eff
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-cancel_announcement
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Cancel announcement
+  aliases:
+  - null
+  disabled_by: integration
 - entity_id: button.kitchen_kitchen_cancel_announcement
   id: b6e0ea5fa764cedb6d653702079a8840
   platform: sonos
@@ -593,15 +602,6 @@
   options:
     conversation:
       should_expose: false
-- entity_id: button.unnamed_room_family_room_cancel_announcement
-  id: 34b86db650384de840f9e822a93b8eff
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-cancel_announcement
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Cancel announcement
-  aliases:
-  - null
-  disabled_by: integration
 - entity_id: button.zigbee2mqtt_bridge_restart
   id: 1bced35bfa4384840eb16456792050b9
   platform: mqtt
@@ -742,6 +742,16 @@
   options:
     conversation:
       should_expose: true
+- entity_id: light.bedroom_lamp
+  id: 83be4bd63b61abbe6c1b12cad4d7b6a2
+  platform: hue
+  unique_id: 0891afb7-3a91-4a62-b919-ed3825d35ff9
+  device_id: c10d0925fe648f52aeda1989ece285f8
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: true
 - entity_id: light.entire_home
   id: b841d584fb96e7b2fd3b58f832a79583
   platform: hue
@@ -802,16 +812,6 @@
   options:
     conversation:
       should_expose: true
-- entity_id: light.pfuus_lampe
-  id: 83be4bd63b61abbe6c1b12cad4d7b6a2
-  platform: hue
-  unique_id: 0891afb7-3a91-4a62-b919-ed3825d35ff9
-  device_id: c10d0925fe648f52aeda1989ece285f8
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: true
 - entity_id: light.pfuusruum
   id: e0249ac3d22fab5396b1d970749ee8d0
   platform: hue
@@ -842,7 +842,7 @@
   options:
     conversation:
       should_expose: true
-- entity_id: media_player.family_room
+- entity_id: media_player.innovation_hub
   id: 9fb230b2e13a183c46966f242607f7af
   platform: sonos
   unique_id: RINCON_74CA6074823801400
@@ -1121,7 +1121,7 @@
   options:
     conversation:
       should_expose: false
-- entity_id: number.family_room_balance
+- entity_id: number.innovation_hub_balance
   id: 59e3cc457630daa7bbd2455ee17152a7
   platform: sonos
   unique_id: RINCON_74CA6074823801400-balance
@@ -1132,7 +1132,7 @@
   options:
     conversation:
       should_expose: false
-- entity_id: number.family_room_bass
+- entity_id: number.innovation_hub_bass
   id: 1f1d69d13e3a02b33734b64d79b92799
   platform: sonos
   unique_id: RINCON_74CA6074823801400-bass
@@ -1143,7 +1143,7 @@
   options:
     conversation:
       should_expose: false
-- entity_id: number.family_room_treble
+- entity_id: number.innovation_hub_treble
   id: 20f71c4c7650274d773e12d26b9fa447
   platform: sonos
   unique_id: RINCON_74CA6074823801400-treble
@@ -1788,12 +1788,34 @@
   options:
     conversation:
       should_expose: false
+- entity_id: select.entire_home_scene
+  id: a5078682832257ff381c071ba41d1fb6
+  platform: hue
+  unique_id: 1f4b779d-8169-4753-8add-520cca2f7ab5_scene_select
+  device_id: 0c75907c3aa885f6e0fb1d67ea4330a3
+  original_name: Scene
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
 - entity_id: select.euphorbia_leuconeura_temperature_unit
   id: 3eb1a9514c75962e1e9a96bd9d863f72
   platform: mqtt
   unique_id: 0xa4c13837fc018338_temperature_unit_zigbee2mqtt
   device_id: e94865b48e1bce7a0517a7144ec04f89
   original_name: Temperature unit
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: select.gym_sportzimmer_scene
+  id: 01309094f9fc22da998a4188eb328f1c
+  platform: hue
+  unique_id: 71f06323-3053-47bc-a1ec-54280497a329_scene_select
+  device_id: 096198bfe4d44ee15d957ef3884df204
+  original_name: Scene
   aliases:
   - null
   options:
@@ -1819,6 +1841,28 @@
   options:
     conversation:
       should_expose: false
+- entity_id: select.living_room_stube_scene
+  id: ce9eb9c5023ba94f70809b42b3d241a5
+  platform: hue
+  unique_id: 0804d1f0-327f-4004-9918-35c47ff80e84_scene_select
+  device_id: 37f38220a6b9299b68f47f80813259c5
+  original_name: Scene
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: select.office_buro_scene
+  id: 20854029162b9501eefd52de6f31a493
+  platform: hue
+  unique_id: 99532490-cf6f-4bba-b838-5ed1fe265881_scene_select
+  device_id: 82e9daff3a4d3489e525d9feeec834ce
+  original_name: Scene
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
 - entity_id: select.office_ceiling_light_effect
   id: 9064b7141dabaeb9d14dd27bf417b49f
   platform: mqtt
@@ -1834,6 +1878,17 @@
   unique_id: 0x001788010d1935a6_power_on_behavior_zigbee2mqtt
   device_id: 2f924b1cbf55792a4c859a3c21f2a6bb
   original_name: Power-on behavior
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: select.pfuusruum_pfuusruum_scene
+  id: 5520dda215896b991bc5889edb77e12e
+  platform: hue
+  unique_id: 6db3f396-4f9e-4766-98f5-75cf67b16116_scene_select
+  device_id: 996a173713a630309b181bcac52a1c70
+  original_name: Scene
   aliases:
   - null
   options:
@@ -2404,6 +2459,15 @@
   aliases:
   - null
   disabled_by: integration
+- entity_id: sensor.bedroom_lamp_zigbee_connectivity
+  id: 398f1606625c381f5544ba17762b7ec6
+  platform: hue
+  unique_id: ddff2221-a9d9-4fe5-b81b-d2d1839b0af0
+  device_id: c10d0925fe648f52aeda1989ece285f8
+  original_name: Zigbee connectivity
+  aliases:
+  - null
+  disabled_by: integration
 - entity_id: sensor.bedroom_motion_sensor_battery
   id: 9ca599514bd11859dbc0a3470b240e06
   platform: mqtt
@@ -2501,6 +2565,17 @@
   options:
     sensor:
       suggested_display_precision: 0
+    conversation:
+      should_expose: false
+- entity_id: sensor.body_scan_battery
+  id: 0bfba784f7d1869fb43b796ee6df90b7
+  platform: withings
+  unique_id: 400f6acefc08afca704b4e29319fa6126a693f59_battery
+  device_id: 0fea69ad8e41872d2cdb02310d80a339
+  original_name: Battery
+  aliases:
+  - null
+  options:
     conversation:
       should_expose: false
 - entity_id: sensor.chrisinas_cache_device_1_status
@@ -2954,6 +3029,7 @@
   original_name: Audio Output
   aliases:
   - null
+  disabled_by: integration
   options:
     conversation:
       should_expose: false
@@ -2976,6 +3052,7 @@
   original_name: Battery Level
   aliases:
   - null
+  device_class: battery
   options:
     conversation:
       should_expose: false
@@ -2998,6 +3075,7 @@
   original_name: BSSID
   aliases:
   - null
+  disabled_by: integration
   options:
     conversation:
       should_expose: false
@@ -3018,6 +3096,7 @@
   original_name: Connection Type
   aliases:
   - null
+  disabled_by: integration
   options:
     conversation:
       should_expose: false
@@ -3084,6 +3163,7 @@
   original_name: Geocoded Location
   aliases:
   - null
+  disabled_by: integration
   options:
     conversation:
       should_expose: false
@@ -3095,6 +3175,7 @@
   original_name: Kiosk Brightness
   aliases:
   - null
+  disabled_by: integration
   options:
     conversation:
       should_expose: false
@@ -3106,6 +3187,7 @@
   original_name: Kiosk Volume
   aliases:
   - null
+  disabled_by: integration
   options:
     conversation:
       should_expose: false
@@ -3117,6 +3199,7 @@
   original_name: Last Update Trigger
   aliases:
   - null
+  disabled_by: integration
   options:
     conversation:
       should_expose: false
@@ -3150,6 +3233,7 @@
   original_name: SIM 1
   aliases:
   - null
+  disabled_by: integration
   options:
     conversation:
       should_expose: false
@@ -3161,6 +3245,7 @@
   original_name: SIM 2
   aliases:
   - null
+  disabled_by: integration
   options:
     conversation:
       should_expose: false
@@ -3172,6 +3257,7 @@
   original_name: SSID
   aliases:
   - null
+  disabled_by: integration
   options:
     conversation:
       should_expose: false
@@ -3194,6 +3280,7 @@
   original_name: Storage
   aliases:
   - null
+  disabled_by: integration
   options:
     conversation:
       should_expose: false
@@ -4001,15 +4088,6 @@
   options:
     conversation:
       should_expose: false
-- entity_id: sensor.pfuus_lampe_zigbee_connectivity
-  id: 398f1606625c381f5544ba17762b7ec6
-  platform: hue
-  unique_id: ddff2221-a9d9-4fe5-b81b-d2d1839b0af0
-  device_id: c10d0925fe648f52aeda1989ece285f8
-  original_name: Zigbee connectivity
-  aliases:
-  - null
-  disabled_by: integration
 - entity_id: sensor.schlumbergera_battery
   id: 1017d570e077f48c46c4dc908e48e9a3
   platform: mqtt
@@ -4277,6 +4355,301 @@
   aliases:
   - null
   disabled_by: integration
+- entity_id: sensor.withings_bone_mass
+  id: 728829fb82d7a50524dc1572e0320704
+  platform: withings
+  unique_id: withings_47373279_bone_mass_kg
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Bone mass
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 2
+    conversation:
+      should_expose: false
+- entity_id: sensor.withings_extracellular_water
+  id: ee9b6cdd2c1888c6d02e3b3c977e1948
+  platform: withings
+  unique_id: withings_47373279_extracellular_water
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Extracellular water
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_fat_free_mass
+  id: 021a4b4aa71dbe869ff275c847aeb0fa
+  platform: withings
+  unique_id: withings_47373279_fat_free_mass_kg
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Fat free mass
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 2
+    conversation:
+      should_expose: false
+- entity_id: sensor.withings_fat_free_mass_in_left_arm
+  id: 204ab794709825c320330562914fd6c6
+  platform: withings
+  unique_id: withings_47373279_fat_free_mass_for_segments_left_arm
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Fat free mass in left arm
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_fat_free_mass_in_left_leg
+  id: d57344dc9fa94b2f874f26da6b21dd40
+  platform: withings
+  unique_id: withings_47373279_fat_free_mass_for_segments_left_leg
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Fat free mass in left leg
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_fat_free_mass_in_right_arm
+  id: 5204a8eafac823b9453f65929f543126
+  platform: withings
+  unique_id: withings_47373279_fat_free_mass_for_segments_right_arm
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Fat free mass in right arm
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_fat_free_mass_in_right_leg
+  id: 0a2f049bf8c3bc88782499562319b6f7
+  platform: withings
+  unique_id: withings_47373279_fat_free_mass_for_segments_right_leg
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Fat free mass in right leg
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_fat_free_mass_in_torso
+  id: d34278d901bb1d77754373b61be5a70f
+  platform: withings
+  unique_id: withings_47373279_fat_free_mass_for_segments_torso
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Fat free mass in torso
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_fat_mass
+  id: 6ea6cc67e91444e077b169bc9f924a15
+  platform: withings
+  unique_id: withings_47373279_fat_mass_kg
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Fat mass
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 2
+    conversation:
+      should_expose: false
+- entity_id: sensor.withings_fat_mass_in_left_arm
+  id: 0eab1f9a6a64e11b89e9daf88ca35dc9
+  platform: withings
+  unique_id: withings_47373279_fat_mass_for_segments_left_arm
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Fat mass in left arm
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_fat_mass_in_left_leg
+  id: c1af34cd7ae6c851d8577880f5a3e6c7
+  platform: withings
+  unique_id: withings_47373279_fat_mass_for_segments_left_leg
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Fat mass in left leg
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_fat_mass_in_right_arm
+  id: 04c7e9a080ecea8c94aa4ad53c1325cd
+  platform: withings
+  unique_id: withings_47373279_fat_mass_for_segments_right_arm
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Fat mass in right arm
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_fat_mass_in_right_leg
+  id: 107004ba6e08cb9cc052f74da1b2dbb4
+  platform: withings
+  unique_id: withings_47373279_fat_mass_for_segments_right_leg
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Fat mass in right leg
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_fat_mass_in_torso
+  id: 9dca0082531903b232beaf025cc99db7
+  platform: withings
+  unique_id: withings_47373279_fat_mass_for_segments_torso
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Fat mass in torso
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_fat_ratio
+  id: c9e61aec6022859e4b5fbd698fdedb73
+  platform: withings
+  unique_id: withings_47373279_fat_ratio_pct
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Fat ratio
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 2
+    conversation:
+      should_expose: false
+- entity_id: sensor.withings_heart_pulse
+  id: 6e455cfa5b4c079434f25df6576f1bbb
+  platform: withings
+  unique_id: withings_47373279_heart_pulse_bpm
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Heart pulse
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.withings_hydration
+  id: 5d8941d7108acfcd7f9c33708cbe1770
+  platform: withings
+  unique_id: withings_47373279_hydration
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Hydration
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_intracellular_water
+  id: 3e64d2f5ec0dfd221b6b1f69d337d9b6
+  platform: withings
+  unique_id: withings_47373279_intracellular_water
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Intracellular water
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_muscle_mass
+  id: e7b52c6ff45b19e72bcd692a5505115e
+  platform: withings
+  unique_id: withings_47373279_muscle_mass_kg
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Muscle mass
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 2
+    conversation:
+      should_expose: false
+- entity_id: sensor.withings_muscle_mass_in_left_arm
+  id: 8aba2159745a2600d5cd8565dd0575d4
+  platform: withings
+  unique_id: withings_47373279_muscle_mass_for_segments_left_arm
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Muscle mass in left arm
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_muscle_mass_in_left_leg
+  id: 708e76f391acbb6a849fde5e2043eab4
+  platform: withings
+  unique_id: withings_47373279_muscle_mass_for_segments_left_leg
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Muscle mass in left leg
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_muscle_mass_in_right_arm
+  id: 836c2b43cfb26f3b65a412a5b8ddc7bc
+  platform: withings
+  unique_id: withings_47373279_muscle_mass_for_segments_right_arm
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Muscle mass in right arm
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_muscle_mass_in_right_leg
+  id: 80bcabe695a658d3f8cceb1d3f6bf599
+  platform: withings
+  unique_id: withings_47373279_muscle_mass_for_segments_right_leg
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Muscle mass in right leg
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_muscle_mass_in_torso
+  id: 3f5525bfdb80987e68aaac4ed4cf8efe
+  platform: withings
+  unique_id: withings_47373279_muscle_mass_for_segments_torso
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Muscle mass in torso
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_pulse_wave_velocity
+  id: c3553a0e056393765618ec2889b09795
+  platform: withings
+  unique_id: withings_47373279_pulse_wave_velocity
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Pulse wave velocity
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 2
+    conversation:
+      should_expose: false
+- entity_id: sensor.withings_vascular_age
+  id: 9d079fd44e41e96da57cbc8d30ef26e3
+  platform: withings
+  unique_id: withings_47373279_vascular_age
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Vascular age
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_visceral_fat_index
+  id: 1af4e331ad6362fca4fcb8bae0d9d63e
+  platform: withings
+  unique_id: withings_47373279_visceral_fat
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Visceral fat index
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.withings_weight
+  id: ee4e0660ffa5ffdf798122b24b72bfae
+  platform: withings
+  unique_id: withings_47373279_weight_kg
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Weight
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 2
+    conversation:
+      should_expose: false
+- entity_id: sensor.withings_weight_goal
+  id: 1ceee71e07de763bdf001d8c79ee42ec
+  platform: withings
+  unique_id: withings_47373279_weight_goal
+  device_id: 6694f9a70570c5cde0742552890aefb2
+  original_name: Weight goal
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 2
+    conversation:
+      should_expose: false
 - entity_id: sensor.zigbee2mqtt_bridge_coordinator_version
   id: 31c1cecfa2b2dc6b14747b97743db3ef
   platform: mqtt
@@ -4511,68 +4884,6 @@
   options:
     conversation:
       should_expose: true
-- entity_id: switch.family_room_crossfade
-  id: 4ea5a8594b958523ca8e62a8be9fa383
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-cross_fade
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Crossfade
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: switch.family_room_loudness
-  id: f3f48795dcc0903835131eee8d3b2bea
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-loudness
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Loudness
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: switch.family_room_status_light
-  id: 88f342a47e2fa6aa14bf3d365a361695
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-status_light
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Status light
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: switch.family_room_touch_controls
-  id: 4b14d680f01f12b1be79f5cb5630a58e
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-buttons_enabled
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Touch controls
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: switch.family_room_tv_autoplay
-  id: 4cda1cdc3dfeb192fd206702beea017e
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-tv_autoplay
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: TV autoplay
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: switch.family_room_ungroup_on_autoplay
-  id: 263aa06fb5dae16a858cb5bccf2340f1
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-ungroup_on_autoplay
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Ungroup on autoplay
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
 - entity_id: switch.file_editor
   id: 43b27f0d2436014dae73cc98f7af68d9
   platform: hassio
@@ -4590,6 +4901,68 @@
   aliases:
   - null
   disabled_by: integration
+- entity_id: switch.innovation_hub_crossfade
+  id: 4ea5a8594b958523ca8e62a8be9fa383
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-cross_fade
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Crossfade
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: switch.innovation_hub_loudness
+  id: f3f48795dcc0903835131eee8d3b2bea
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-loudness
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Loudness
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: switch.innovation_hub_status_light
+  id: 88f342a47e2fa6aa14bf3d365a361695
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-status_light
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Status light
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: switch.innovation_hub_touch_controls
+  id: 4b14d680f01f12b1be79f5cb5630a58e
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-buttons_enabled
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Touch controls
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: switch.innovation_hub_tv_autoplay
+  id: 4cda1cdc3dfeb192fd206702beea017e
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-tv_autoplay
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: TV autoplay
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: switch.innovation_hub_ungroup_on_autoplay
+  id: 263aa06fb5dae16a858cb5bccf2340f1
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-ungroup_on_autoplay
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Ungroup on autoplay
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
 - entity_id: switch.kitchen_crossfade
   id: b6fc1db5714d6d2b268276f02018f28b
   platform: sonos
@@ -4759,6 +5132,15 @@
   options:
     conversation:
       should_expose: true
+- entity_id: switch.polar_pre_release
+  id: d22793932106929452aaa6327adf31bc
+  platform: hacs
+  unique_id: '580152298'
+  device_id: 6b9bc8bb9ddae2aac60d2e30ac7a3b9a
+  original_name: Pre-release
+  aliases:
+  - null
+  disabled_by: integration
 - entity_id: switch.terminal_ssh
   id: 10250ee7d1afffde747bccf6a65e15e3
   platform: hassio
@@ -5034,6 +5416,17 @@
   platform: mqtt
   unique_id: 0x001788010d1935a6_update_zigbee2mqtt
   device_id: 2f924b1cbf55792a4c859a3c21f2a6bb
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: update.polar_update
+  id: 137e82f9b77303cb60a33b96d736f798
+  platform: hacs
+  unique_id: '580152298'
+  device_id: 6b9bc8bb9ddae2aac60d2e30ac7a3b9a
+  original_name: Update
   aliases:
   - null
   options:

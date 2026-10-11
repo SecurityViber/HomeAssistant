@@ -1,6 +1,8 @@
 exposed_entities:
   light.bed_light_strip:
     conversation: true
+  light.bedroom_lamp:
+    conversation: true
   light.entire_home:
     conversation: true
   light.gym_ceiling_light:
@@ -13,15 +15,13 @@ exposed_entities:
     conversation: true
   light.office_ceiling_light:
     conversation: true
-  light.pfuus_lampe:
-    conversation: true
   light.pfuusruum:
     conversation: true
   light.sportzimmer:
     conversation: true
   light.stube:
     conversation: true
-  media_player.family_room:
+  media_player.innovation_hub:
     conversation: true
   media_player.kitchen:
     conversation: true
