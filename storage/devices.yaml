@@ -1,10 +1,11 @@
 - id: 750a55b4dd4545a6c05353845c3e1ba2
   name: Kitchen (2)
+  name_by_user: Kitchen HomePod
   manufacturer: Apple
   model: HomePod Mini
   integrations:
   - apple_tv
-  area_id: kitchen_2
+  area_id: kitchen
   identifiers:
   - - apple_tv
     - D6:9D:83:9C:7E:34
@@ -17,7 +18,7 @@
   model: HomePod Mini
   integrations:
   - apple_tv
-  area_id: entire_home
+  area_id: kitchen
   identifiers:
   - - apple_tv
     - 72:41:DA:17:E6:73
@@ -200,28 +201,13 @@
   connections:
   - - mac
     - c7:0c:3b:e6:e6:33
-- id: c3fb476c1e49c68096b84c94b5d99dba
-  name: HASS Bridge:21064
-  name_by_user: Apple Bridge
-  manufacturer: Home Assistant
-  model: HomeBridge
-  integrations:
-  - homekit
-  disabled_by: config_entry
-  identifiers:
-  - - homekit
-    - 01KDB0ZMN46PR6RWWSK88Q68M1
-    - homekit.bridge
-  connections:
-  - - mac
-    - 53:6d:dd:0e:97:cf
 - id: 82e9daff3a4d3489e525d9feeec834ce
   name: Büro
   manufacturer: Signify Netherlands B.V.
   model: Room
   integrations:
   - hue
-  area_id: buro
+  area_id: office
   identifiers:
   - - hue
     - 99532490-cf6f-4bba-b838-5ed1fe265881
@@ -267,11 +253,12 @@
   via_device_id: 0c7cbc97987734d03b73fa863d2204e9
 - id: 9aacc95b244d81c075f23584cb921cab
   name: Hue dimmer switch 2
+  name_by_user: Gym Dimmer Switch
   manufacturer: Signify Netherlands B.V.
   model: Hue dimmer switch
   integrations:
   - hue
-  area_id: sportzimmer
+  area_id: gym
   identifiers:
   - - hue
     - 82cb3931-3d3e-4c62-aea9-59d9017af1e7
@@ -319,11 +306,12 @@
   via_device_id: 0c7cbc97987734d03b73fa863d2204e9
 - id: 220682812dec33e04310aacc0869474b
   name: Sport zimmer
+  name_by_user: Gym Ceiling Light
   manufacturer: Signify Netherlands B.V.
   model: Hue Infuse ceiling
   integrations:
   - hue
-  area_id: sportzimmer
+  area_id: gym
   identifiers:
   - - hue
     - 2eccf8ea-e1d7-4051-a7eb-1f245eea7dfd
@@ -337,18 +325,19 @@
   model: Room
   integrations:
   - hue
-  area_id: sportzimmer
+  area_id: gym
   identifiers:
   - - hue
     - 71f06323-3053-47bc-a1ec-54280497a329
   via_device_id: 0c7cbc97987734d03b73fa863d2204e9
 - id: d9566bd1d1db0abbb2f42039381a4492
   name: Stubaaaa
+  name_by_user: Living Room Ceiling Light
   manufacturer: Signify Netherlands B.V.
   model: Hue Infuse ceiling
   integrations:
   - hue
-  area_id: stube
+  area_id: living_room
   identifiers:
   - - hue
     - 57d6e023-2343-4018-b4d2-3cad9a399b5f
@@ -362,7 +351,7 @@
   model: Room
   integrations:
   - hue
-  area_id: stube
+  area_id: living_room
   identifiers:
   - - hue
     - 0804d1f0-327f-4004-9918-35c47ff80e84
@@ -373,7 +362,7 @@
   model: HP Color LaserJet MFP M477fdw
   integrations:
   - ipp
-  area_id: buro
+  area_id: office
   identifiers:
   - - ipp
     - 564e434b-4d32-4832-4242-b00cd1dc77e9
@@ -416,7 +405,7 @@
   via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
 - id: adb80959cca1f85472517d2b345be0b2
   name: '0xa4c1383be574225a'
-  manufacturer: Tuya
+  manufacturer: HOBEIAN
   model: 5.8Ghz/24Ghz Human presence sensor
   integrations:
   - mqtt
@@ -450,26 +439,31 @@
   model: Zigbee LED controller (Dimmer)
   integrations:
   - mqtt
+  area_id: bedroom
   identifiers:
   - - mqtt
     - zigbee2mqtt_0xa4c1388268bc795d
   via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
 - id: 4932e8a2eb71479b6d54d6bf0c7f741b
   name: Bedroom
+  name_by_user: Bedroom Switch
   manufacturer: IKEA
   model: RODRET wireless dimmer/power switch
   integrations:
   - mqtt
+  area_id: bedroom
   identifiers:
   - - mqtt
     - zigbee2mqtt_0x08fd52fffe6ed25e
   via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
 - id: f3042e96ab16fbb14c7160b963a42d3a
   name: Bedroom PIR
+  name_by_user: Bedroom Motion Sensor
   manufacturer: Aqara
   model: Motion sensor
   integrations:
   - mqtt
+  area_id: bedroom
   identifiers:
   - - mqtt
     - zigbee2mqtt_0x00158d008bc3cfdf
@@ -486,20 +480,24 @@
   via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
 - id: b255da3e41234ae2845e5e0f208c58be
   name: Hallway
+  name_by_user: Hallway Light
   manufacturer: IKEA
   model: TRADFRI bulb E26/27, white spectrum, globe, opal, 1055/1100/1160 lm
   integrations:
   - mqtt
+  area_id: hallway
   identifiers:
   - - mqtt
     - zigbee2mqtt_0x781c9dfffe0b2d4a
   via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
 - id: 3a94836cef7376d31ee03078aabafab4
   name: Hallway PIR
+  name_by_user: Hallway Motion Sensor
   manufacturer: Aqara
   model: Motion sensor
   integrations:
   - mqtt
+  area_id: hallway
   identifiers:
   - - mqtt
     - zigbee2mqtt_0x00158d008bc3d235
@@ -516,10 +514,12 @@
   via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
 - id: 5f0c36bbc73fcc5d55638b8304dddc7f
   name: Livingroom
+  name_by_user: Living Room Switch
   manufacturer: IKEA
   model: RODRET wireless dimmer/power switch
   integrations:
   - mqtt
+  area_id: living_room
   identifiers:
   - - mqtt
     - zigbee2mqtt_0x08fd52fffe5ea498
@@ -530,6 +530,7 @@
   model: Hue Bluetooth white & color ambiance ceiling lamp Infuse medium
   integrations:
   - mqtt
+  area_id: office
   identifiers:
   - - mqtt
     - zigbee2mqtt_0x001788010d1935a6
@@ -540,6 +541,7 @@
   model: 24G MmWave radar human presence motion sensor (added distance switch)
   integrations:
   - mqtt
+  area_id: office
   identifiers:
   - - mqtt
     - zigbee2mqtt_0xa4c138658ea42994
@@ -645,7 +647,7 @@
     - 74:ca:60:7e:31:86
 - id: cced51bd056667be1707cc84fabdc326
   name: Living Room
-  name_by_user: Living room
+  name_by_user: Living Room
   manufacturer: Sonos
   model: Era 100
   integrations:
@@ -730,166 +732,3 @@
   - - synology_dsm
     - 21C0TER3SBBDK_volume_1
   via_device_id: cb3a61298226638b10543b3614dbd36f
-- id: 17f9a407383c93f3c5a1d5667f5fd38b
-  name: HOBEIAN ZG-303Z
-  name_by_user: Weihnachts Kakti
-  manufacturer: HOBEIAN
-  model: ZG-303Z
-  integrations:
-  - zha
-  area_id: living_room
-  disabled_by: config_entry
-  identifiers:
-  - - zha
-    - a4:c1:38:0d:65:60:c1:7f
-  connections:
-  - - zigbee
-    - a4:c1:38:0d:65:60:c1:7f
-  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
-- id: 94fb0090643249f3eb2a0f2f7185538e
-  name: HOBEIAN ZG-303Z
-  name_by_user: Spucki Palme
-  manufacturer: HOBEIAN
-  model: ZG-303Z
-  integrations:
-  - zha
-  disabled_by: config_entry
-  identifiers:
-  - - zha
-    - a4:c1:38:37:fc:01:83:38
-  connections:
-  - - zigbee
-    - a4:c1:38:37:fc:01:83:38
-  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
-- id: 68f89069e7a7d556992de0c39e5bae3d
-  name: HOBEIAN ZG-303Z
-  name_by_user: Grosse Diva
-  manufacturer: HOBEIAN
-  model: ZG-303Z
-  integrations:
-  - zha
-  disabled_by: config_entry
-  identifiers:
-  - - zha
-    - a4:c1:38:a5:9a:fc:57:5f
-  connections:
-  - - zigbee
-    - a4:c1:38:a5:9a:fc:57:5f
-  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
-- id: d2b2e533e204a416a9dccbe334b09030
-  name: LUMI lumi.remote.b1acn01
-  manufacturer: LUMI
-  model: lumi.remote.b1acn01
-  integrations:
-  - zha
-  disabled_by: config_entry
-  identifiers:
-  - - zha
-    - 00:15:8d:00:8c:75:62:10
-  connections:
-  - - zigbee
-    - 00:15:8d:00:8c:75:62:10
-  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
-- id: c67af7688b444ce25d186725d4d51f3a
-  name: LUMI lumi.sensor_motion.aq2
-  name_by_user: Quara Motion Sensor Stube
-  manufacturer: LUMI
-  model: lumi.sensor_motion.aq2
-  integrations:
-  - zha
-  area_id: stube
-  disabled_by: config_entry
-  identifiers:
-  - - zha
-    - 00:15:8d:00:8b:c3:cf:df
-  connections:
-  - - zigbee
-    - 00:15:8d:00:8b:c3:cf:df
-  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
-- id: 630c86f08f09182876d35b1ef4f35e05
-  name: LUMI lumi.vibration.aq1
-  manufacturer: LUMI
-  model: lumi.vibration.aq1
-  integrations:
-  - zha
-  disabled_by: config_entry
-  identifiers:
-  - - zha
-    - 00:15:8d:00:8b:c1:c1:e1
-  connections:
-  - - zigbee
-    - 00:15:8d:00:8b:c1:c1:e1
-  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
-- id: 2a22955ad018b004d424708693511668
-  name: Philips 915005997201
-  manufacturer: Philips
-  model: '915005997201'
-  integrations:
-  - zha
-  disabled_by: config_entry
-  identifiers:
-  - - zha
-    - 00:17:88:01:0d:19:35:a6
-  connections:
-  - - zigbee
-    - 00:17:88:01:0d:19:35:a6
-  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
-- id: 3ab429f5a9a5266d79c4a4b53e5890b4
-  name: Texas Instruments CC2652
-  manufacturer: Texas Instruments
-  model: CC2652
-  integrations:
-  - zha
-  disabled_by: config_entry
-  identifiers:
-  - - zha
-    - 00:12:4b:00:31:dd:76:75
-  connections:
-  - - zigbee
-    - 00:12:4b:00:31:dd:76:75
-- id: c44e74ae9b13879fe054ffd909b1c6d3
-  name: _TZE204_gkfbdvyx TS0601
-  name_by_user: Mini Human Breath Sensor
-  manufacturer: _TZE204_gkfbdvyx
-  model: TS0601
-  integrations:
-  - zha
-  area_id: stube
-  disabled_by: config_entry
-  identifiers:
-  - - zha
-    - a4:c1:38:65:8e:a4:29:94
-  connections:
-  - - zigbee
-    - a4:c1:38:65:8e:a4:29:94
-  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
-- id: de3bc63edf70aa1496efec6a3d6ecc2e
-  name: eWeLight ZB-DL01
-  name_by_user: Bettlicht
-  manufacturer: eWeLight
-  model: ZB-DL01
-  integrations:
-  - zha
-  area_id: bedroom
-  disabled_by: config_entry
-  identifiers:
-  - - zha
-    - a4:c1:38:82:68:bc:79:5d
-  connections:
-  - - zigbee
-    - a4:c1:38:82:68:bc:79:5d
-  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
-- id: 97a9c3baa82059499e0d3916140049bf
-  name: eWeLink SNZB-02P
-  manufacturer: eWeLink
-  model: SNZB-02P
-  integrations:
-  - zha
-  disabled_by: config_entry
-  identifiers:
-  - - zha
-    - 44:9f:da:ff:fe:22:3f:61
-  connections:
-  - - zigbee
-    - 44:9f:da:ff:fe:22:3f:61
-  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4

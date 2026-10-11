@@ -1,23 +1,16 @@
 - area_id: bedroom
   name: Bedroom
-- area_id: buro
-  name: Büro
-- area_id: entire_home
-  name: Entire Home
-  icon: mdi:home
+- area_id: gym
+  name: Gym
+- area_id: hallway
+  name: Hallway
 - area_id: kitchen
   name: Kitchen
-- area_id: kitchen_2
-  name: Kitchen (2)
 - area_id: living_room
   name: Living Room
+- area_id: office
+  name: Office
 - area_id: pfuusruum
   name: Pfuusruum
-- area_id: shitpod
-  name: ShitPod
-- area_id: sportzimmer
-  name: Sportzimmer
-- area_id: stube
-  name: Stube
 - area_id: unnamed_room
   name: Unnamed Room

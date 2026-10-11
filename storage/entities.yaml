@@ -1,8 +1,38 @@
-- entity_id: automation.alarm_nas_security_alert_christopher
+- entity_id: automation.aqara_button_1_toggle_gym_ceiling_light
+  id: b5cc4d0b7f2fee8f246a8e1fe8650807
+  platform: automation
+  unique_id: '1766688495972'
+  original_name: 'Aqara Button 1: Toggle gym ceiling light'
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: automation.bedroom_light_on_with_presence
+  id: b72d2d6748602ddf7f68727ab35f6f46
+  platform: automation
+  unique_id: '1766683787264'
+  original_name: 'Bedroom: Light on with presence'
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: automation.hallway_light_follows_presence
+  id: 7bbceae43fb4055f610d958c65ce6e3f
+  platform: automation
+  unique_id: '1766871202931'
+  original_name: 'Hallway: Light follows presence'
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: automation.nas_security_alert
   id: f7816ddcd18d42e44503d4eba38d3183
   platform: automation
   unique_id: '1771087316568'
-  original_name: 'Alarm: NAS Security Alert Christopher'
+  original_name: 'NAS: Security alert'
   aliases:
   - null
   labels:
@@ -12,76 +42,26 @@
   options:
     conversation:
       should_expose: false
-- entity_id: automation.aqara_button_1_stubaa
-  id: b5cc4d0b7f2fee8f246a8e1fe8650807
-  platform: automation
-  unique_id: '1766688495972'
-  original_name: Aqara Button 1 Stubaa
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: automation.bed_light_on
-  id: b72d2d6748602ddf7f68727ab35f6f46
-  platform: automation
-  unique_id: '1766683787264'
-  original_name: Bed light on
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: automation.hallway_became_not_occupied
-  id: 493e5cccbe44df9c0e96388fd1147a16
-  platform: automation
-  unique_id: '1766871270746'
-  original_name: Hallway became not occupied
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: automation.hallway_become_occupied
-  id: 7bbceae43fb4055f610d958c65ce6e3f
-  platform: automation
-  unique_id: '1766871202931'
-  original_name: Hallway become occupied
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: automation.office_motion_on
+- entity_id: automation.office_light_on_with_presence
   id: a19d0a7e7cb5d0b00f61aca0ab961281
   platform: automation
   unique_id: '1766683491744'
-  original_name: Office Motion on
+  original_name: 'Office: Light on with presence'
   aliases:
   - null
   options:
     conversation:
       should_expose: false
-- entity_id: automation.plant_hydration_management
+- entity_id: automation.plants_watering_alerts
   id: 96a679f0b87db6ec313b6d5bc0f83a94
   platform: automation
   unique_id: '1771088319454'
-  original_name: Plant Hydration Management
+  original_name: 'Plants: Watering alerts'
   aliases:
   - null
   area_id: living_room
   labels:
   - plant_management
-  options:
-    conversation:
-      should_expose: false
-- entity_id: automation.testing_lets_go_to_sleep
-  id: b080c4155d7d8d239ec836f79f3b271a
-  platform: automation
-  unique_id: '1766000716123'
-  original_name: Testing lets go to sleep
-  aliases:
-  - null
   options:
     conversation:
       should_expose: false
@@ -91,28 +71,6 @@
   unique_id: 0x00158d008bc1c1e1_vibration_zigbee2mqtt
   device_id: 49490a46208c34189cce08e1a56ba266
   original_name: Vibration
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: binary_sensor.0x00158d008bc3cfdf_occupancy
-  id: afcf09c4e707c0eed344cd2fd300a600
-  platform: mqtt
-  unique_id: 0x00158d008bc3cfdf_occupancy_zigbee2mqtt
-  device_id: f3042e96ab16fbb14c7160b963a42d3a
-  original_name: Occupancy
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: binary_sensor.0x00158d008bc3d235_occupancy
-  id: 1c32936536f8250cb65de73dae84edc8
-  platform: mqtt
-  unique_id: 0x00158d008bc3d235_occupancy_zigbee2mqtt
-  device_id: 3a94836cef7376d31ee03078aabafab4
-  original_name: Occupancy
   aliases:
   - null
   options:
@@ -129,56 +87,12 @@
   options:
     conversation:
       should_expose: false
-- entity_id: binary_sensor.0xa4c1380d6560c17f_dry
-  id: b194303da509423a28c8692e830ed1b0
-  platform: mqtt
-  unique_id: 0xa4c1380d6560c17f_dry_zigbee2mqtt
-  device_id: b186ec1927ef302182bbaafda0bf1c25
-  original_name: Dry
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: binary_sensor.0xa4c13837fc018338_dry
-  id: 35f7dc1514c20e2a61ac87b32616b29f
-  platform: mqtt
-  unique_id: 0xa4c13837fc018338_dry_zigbee2mqtt
-  device_id: e94865b48e1bce7a0517a7144ec04f89
-  original_name: Dry
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
 - entity_id: binary_sensor.0xa4c1383be574225a_presence
   id: 9a58f369f607948dd3f8ad489ef5af13
   platform: mqtt
   unique_id: 0xa4c1383be574225a_presence_zigbee2mqtt
   device_id: adb80959cca1f85472517d2b345be0b2
   original_name: Occupancy
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: binary_sensor.0xa4c138658ea42994_presence
-  id: 01d9ded7c3e75a20372d567e8f2838a9
-  platform: mqtt
-  unique_id: 0xa4c138658ea42994_presence_zigbee2mqtt
-  device_id: 94d587e8bee0564ab127389bf82b697f
-  original_name: Occupancy
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: binary_sensor.0xa4c138a59afc575f_dry
-  id: 8046046943894f0e904931d4f942a627
-  platform: mqtt
-  unique_id: 0xa4c138a59afc575f_dry_zigbee2mqtt
-  device_id: d0b0af193414a58b71edf2888a788ce0
-  original_name: Dry
   aliases:
   - null
   options:
@@ -193,6 +107,17 @@
   aliases:
   - null
   disabled_by: integration
+- entity_id: binary_sensor.bedroom_motion_sensor_occupancy
+  id: afcf09c4e707c0eed344cd2fd300a600
+  platform: mqtt
+  unique_id: 0x00158d008bc3cfdf_occupancy_zigbee2mqtt
+  device_id: f3042e96ab16fbb14c7160b963a42d3a
+  original_name: Occupancy
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
 - entity_id: binary_sensor.chrisinas_cache_device_1_below_min_remaining_life
   id: 2d90782d7539a240d05a32ffe620a53b
   platform: synology_dsm
@@ -334,6 +259,28 @@
   options:
     conversation:
       should_expose: false
+- entity_id: binary_sensor.euphorbia_leuconeura_dry
+  id: 35f7dc1514c20e2a61ac87b32616b29f
+  platform: mqtt
+  unique_id: 0xa4c13837fc018338_dry_zigbee2mqtt
+  device_id: e94865b48e1bce7a0517a7144ec04f89
+  original_name: Dry
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: binary_sensor.family_room_microphone
+  id: 57c09dfc5e0c346a9d6ef71638fed086
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-microphone
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Microphone
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
 - entity_id: binary_sensor.file_editor_running
   id: c024236a7dd0db9110a93180e344d4d3
   platform: hassio
@@ -343,6 +290,17 @@
   aliases:
   - null
   disabled_by: integration
+- entity_id: binary_sensor.hallway_motion_sensor_occupancy
+  id: 1c32936536f8250cb65de73dae84edc8
+  platform: mqtt
+  unique_id: 0x00158d008bc3d235_occupancy_zigbee2mqtt
+  device_id: 3a94836cef7376d31ee03078aabafab4
+  original_name: Occupancy
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
 - entity_id: binary_sensor.iphone_von_kim_kiosk_mode
   id: 09c512881970288544cfcbe2bf2c9d4d
   platform: mobile_app
@@ -365,14 +323,14 @@
   options:
     conversation:
       should_expose: false
-- entity_id: binary_sensor.lumi_lumi_vibration_aq1
-  id: f05690f518489510d92918e29dc34946
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c1:c1:e1-1-1280
-  device_id: 630c86f08f09182876d35b1ef4f35e05
+- entity_id: binary_sensor.living_room_microphone
+  id: 354566a08b6c9089e2d845f0f04d3003
+  platform: sonos
+  unique_id: RINCON_74CA607E2D9601400-microphone
+  device_id: cced51bd056667be1707cc84fabdc326
+  original_name: Microphone
   aliases:
   - null
-  disabled_by: config_entry
   options:
     conversation:
       should_expose: false
@@ -385,17 +343,6 @@
   aliases:
   - null
   disabled_by: integration
-- entity_id: binary_sensor.mini_human_breath_sensor
-  id: 9a5c7280bb79068c5353cda1ca49eb27
-  platform: zha
-  unique_id: a4:c1:38:65:8e:a4:29:94-1-1030
-  device_id: c44e74ae9b13879fe054ffd909b1c6d3
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: false
 - entity_id: binary_sensor.mosquitto_broker_running
   id: 441446ab95a3a01a4ba8622c4f0424b9
   platform: hassio
@@ -405,26 +352,36 @@
   aliases:
   - null
   disabled_by: integration
-- entity_id: binary_sensor.quara_motion_sensor_stube
-  id: 894f06793e98642946ea713e6326626d
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c3:cf:df-1-1280
-  device_id: c67af7688b444ce25d186725d4d51f3a
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: true
-- entity_id: binary_sensor.quara_motion_sensor_stube_occupancy
-  id: 4328da49333b9a2806d98556eb8d6406
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c3:cf:df-1-1030
-  device_id: c67af7688b444ce25d186725d4d51f3a
+- entity_id: binary_sensor.office_presence_sensor_presence
+  id: 01d9ded7c3e75a20372d567e8f2838a9
+  platform: mqtt
+  unique_id: 0xa4c138658ea42994_presence_zigbee2mqtt
+  device_id: 94d587e8bee0564ab127389bf82b697f
   original_name: Occupancy
   aliases:
   - null
-  disabled_by: config_entry
+  options:
+    conversation:
+      should_expose: false
+- entity_id: binary_sensor.schlumbergera_dry
+  id: b194303da509423a28c8692e830ed1b0
+  platform: mqtt
+  unique_id: 0xa4c1380d6560c17f_dry_zigbee2mqtt
+  device_id: b186ec1927ef302182bbaafda0bf1c25
+  original_name: Dry
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: binary_sensor.strelitzia_dry
+  id: 8046046943894f0e904931d4f942a627
+  platform: mqtt
+  unique_id: 0xa4c138a59afc575f_dry_zigbee2mqtt
+  device_id: d0b0af193414a58b71edf2888a788ce0
+  original_name: Dry
+  aliases:
+  - null
   options:
     conversation:
       should_expose: false
@@ -446,28 +403,6 @@
   aliases:
   - null
   disabled_by: integration
-- entity_id: binary_sensor.unnamed_room_microphone
-  id: 354566a08b6c9089e2d845f0f04d3003
-  platform: sonos
-  unique_id: RINCON_74CA607E2D9601400-microphone
-  device_id: cced51bd056667be1707cc84fabdc326
-  original_name: Microphone
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: binary_sensor.unnamed_room_microphone_2
-  id: 57c09dfc5e0c346a9d6ef71638fed086
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-microphone
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Microphone
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
 - entity_id: binary_sensor.zigbee2mqtt_bridge_connection_state
   id: aec282df7f10fe333170a3ba42d47f1b
   platform: mqtt
@@ -497,28 +432,6 @@
   aliases:
   - null
   disabled_by: integration
-- entity_id: button.0x08fd52fffe5ea498_identify
-  id: fc58ff768bf5145fa1fb2b85dfea53ef
-  platform: mqtt
-  unique_id: 0x08fd52fffe5ea498_identify_zigbee2mqtt
-  device_id: 5f0c36bbc73fcc5d55638b8304dddc7f
-  original_name: Identify
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: button.0x08fd52fffe6ed25e_identify
-  id: 57c46e87b98334aa3c9e7c4020205137
-  platform: mqtt
-  unique_id: 0x08fd52fffe6ed25e_identify_zigbee2mqtt
-  device_id: 4932e8a2eb71479b6d54d6bf0c7f741b
-  original_name: Identify
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
 - entity_id: button.0x08fd52fffef625db_identify
   id: e2fde850882ca316502d7f49e14e3ee1
   platform: mqtt
@@ -552,22 +465,22 @@
   options:
     conversation:
       should_expose: false
-- entity_id: button.0x781c9dfffe0b2d4a_identify
-  id: 1fbbb84d18a2006bd7946c244b94b293
+- entity_id: button.aqara_button_1_identify
+  id: 9e7ae78839e17d5936e8ebcfd768a330
   platform: mqtt
-  unique_id: 0x781c9dfffe0b2d4a_identify_zigbee2mqtt
-  device_id: b255da3e41234ae2845e5e0f208c58be
+  unique_id: 0x00158d008c756210_identify_zigbee2mqtt
+  device_id: 1da4aea06a675be80f73bc4ba72958f7
   original_name: Identify
   aliases:
   - null
   options:
     conversation:
       should_expose: false
-- entity_id: button.aqara_button_1_identify
-  id: 9e7ae78839e17d5936e8ebcfd768a330
+- entity_id: button.bedroom_switch_identify
+  id: 57c46e87b98334aa3c9e7c4020205137
   platform: mqtt
-  unique_id: 0x00158d008c756210_identify_zigbee2mqtt
-  device_id: 1da4aea06a675be80f73bc4ba72958f7
+  unique_id: 0x08fd52fffe6ed25e_identify_zigbee2mqtt
+  device_id: 4932e8a2eb71479b6d54d6bf0c7f741b
   original_name: Identify
   aliases:
   - null
@@ -607,63 +520,14 @@
   options:
     conversation:
       should_expose: false
-- entity_id: button.ewelight_zb_dl01_identify
-  id: 1ce4efb31c2bbec18a9ded7486b5e42b
-  platform: zha
-  unique_id: a4:c1:38:82:68:bc:79:5d-1-3
-  device_id: de3bc63edf70aa1496efec6a3d6ecc2e
+- entity_id: button.hallway_light_identify
+  id: 1fbbb84d18a2006bd7946c244b94b293
+  platform: mqtt
+  unique_id: 0x781c9dfffe0b2d4a_identify_zigbee2mqtt
+  device_id: b255da3e41234ae2845e5e0f208c58be
   original_name: Identify
   aliases:
   - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: false
-- entity_id: button.ewelink_snzb_02p_identify
-  id: bd30d5687e9f902d4dbe1e1d211f579c
-  platform: zha
-  unique_id: 44:9f:da:ff:fe:22:3f:61-1-3
-  device_id: 97a9c3baa82059499e0d3916140049bf
-  original_name: Identify
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: false
-- entity_id: button.hobeian_zg_303z_identify
-  id: 0d5a8c4d829886a979b8c09cf64c0288
-  platform: zha
-  unique_id: a4:c1:38:0d:65:60:c1:7f-1-3
-  device_id: 17f9a407383c93f3c5a1d5667f5fd38b
-  original_name: Identify
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: false
-- entity_id: button.hobeian_zg_303z_identify_2
-  id: ce93d2064f2d816b04f46be3b53ba6c6
-  platform: zha
-  unique_id: a4:c1:38:37:fc:01:83:38-1-3
-  device_id: 94fb0090643249f3eb2a0f2f7185538e
-  original_name: Identify
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: false
-- entity_id: button.hobeian_zg_303z_identify_3
-  id: c8adebb591ededa2770963c0db9740c7
-  platform: zha
-  unique_id: a4:c1:38:a5:9a:fc:57:5f-1-3
-  device_id: 68f89069e7a7d556992de0c39e5bae3d
-  original_name: Identify
-  aliases:
-  - null
-  disabled_by: config_entry
   options:
     conversation:
       should_expose: false
@@ -685,15 +549,14 @@
   aliases:
   - null
   disabled_by: integration
-- entity_id: button.lumi_lumi_vibration_aq1_identify
-  id: e0198d8882a3663f632b3e13a74b8e60
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c1:c1:e1-1-3
-  device_id: 630c86f08f09182876d35b1ef4f35e05
+- entity_id: button.living_room_switch_identify
+  id: fc58ff768bf5145fa1fb2b85dfea53ef
+  platform: mqtt
+  unique_id: 0x08fd52fffe5ea498_identify_zigbee2mqtt
+  device_id: 5f0c36bbc73fcc5d55638b8304dddc7f
   original_name: Identify
   aliases:
   - null
-  disabled_by: config_entry
   options:
     conversation:
       should_expose: false
@@ -705,30 +568,6 @@
   original_name: Identify
   aliases:
   - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: button.philips_915005997201_identify
-  id: 851d3e1550ec8ae64be991be11622b2f
-  platform: zha
-  unique_id: 00:17:88:01:0d:19:35:a6-11-3
-  device_id: 2a22955ad018b004d424708693511668
-  original_name: Identify
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: false
-- entity_id: button.quara_motion_sensor_stube_identify
-  id: 3f6c32b9ac10cd90e3bf3d88573bf8a5
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c3:cf:df-1-3
-  device_id: c67af7688b444ce25d186725d4d51f3a
-  original_name: Identify
-  aliases:
-  - null
-  disabled_by: config_entry
   options:
     conversation:
       should_expose: false
@@ -805,6 +644,50 @@
   options:
     conversation:
       should_expose: false
+- entity_id: event.gym_dimmer_switch_button_1
+  id: 12d3a2fbb600003e36114da822ccc043
+  platform: hue
+  unique_id: 41e7b6cf-4d28-4d5b-89d0-81b7ad65f1a1
+  device_id: 9aacc95b244d81c075f23584cb921cab
+  original_name: Button 1
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: event.gym_dimmer_switch_button_2
+  id: b353086788ac2a8299558cf8961f99e1
+  platform: hue
+  unique_id: ec506a14-7557-4b91-84b5-f5cacf381f45
+  device_id: 9aacc95b244d81c075f23584cb921cab
+  original_name: Button 2
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: event.gym_dimmer_switch_button_3
+  id: 5651805a551e60685e616ac8e943e415
+  platform: hue
+  unique_id: cb954188-f4d7-4113-877c-039b01e27bb0
+  device_id: 9aacc95b244d81c075f23584cb921cab
+  original_name: Button 3
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: event.gym_dimmer_switch_button_4
+  id: cc286af84c6c13a642168dacf45f5b15
+  platform: hue
+  unique_id: a067f77f-02a3-48a4-baeb-28bbee200441
+  device_id: 9aacc95b244d81c075f23584cb921cab
+  original_name: Button 4
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
 - entity_id: event.hue_dimmer_switch_1_button_1
   id: 79814a62039aef4b6c2cbbc9c4430984
   platform: hue
@@ -849,71 +732,7 @@
   options:
     conversation:
       should_expose: false
-- entity_id: event.hue_dimmer_switch_2_button_1
-  id: 12d3a2fbb600003e36114da822ccc043
-  platform: hue
-  unique_id: 41e7b6cf-4d28-4d5b-89d0-81b7ad65f1a1
-  device_id: 9aacc95b244d81c075f23584cb921cab
-  original_name: Button 1
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: event.hue_dimmer_switch_2_button_2
-  id: b353086788ac2a8299558cf8961f99e1
-  platform: hue
-  unique_id: ec506a14-7557-4b91-84b5-f5cacf381f45
-  device_id: 9aacc95b244d81c075f23584cb921cab
-  original_name: Button 2
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: event.hue_dimmer_switch_2_button_3
-  id: 5651805a551e60685e616ac8e943e415
-  platform: hue
-  unique_id: cb954188-f4d7-4113-877c-039b01e27bb0
-  device_id: 9aacc95b244d81c075f23584cb921cab
-  original_name: Button 3
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: event.hue_dimmer_switch_2_button_4
-  id: cc286af84c6c13a642168dacf45f5b15
-  platform: hue
-  unique_id: a067f77f-02a3-48a4-baeb-28bbee200441
-  device_id: 9aacc95b244d81c075f23584cb921cab
-  original_name: Button 4
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: light.0x001788010d1935a6
-  id: 1227f67826f356738f8bf87ca4ff298f
-  platform: mqtt
-  unique_id: 0x001788010d1935a6_light_zigbee2mqtt
-  device_id: 2f924b1cbf55792a4c859a3c21f2a6bb
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: true
-- entity_id: light.0x781c9dfffe0b2d4a
-  id: 48228afd0b8f11a37a3a6808480c8356
-  platform: mqtt
-  unique_id: 0x781c9dfffe0b2d4a_light_zigbee2mqtt
-  device_id: b255da3e41234ae2845e5e0f208c58be
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: true
-- entity_id: light.0xa4c1388268bc795d
+- entity_id: light.bed_light_strip
   id: dede045bc8dc4eed07cbdd5716c6689a
   platform: mqtt
   unique_id: 0xa4c1388268bc795d_light_zigbee2mqtt
@@ -933,14 +752,23 @@
   options:
     conversation:
       should_expose: true
-- entity_id: light.ewelight_zb_dl01
-  id: 69c2a023e12d1481541dccd68752fd13
-  platform: zha
-  unique_id: a4:c1:38:82:68:bc:79:5d-1
-  device_id: de3bc63edf70aa1496efec6a3d6ecc2e
+- entity_id: light.gym_ceiling_light
+  id: dc3a7f8460586d525c974af679841a85
+  platform: hue
+  unique_id: c7238442-fcfa-42ed-a40d-cc73c8d4fd1b
+  device_id: 220682812dec33e04310aacc0869474b
   aliases:
   - null
-  disabled_by: config_entry
+  options:
+    conversation:
+      should_expose: true
+- entity_id: light.hallway_light
+  id: 48228afd0b8f11a37a3a6808480c8356
+  platform: mqtt
+  unique_id: 0x781c9dfffe0b2d4a_light_zigbee2mqtt
+  device_id: b255da3e41234ae2845e5e0f208c58be
+  aliases:
+  - null
   options:
     conversation:
       should_expose: true
@@ -949,6 +777,26 @@
   platform: hue
   unique_id: ccca0d61-f92d-46b6-9d60-f06f21734d29
   device_id: 73002c26ad3b5417145e1577fd48e3b3
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: true
+- entity_id: light.living_room_ceiling_light
+  id: 6ac9b787d357818b788a1a10c5bcefa7
+  platform: hue
+  unique_id: eb0c71e8-9862-4264-81c6-b772370126d4
+  device_id: d9566bd1d1db0abbb2f42039381a4492
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: true
+- entity_id: light.office_ceiling_light
+  id: 1227f67826f356738f8bf87ca4ff298f
+  platform: mqtt
+  unique_id: 0x001788010d1935a6_light_zigbee2mqtt
+  device_id: 2f924b1cbf55792a4c859a3c21f2a6bb
   aliases:
   - null
   options:
@@ -974,42 +822,11 @@
   options:
     conversation:
       should_expose: true
-- entity_id: light.philips_915005997201
-  id: 581c5027f4db40bac8c455bbbb6dac6d
-  platform: zha
-  unique_id: 00:17:88:01:0d:19:35:a6-11
-  device_id: 2a22955ad018b004d424708693511668
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: true
-- entity_id: light.sport_zimmer
-  id: dc3a7f8460586d525c974af679841a85
-  platform: hue
-  unique_id: c7238442-fcfa-42ed-a40d-cc73c8d4fd1b
-  device_id: 220682812dec33e04310aacc0869474b
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: true
 - entity_id: light.sportzimmer
   id: 176fbeaad0265e67df0edd47efe8eb24
   platform: hue
   unique_id: 12c9bed9-fc67-4919-96f0-242c6260a8da
   device_id: 096198bfe4d44ee15d957ef3884df204
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: true
-- entity_id: light.stubaaaa
-  id: 6ac9b787d357818b788a1a10c5bcefa7
-  platform: hue
-  unique_id: eb0c71e8-9862-4264-81c6-b772370126d4
-  device_id: d9566bd1d1db0abbb2f42039381a4492
   aliases:
   - null
   options:
@@ -1025,6 +842,16 @@
   options:
     conversation:
       should_expose: true
+- entity_id: media_player.family_room
+  id: 9fb230b2e13a183c46966f242607f7af
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: true
 - entity_id: media_player.kitchen
   id: ed595e7d18d80a8684cca65abee67d5d
   platform: sonos
@@ -1035,11 +862,21 @@
   options:
     conversation:
       should_expose: true
-- entity_id: media_player.kitchen_2
+- entity_id: media_player.kitchen_homepod
   id: 443df6f4d3f380faa1255127e68f7aaf
   platform: apple_tv
   unique_id: D6:9D:83:9C:7E:34
   device_id: 750a55b4dd4545a6c05353845c3e1ba2
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: true
+- entity_id: media_player.living_room
+  id: 21ee7d929d213749d21b283404cab8b0
+  platform: sonos
+  unique_id: RINCON_74CA607E2D9601400
+  device_id: cced51bd056667be1707cc84fabdc326
   aliases:
   - null
   options:
@@ -1050,26 +887,6 @@
   platform: apple_tv
   unique_id: 72:41:DA:17:E6:73
   device_id: e9d89cb1bdfcf4f33aa76611971e9d82
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: true
-- entity_id: media_player.unnamed_room
-  id: 21ee7d929d213749d21b283404cab8b0
-  platform: sonos
-  unique_id: RINCON_74CA607E2D9601400
-  device_id: cced51bd056667be1707cc84fabdc326
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: true
-- entity_id: media_player.unnamed_room_2
-  id: 9fb230b2e13a183c46966f242607f7af
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400
-  device_id: 3fa21279b11d93f2c50b415738c000d1
   aliases:
   - null
   options:
@@ -1112,138 +929,6 @@
   unique_id: 0x983268fffe011f16_occupancy_timeout_zigbee2mqtt
   device_id: 29818e07a7cfffd81ccff0b9c158498b
   original_name: Occupancy timeout
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c1380d6560c17f_humidity_calibration
-  id: d8ba18e78392ad02729da20c623004cb
-  platform: mqtt
-  unique_id: 0xa4c1380d6560c17f_humidity_calibration_zigbee2mqtt
-  device_id: b186ec1927ef302182bbaafda0bf1c25
-  original_name: Humidity calibration
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c1380d6560c17f_soil_calibration
-  id: 14e63a49f2cfc776e3124ab530cab2ad
-  platform: mqtt
-  unique_id: 0xa4c1380d6560c17f_soil_calibration_zigbee2mqtt
-  device_id: b186ec1927ef302182bbaafda0bf1c25
-  original_name: Soil calibration
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c1380d6560c17f_soil_sampling
-  id: 71d6771cee933305eb53c55d71e21d7c
-  platform: mqtt
-  unique_id: 0xa4c1380d6560c17f_soil_sampling_zigbee2mqtt
-  device_id: b186ec1927ef302182bbaafda0bf1c25
-  original_name: Soil sampling
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c1380d6560c17f_soil_warning
-  id: ee193fe195bdccf5f9e62220f0884675
-  platform: mqtt
-  unique_id: 0xa4c1380d6560c17f_soil_warning_zigbee2mqtt
-  device_id: b186ec1927ef302182bbaafda0bf1c25
-  original_name: Soil warning
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c1380d6560c17f_temperature_calibration
-  id: b8db1f419832449a27f24a12c5dba971
-  platform: mqtt
-  unique_id: 0xa4c1380d6560c17f_temperature_calibration_zigbee2mqtt
-  device_id: b186ec1927ef302182bbaafda0bf1c25
-  original_name: Temperature calibration
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c1380d6560c17f_temperature_sampling
-  id: f81bba827b42ae548b491298590a74e0
-  platform: mqtt
-  unique_id: 0xa4c1380d6560c17f_temperature_sampling_zigbee2mqtt
-  device_id: b186ec1927ef302182bbaafda0bf1c25
-  original_name: Temperature sampling
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c13837fc018338_humidity_calibration
-  id: f65c17bc130013a435ba6a7bb3710fbe
-  platform: mqtt
-  unique_id: 0xa4c13837fc018338_humidity_calibration_zigbee2mqtt
-  device_id: e94865b48e1bce7a0517a7144ec04f89
-  original_name: Humidity calibration
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c13837fc018338_soil_calibration
-  id: 0113e391f9f76ddb51ec895ab82ee6b4
-  platform: mqtt
-  unique_id: 0xa4c13837fc018338_soil_calibration_zigbee2mqtt
-  device_id: e94865b48e1bce7a0517a7144ec04f89
-  original_name: Soil calibration
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c13837fc018338_soil_sampling
-  id: e60339e25294e0612c7d0b94430f8a74
-  platform: mqtt
-  unique_id: 0xa4c13837fc018338_soil_sampling_zigbee2mqtt
-  device_id: e94865b48e1bce7a0517a7144ec04f89
-  original_name: Soil sampling
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c13837fc018338_soil_warning
-  id: c5864582a1976238165815bb9a555311
-  platform: mqtt
-  unique_id: 0xa4c13837fc018338_soil_warning_zigbee2mqtt
-  device_id: e94865b48e1bce7a0517a7144ec04f89
-  original_name: Soil warning
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c13837fc018338_temperature_calibration
-  id: 9bdb1cd472023505d64363674bc1ba22
-  platform: mqtt
-  unique_id: 0xa4c13837fc018338_temperature_calibration_zigbee2mqtt
-  device_id: e94865b48e1bce7a0517a7144ec04f89
-  original_name: Temperature calibration
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c13837fc018338_temperature_sampling
-  id: 40e7a072981506459b807a0c05e26f32
-  platform: mqtt
-  unique_id: 0xa4c13837fc018338_temperature_sampling_zigbee2mqtt
-  device_id: e94865b48e1bce7a0517a7144ec04f89
-  original_name: Temperature sampling
   aliases:
   - null
   options:
@@ -1337,127 +1022,6 @@
   options:
     conversation:
       should_expose: false
-- entity_id: number.0xa4c138658ea42994_detection_distance_max
-  id: 4248d33443fbbcc6550fa0bc9b9cc052
-  platform: mqtt
-  unique_id: 0xa4c138658ea42994_detection_distance_max_zigbee2mqtt
-  device_id: 94d587e8bee0564ab127389bf82b697f
-  original_name: Detection distance max
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c138658ea42994_detection_distance_min
-  id: 330040849aa4a08b62025bb73f8aac7a
-  platform: mqtt
-  unique_id: 0xa4c138658ea42994_detection_distance_min_zigbee2mqtt
-  device_id: 94d587e8bee0564ab127389bf82b697f
-  original_name: Detection distance min
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c138658ea42994_move_sensitivity
-  id: 381022c4099c87eba92b9bfee09b00a9
-  platform: mqtt
-  unique_id: 0xa4c138658ea42994_move_sensitivity_zigbee2mqtt
-  device_id: 94d587e8bee0564ab127389bf82b697f
-  original_name: Move sensitivity
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c138658ea42994_presence_sensitivity
-  id: 1af0cb522a504927174b54ab1c97b55e
-  platform: mqtt
-  unique_id: 0xa4c138658ea42994_presence_sensitivity_zigbee2mqtt
-  device_id: 94d587e8bee0564ab127389bf82b697f
-  original_name: Presence sensitivity
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c138658ea42994_presence_timeout
-  id: a94082fdcff34a12dc840c1f8bd55405
-  platform: mqtt
-  unique_id: 0xa4c138658ea42994_presence_timeout_zigbee2mqtt
-  device_id: 94d587e8bee0564ab127389bf82b697f
-  original_name: Presence timeout
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c138a59afc575f_humidity_calibration
-  id: f9b496f3b59a71025ba41682f56e2315
-  platform: mqtt
-  unique_id: 0xa4c138a59afc575f_humidity_calibration_zigbee2mqtt
-  device_id: d0b0af193414a58b71edf2888a788ce0
-  original_name: Humidity calibration
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c138a59afc575f_soil_calibration
-  id: 26115ecd059a51b47c85c1beb540ccdf
-  platform: mqtt
-  unique_id: 0xa4c138a59afc575f_soil_calibration_zigbee2mqtt
-  device_id: d0b0af193414a58b71edf2888a788ce0
-  original_name: Soil calibration
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c138a59afc575f_soil_sampling
-  id: 7cde1925e57c033c6ad662f907654dd9
-  platform: mqtt
-  unique_id: 0xa4c138a59afc575f_soil_sampling_zigbee2mqtt
-  device_id: d0b0af193414a58b71edf2888a788ce0
-  original_name: Soil sampling
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c138a59afc575f_soil_warning
-  id: 5fee383d2bdd33e9372ee900319b551f
-  platform: mqtt
-  unique_id: 0xa4c138a59afc575f_soil_warning_zigbee2mqtt
-  device_id: d0b0af193414a58b71edf2888a788ce0
-  original_name: Soil warning
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c138a59afc575f_temperature_calibration
-  id: 526162065138d33ae841539b6becf31d
-  platform: mqtt
-  unique_id: 0xa4c138a59afc575f_temperature_calibration_zigbee2mqtt
-  device_id: d0b0af193414a58b71edf2888a788ce0
-  original_name: Temperature calibration
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.0xa4c138a59afc575f_temperature_sampling
-  id: f5c9f49eec8acccf40ed0d1e91808514
-  platform: mqtt
-  unique_id: 0xa4c138a59afc575f_temperature_sampling_zigbee2mqtt
-  device_id: d0b0af193414a58b71edf2888a788ce0
-  original_name: Temperature sampling
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
 - entity_id: number.0xa4c138e5d4f73afa_delay
   id: 0556e9d25e3d0678d61abbe188a0f4f9
   platform: mqtt
@@ -1491,15 +1055,102 @@
   options:
     conversation:
       should_expose: false
-- entity_id: number.ewelight_zb_dl01_start_up_current_level
-  id: a48332a3fb4de095ca92c770b16adbee
-  platform: zha
-  unique_id: a4:c1:38:82:68:bc:79:5d-1-8-start_up_current_level
-  device_id: de3bc63edf70aa1496efec6a3d6ecc2e
-  original_name: Start-up current level
+- entity_id: number.euphorbia_leuconeura_humidity_calibration
+  id: f65c17bc130013a435ba6a7bb3710fbe
+  platform: mqtt
+  unique_id: 0xa4c13837fc018338_humidity_calibration_zigbee2mqtt
+  device_id: e94865b48e1bce7a0517a7144ec04f89
+  original_name: Humidity calibration
   aliases:
   - null
-  disabled_by: config_entry
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.euphorbia_leuconeura_soil_calibration
+  id: 0113e391f9f76ddb51ec895ab82ee6b4
+  platform: mqtt
+  unique_id: 0xa4c13837fc018338_soil_calibration_zigbee2mqtt
+  device_id: e94865b48e1bce7a0517a7144ec04f89
+  original_name: Soil calibration
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.euphorbia_leuconeura_soil_sampling
+  id: e60339e25294e0612c7d0b94430f8a74
+  platform: mqtt
+  unique_id: 0xa4c13837fc018338_soil_sampling_zigbee2mqtt
+  device_id: e94865b48e1bce7a0517a7144ec04f89
+  original_name: Soil sampling
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.euphorbia_leuconeura_soil_warning
+  id: c5864582a1976238165815bb9a555311
+  platform: mqtt
+  unique_id: 0xa4c13837fc018338_soil_warning_zigbee2mqtt
+  device_id: e94865b48e1bce7a0517a7144ec04f89
+  original_name: Soil warning
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.euphorbia_leuconeura_temperature_calibration
+  id: 9bdb1cd472023505d64363674bc1ba22
+  platform: mqtt
+  unique_id: 0xa4c13837fc018338_temperature_calibration_zigbee2mqtt
+  device_id: e94865b48e1bce7a0517a7144ec04f89
+  original_name: Temperature calibration
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.euphorbia_leuconeura_temperature_sampling
+  id: 40e7a072981506459b807a0c05e26f32
+  platform: mqtt
+  unique_id: 0xa4c13837fc018338_temperature_sampling_zigbee2mqtt
+  device_id: e94865b48e1bce7a0517a7144ec04f89
+  original_name: Temperature sampling
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.family_room_balance
+  id: 59e3cc457630daa7bbd2455ee17152a7
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-balance
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Balance
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.family_room_bass
+  id: 1f1d69d13e3a02b33734b64d79b92799
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-bass
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Bass
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.family_room_treble
+  id: 20f71c4c7650274d773e12d26b9fa447
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-treble
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Treble
+  aliases:
+  - null
   options:
     conversation:
       should_expose: false
@@ -1536,63 +1187,36 @@
   options:
     conversation:
       should_expose: false
-- entity_id: number.mini_human_breath_sensor_fading_time
-  id: 48bc028c2e58f14bbe4258a10c269c38
-  platform: zha
-  unique_id: a4:c1:38:65:8e:a4:29:94-1-presence_timeout
-  device_id: c44e74ae9b13879fe054ffd909b1c6d3
-  original_name: Fading time
+- entity_id: number.living_room_balance
+  id: fb5dcdb118b2195bb8b6072e5fa14cf7
+  platform: sonos
+  unique_id: RINCON_74CA607E2D9601400-balance
+  device_id: cced51bd056667be1707cc84fabdc326
+  original_name: Balance
   aliases:
   - null
-  disabled_by: config_entry
   options:
     conversation:
       should_expose: false
-- entity_id: number.mini_human_breath_sensor_maximum_range
-  id: a1f81bf88f96da6f8af811cff9935c51
-  platform: zha
-  unique_id: a4:c1:38:65:8e:a4:29:94-1-detection_distance_max
-  device_id: c44e74ae9b13879fe054ffd909b1c6d3
-  original_name: Maximum range
+- entity_id: number.living_room_bass
+  id: 07ed4cca066cb0b5a9d835c6ab470068
+  platform: sonos
+  unique_id: RINCON_74CA607E2D9601400-bass
+  device_id: cced51bd056667be1707cc84fabdc326
+  original_name: Bass
   aliases:
   - null
-  disabled_by: config_entry
   options:
     conversation:
       should_expose: false
-- entity_id: number.mini_human_breath_sensor_minimum_range
-  id: 9793bdd17a63c71a2e542722ad225290
-  platform: zha
-  unique_id: a4:c1:38:65:8e:a4:29:94-1-detection_distance_min
-  device_id: c44e74ae9b13879fe054ffd909b1c6d3
-  original_name: Minimum range
+- entity_id: number.living_room_treble
+  id: db48bff9d0fd25e16e362b6494e4022b
+  platform: sonos
+  unique_id: RINCON_74CA607E2D9601400-treble
+  device_id: cced51bd056667be1707cc84fabdc326
+  original_name: Treble
   aliases:
   - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.mini_human_breath_sensor_motion_sensitivity
-  id: 338af128c229e7a87bbdb33ffedcd27b
-  platform: zha
-  unique_id: a4:c1:38:65:8e:a4:29:94-1-move_sensitivity
-  device_id: c44e74ae9b13879fe054ffd909b1c6d3
-  original_name: Motion sensitivity
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.mini_human_breath_sensor_presence_sensitivity
-  id: 375d11b9054bdbf0f1e17c6d84206c92
-  platform: zha
-  unique_id: a4:c1:38:65:8e:a4:29:94-1-presence_sensitivity
-  device_id: c44e74ae9b13879fe054ffd909b1c6d3
-  original_name: Presence sensitivity
-  aliases:
-  - null
-  disabled_by: config_entry
   options:
     conversation:
       should_expose: false
@@ -1607,91 +1231,188 @@
   options:
     conversation:
       should_expose: false
-- entity_id: number.philips_915005997201_start_up_color_temperature
-  id: f6c46fa2460aba3ce1217c23394d4301
-  platform: zha
-  unique_id: 00:17:88:01:0d:19:35:a6-11-768-start_up_color_temperature
-  device_id: 2a22955ad018b004d424708693511668
-  original_name: Start-up color temperature
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.philips_915005997201_start_up_current_level
-  id: dd407323796117e8238d9d977a83841a
-  platform: zha
-  unique_id: 00:17:88:01:0d:19:35:a6-11-8-start_up_current_level
-  device_id: 2a22955ad018b004d424708693511668
-  original_name: Start-up current level
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: false
-- entity_id: number.unnamed_room_balance
-  id: fb5dcdb118b2195bb8b6072e5fa14cf7
-  platform: sonos
-  unique_id: RINCON_74CA607E2D9601400-balance
-  device_id: cced51bd056667be1707cc84fabdc326
-  original_name: Balance
+- entity_id: number.office_presence_sensor_detection_distance_max
+  id: 4248d33443fbbcc6550fa0bc9b9cc052
+  platform: mqtt
+  unique_id: 0xa4c138658ea42994_detection_distance_max_zigbee2mqtt
+  device_id: 94d587e8bee0564ab127389bf82b697f
+  original_name: Detection distance max
   aliases:
   - null
   options:
     conversation:
       should_expose: false
-- entity_id: number.unnamed_room_balance_2
-  id: 59e3cc457630daa7bbd2455ee17152a7
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-balance
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Balance
+- entity_id: number.office_presence_sensor_detection_distance_min
+  id: 330040849aa4a08b62025bb73f8aac7a
+  platform: mqtt
+  unique_id: 0xa4c138658ea42994_detection_distance_min_zigbee2mqtt
+  device_id: 94d587e8bee0564ab127389bf82b697f
+  original_name: Detection distance min
   aliases:
   - null
   options:
     conversation:
       should_expose: false
-- entity_id: number.unnamed_room_bass
-  id: 07ed4cca066cb0b5a9d835c6ab470068
-  platform: sonos
-  unique_id: RINCON_74CA607E2D9601400-bass
-  device_id: cced51bd056667be1707cc84fabdc326
-  original_name: Bass
+- entity_id: number.office_presence_sensor_move_sensitivity
+  id: 381022c4099c87eba92b9bfee09b00a9
+  platform: mqtt
+  unique_id: 0xa4c138658ea42994_move_sensitivity_zigbee2mqtt
+  device_id: 94d587e8bee0564ab127389bf82b697f
+  original_name: Move sensitivity
   aliases:
   - null
   options:
     conversation:
       should_expose: false
-- entity_id: number.unnamed_room_bass_2
-  id: 1f1d69d13e3a02b33734b64d79b92799
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-bass
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Bass
+- entity_id: number.office_presence_sensor_presence_sensitivity
+  id: 1af0cb522a504927174b54ab1c97b55e
+  platform: mqtt
+  unique_id: 0xa4c138658ea42994_presence_sensitivity_zigbee2mqtt
+  device_id: 94d587e8bee0564ab127389bf82b697f
+  original_name: Presence sensitivity
   aliases:
   - null
   options:
     conversation:
       should_expose: false
-- entity_id: number.unnamed_room_treble
-  id: db48bff9d0fd25e16e362b6494e4022b
-  platform: sonos
-  unique_id: RINCON_74CA607E2D9601400-treble
-  device_id: cced51bd056667be1707cc84fabdc326
-  original_name: Treble
+- entity_id: number.office_presence_sensor_presence_timeout
+  id: a94082fdcff34a12dc840c1f8bd55405
+  platform: mqtt
+  unique_id: 0xa4c138658ea42994_presence_timeout_zigbee2mqtt
+  device_id: 94d587e8bee0564ab127389bf82b697f
+  original_name: Presence timeout
   aliases:
   - null
   options:
     conversation:
       should_expose: false
-- entity_id: number.unnamed_room_treble_2
-  id: 20f71c4c7650274d773e12d26b9fa447
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-treble
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Treble
+- entity_id: number.schlumbergera_humidity_calibration
+  id: d8ba18e78392ad02729da20c623004cb
+  platform: mqtt
+  unique_id: 0xa4c1380d6560c17f_humidity_calibration_zigbee2mqtt
+  device_id: b186ec1927ef302182bbaafda0bf1c25
+  original_name: Humidity calibration
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.schlumbergera_soil_calibration
+  id: 14e63a49f2cfc776e3124ab530cab2ad
+  platform: mqtt
+  unique_id: 0xa4c1380d6560c17f_soil_calibration_zigbee2mqtt
+  device_id: b186ec1927ef302182bbaafda0bf1c25
+  original_name: Soil calibration
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.schlumbergera_soil_sampling
+  id: 71d6771cee933305eb53c55d71e21d7c
+  platform: mqtt
+  unique_id: 0xa4c1380d6560c17f_soil_sampling_zigbee2mqtt
+  device_id: b186ec1927ef302182bbaafda0bf1c25
+  original_name: Soil sampling
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.schlumbergera_soil_warning
+  id: ee193fe195bdccf5f9e62220f0884675
+  platform: mqtt
+  unique_id: 0xa4c1380d6560c17f_soil_warning_zigbee2mqtt
+  device_id: b186ec1927ef302182bbaafda0bf1c25
+  original_name: Soil warning
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.schlumbergera_temperature_calibration
+  id: b8db1f419832449a27f24a12c5dba971
+  platform: mqtt
+  unique_id: 0xa4c1380d6560c17f_temperature_calibration_zigbee2mqtt
+  device_id: b186ec1927ef302182bbaafda0bf1c25
+  original_name: Temperature calibration
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.schlumbergera_temperature_sampling
+  id: f81bba827b42ae548b491298590a74e0
+  platform: mqtt
+  unique_id: 0xa4c1380d6560c17f_temperature_sampling_zigbee2mqtt
+  device_id: b186ec1927ef302182bbaafda0bf1c25
+  original_name: Temperature sampling
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.strelitzia_humidity_calibration
+  id: f9b496f3b59a71025ba41682f56e2315
+  platform: mqtt
+  unique_id: 0xa4c138a59afc575f_humidity_calibration_zigbee2mqtt
+  device_id: d0b0af193414a58b71edf2888a788ce0
+  original_name: Humidity calibration
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.strelitzia_soil_calibration
+  id: 26115ecd059a51b47c85c1beb540ccdf
+  platform: mqtt
+  unique_id: 0xa4c138a59afc575f_soil_calibration_zigbee2mqtt
+  device_id: d0b0af193414a58b71edf2888a788ce0
+  original_name: Soil calibration
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.strelitzia_soil_sampling
+  id: 7cde1925e57c033c6ad662f907654dd9
+  platform: mqtt
+  unique_id: 0xa4c138a59afc575f_soil_sampling_zigbee2mqtt
+  device_id: d0b0af193414a58b71edf2888a788ce0
+  original_name: Soil sampling
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.strelitzia_soil_warning
+  id: 5fee383d2bdd33e9372ee900319b551f
+  platform: mqtt
+  unique_id: 0xa4c138a59afc575f_soil_warning_zigbee2mqtt
+  device_id: d0b0af193414a58b71edf2888a788ce0
+  original_name: Soil warning
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.strelitzia_temperature_calibration
+  id: 526162065138d33ae841539b6becf31d
+  platform: mqtt
+  unique_id: 0xa4c138a59afc575f_temperature_calibration_zigbee2mqtt
+  device_id: d0b0af193414a58b71edf2888a788ce0
+  original_name: Temperature calibration
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: number.strelitzia_temperature_sampling
+  id: f5c9f49eec8acccf40ed0d1e91808514
+  platform: mqtt
+  unique_id: 0xa4c138a59afc575f_temperature_sampling_zigbee2mqtt
+  device_id: d0b0af193414a58b71edf2888a788ce0
+  original_name: Temperature sampling
   aliases:
   - null
   options:
@@ -1708,8 +1429,18 @@
     conversation:
       should_expose: false
     collection:
-      hash: c2127f1cb6925e318959b5a640c07960
-- entity_id: remote.kitchen_2
+      hash: ac2762c8db44d4304ac88c28dcd88da3
+- entity_id: person.kim
+  id: f43a9424872858ca1c2e8679a7ac5547
+  platform: person
+  unique_id: kim
+  original_name: Kim
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: remote.kitchen_homepod
   id: a03fda36ab7b54d74eeec61d9c1c13ea
   platform: apple_tv
   unique_id: D6:9D:83:9C:7E:34
@@ -1729,17 +1460,6 @@
   options:
     conversation:
       should_expose: false
-- entity_id: scene.chill_out_eveninf
-  id: 784a51e508e633dac4e891c553a4cb63
-  platform: homeassistant
-  unique_id: '1763584680418'
-  original_name: Chill out eveninf
-  aliases:
-  - null
-  area_id: living_room
-  options:
-    conversation:
-      should_expose: true
 - entity_id: scene.entire_home_arise
   id: c05517fbaa2e2efb51e11d119006977d
   platform: hue
@@ -1847,6 +1567,17 @@
   original_name: Unwind
   aliases:
   - null
+  options:
+    conversation:
+      should_expose: true
+- entity_id: scene.living_room_chill_evening
+  id: 784a51e508e633dac4e891c553a4cb63
+  platform: homeassistant
+  unique_id: '1763584680418'
+  original_name: 'Living Room: Chill Evening'
+  aliases:
+  - null
+  area_id: living_room
   options:
     conversation:
       should_expose: true
@@ -1982,26 +1713,6 @@
   options:
     conversation:
       should_expose: true
-- entity_id: select.0x001788010d1935a6_effect
-  id: 9064b7141dabaeb9d14dd27bf417b49f
-  platform: mqtt
-  unique_id: 0x001788010d1935a6_effect_zigbee2mqtt
-  device_id: 2f924b1cbf55792a4c859a3c21f2a6bb
-  original_name: Effect
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: select.0x001788010d1935a6_power_on_behavior
-  id: f58ccb1acd9c6880723df971b8ed8935
-  platform: mqtt
-  unique_id: 0x001788010d1935a6_power_on_behavior_zigbee2mqtt
-  device_id: 2f924b1cbf55792a4c859a3c21f2a6bb
-  original_name: Power-on behavior
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
 - entity_id: select.0x08fd52fffef625db_power_on_behavior
   id: ed939ec8877a972b7dfd8a5cbcf32ab7
   platform: mqtt
@@ -2035,74 +1746,12 @@
   options:
     conversation:
       should_expose: false
-- entity_id: select.0x781c9dfffe0b2d4a_effect
-  id: 907f49e143a3fd9e1e5d951536cb4912
-  platform: mqtt
-  unique_id: 0x781c9dfffe0b2d4a_effect_zigbee2mqtt
-  device_id: b255da3e41234ae2845e5e0f208c58be
-  original_name: Effect
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: select.0x781c9dfffe0b2d4a_power_on_behavior
-  id: c12f6109da252198d74dbd50bca9237d
-  platform: mqtt
-  unique_id: 0x781c9dfffe0b2d4a_power_on_behavior_zigbee2mqtt
-  device_id: b255da3e41234ae2845e5e0f208c58be
-  original_name: Power-on behavior
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
 - entity_id: select.0x983268fffe011f16_occupancy_sensitivity
   id: 364dbc9cfc5163bd888e5acbbd1cb299
   platform: mqtt
   unique_id: 0x983268fffe011f16_occupancy_sensitivity_zigbee2mqtt
   device_id: 29818e07a7cfffd81ccff0b9c158498b
   original_name: Occupancy sensitivity
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: select.0xa4c1380d6560c17f_temperature_unit
-  id: ca1b4c26f5db9e9c8b38f0819dc30184
-  platform: mqtt
-  unique_id: 0xa4c1380d6560c17f_temperature_unit_zigbee2mqtt
-  device_id: b186ec1927ef302182bbaafda0bf1c25
-  original_name: Temperature unit
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: select.0xa4c13837fc018338_temperature_unit
-  id: 3eb1a9514c75962e1e9a96bd9d863f72
-  platform: mqtt
-  unique_id: 0xa4c13837fc018338_temperature_unit_zigbee2mqtt
-  device_id: e94865b48e1bce7a0517a7144ec04f89
-  original_name: Temperature unit
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: select.0xa4c1388268bc795d_effect
-  id: 1277b590b12e0a96a7dd5552aed47be1
-  platform: mqtt
-  unique_id: 0xa4c1388268bc795d_effect_zigbee2mqtt
-  device_id: ea3b6a422a3090a0b191f53a41d05ae7
-  original_name: Effect
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: select.0xa4c138a59afc575f_temperature_unit
-  id: 7e2ff0f2cbbbd28dafe41baa050077dd
-  platform: mqtt
-  unique_id: 0xa4c138a59afc575f_temperature_unit_zigbee2mqtt
-  device_id: d0b0af193414a58b71edf2888a788ce0
-  original_name: Temperature unit
   aliases:
   - null
   options:
@@ -2119,6 +1768,15 @@
   options:
     conversation:
       should_expose: false
+- entity_id: select.bed_light_strip_effect
+  id: 1277b590b12e0a96a7dd5552aed47be1
+  platform: mqtt
+  unique_id: 0xa4c1388268bc795d_effect_zigbee2mqtt
+  device_id: ea3b6a422a3090a0b191f53a41d05ae7
+  original_name: Effect
+  aliases:
+  - null
+  disabled_by: integration
 - entity_id: select.chrisinas_fan_speed_mode
   id: aaec1467f9dd40a408805d37afd1d231
   platform: synology_dsm
@@ -2130,27 +1788,76 @@
   options:
     conversation:
       should_expose: false
-- entity_id: select.ewelight_zb_dl01_start_up_behavior
-  id: 07627c2c2ff933074fd29931cd8a8b52
-  platform: zha
-  unique_id: a4:c1:38:82:68:bc:79:5d-1-6-StartUpOnOff
-  device_id: de3bc63edf70aa1496efec6a3d6ecc2e
-  original_name: Start-up behavior
+- entity_id: select.euphorbia_leuconeura_temperature_unit
+  id: 3eb1a9514c75962e1e9a96bd9d863f72
+  platform: mqtt
+  unique_id: 0xa4c13837fc018338_temperature_unit_zigbee2mqtt
+  device_id: e94865b48e1bce7a0517a7144ec04f89
+  original_name: Temperature unit
   aliases:
   - null
-  disabled_by: config_entry
   options:
     conversation:
       should_expose: false
-- entity_id: select.philips_915005997201_start_up_behavior
-  id: 20565ea6ea1155c5ebd099f549519c5c
-  platform: zha
-  unique_id: 00:17:88:01:0d:19:35:a6-11-6-StartUpOnOff
-  device_id: 2a22955ad018b004d424708693511668
-  original_name: Start-up behavior
+- entity_id: select.hallway_light_effect
+  id: 907f49e143a3fd9e1e5d951536cb4912
+  platform: mqtt
+  unique_id: 0x781c9dfffe0b2d4a_effect_zigbee2mqtt
+  device_id: b255da3e41234ae2845e5e0f208c58be
+  original_name: Effect
   aliases:
   - null
-  disabled_by: config_entry
+  disabled_by: integration
+- entity_id: select.hallway_light_power_on_behavior
+  id: c12f6109da252198d74dbd50bca9237d
+  platform: mqtt
+  unique_id: 0x781c9dfffe0b2d4a_power_on_behavior_zigbee2mqtt
+  device_id: b255da3e41234ae2845e5e0f208c58be
+  original_name: Power-on behavior
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: select.office_ceiling_light_effect
+  id: 9064b7141dabaeb9d14dd27bf417b49f
+  platform: mqtt
+  unique_id: 0x001788010d1935a6_effect_zigbee2mqtt
+  device_id: 2f924b1cbf55792a4c859a3c21f2a6bb
+  original_name: Effect
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: select.office_ceiling_light_power_on_behavior
+  id: f58ccb1acd9c6880723df971b8ed8935
+  platform: mqtt
+  unique_id: 0x001788010d1935a6_power_on_behavior_zigbee2mqtt
+  device_id: 2f924b1cbf55792a4c859a3c21f2a6bb
+  original_name: Power-on behavior
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: select.schlumbergera_temperature_unit
+  id: ca1b4c26f5db9e9c8b38f0819dc30184
+  platform: mqtt
+  unique_id: 0xa4c1380d6560c17f_temperature_unit_zigbee2mqtt
+  device_id: b186ec1927ef302182bbaafda0bf1c25
+  original_name: Temperature unit
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: select.strelitzia_temperature_unit
+  id: 7e2ff0f2cbbbd28dafe41baa050077dd
+  platform: mqtt
+  unique_id: 0xa4c138a59afc575f_temperature_unit_zigbee2mqtt
+  device_id: d0b0af193414a58b71edf2888a788ce0
+  original_name: Temperature unit
+  aliases:
+  - null
   options:
     conversation:
       should_expose: false
@@ -2288,268 +1995,6 @@
   options:
     conversation:
       should_expose: false
-- entity_id: sensor.0x00158d008bc3cfdf_battery
-  id: 9ca599514bd11859dbc0a3470b240e06
-  platform: mqtt
-  unique_id: 0x00158d008bc3cfdf_battery_zigbee2mqtt
-  device_id: f3042e96ab16fbb14c7160b963a42d3a
-  original_name: Battery
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x00158d008bc3cfdf_device_temperature
-  id: dfdfd1c76eb919ca9af305223357287c
-  platform: mqtt
-  unique_id: 0x00158d008bc3cfdf_device_temperature_zigbee2mqtt
-  device_id: f3042e96ab16fbb14c7160b963a42d3a
-  original_name: Temperature
-  aliases:
-  - null
-  options:
-    sensor:
-      suggested_display_precision: 1
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x00158d008bc3cfdf_illuminance
-  id: f83d89f93dc5390ddf3784fd66460170
-  platform: mqtt
-  unique_id: 0x00158d008bc3cfdf_illuminance_zigbee2mqtt
-  device_id: f3042e96ab16fbb14c7160b963a42d3a
-  original_name: Illuminance
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x00158d008bc3cfdf_linkquality
-  id: 37b8717f0247419638779560adb8c33b
-  platform: mqtt
-  unique_id: 0x00158d008bc3cfdf_linkquality_zigbee2mqtt
-  device_id: f3042e96ab16fbb14c7160b963a42d3a
-  original_name: Linkquality
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0x00158d008bc3cfdf_power_outage_count
-  id: d24f0a5383fa455655d39c0f9b215d8d
-  platform: mqtt
-  unique_id: 0x00158d008bc3cfdf_power_outage_count_zigbee2mqtt
-  device_id: f3042e96ab16fbb14c7160b963a42d3a
-  original_name: Power outage count
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0x00158d008bc3cfdf_voltage
-  id: 666ac6015a7ac9a174ecee8283b1cf5e
-  platform: mqtt
-  unique_id: 0x00158d008bc3cfdf_voltage_zigbee2mqtt
-  device_id: f3042e96ab16fbb14c7160b963a42d3a
-  original_name: Voltage
-  aliases:
-  - null
-  options:
-    sensor:
-      suggested_display_precision: 0
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x00158d008bc3d235_battery
-  id: eafb619d4a9692d66c5d270c00efd076
-  platform: mqtt
-  unique_id: 0x00158d008bc3d235_battery_zigbee2mqtt
-  device_id: 3a94836cef7376d31ee03078aabafab4
-  original_name: Battery
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x00158d008bc3d235_device_temperature
-  id: be07324d110855a43cd4755070f6f327
-  platform: mqtt
-  unique_id: 0x00158d008bc3d235_device_temperature_zigbee2mqtt
-  device_id: 3a94836cef7376d31ee03078aabafab4
-  original_name: Temperature
-  aliases:
-  - null
-  options:
-    sensor:
-      suggested_display_precision: 1
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x00158d008bc3d235_illuminance
-  id: 864633831cdfed69ed85e2d46f9678d5
-  platform: mqtt
-  unique_id: 0x00158d008bc3d235_illuminance_zigbee2mqtt
-  device_id: 3a94836cef7376d31ee03078aabafab4
-  original_name: Illuminance
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x00158d008bc3d235_linkquality
-  id: 37911908e5f0afb54e61f890d3f36be3
-  platform: mqtt
-  unique_id: 0x00158d008bc3d235_linkquality_zigbee2mqtt
-  device_id: 3a94836cef7376d31ee03078aabafab4
-  original_name: Linkquality
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0x00158d008bc3d235_power_outage_count
-  id: 9954e95aad4395d51faa7d04a101b994
-  platform: mqtt
-  unique_id: 0x00158d008bc3d235_power_outage_count_zigbee2mqtt
-  device_id: 3a94836cef7376d31ee03078aabafab4
-  original_name: Power outage count
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0x00158d008bc3d235_voltage
-  id: 0ee1ca0e5d296d879314beb6da27c8e3
-  platform: mqtt
-  unique_id: 0x00158d008bc3d235_voltage_zigbee2mqtt
-  device_id: 3a94836cef7376d31ee03078aabafab4
-  original_name: Voltage
-  aliases:
-  - null
-  options:
-    sensor:
-      suggested_display_precision: 0
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x00158d008c756210_battery
-  id: a079bf8de017563f5d1953c469e8987f
-  platform: mqtt
-  unique_id: 0x00158d008c756210_battery_zigbee2mqtt
-  device_id: 1da4aea06a675be80f73bc4ba72958f7
-  original_name: Battery
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x00158d008c756210_device_temperature
-  id: aee1d507bda26a62757c2badd2d562ea
-  platform: mqtt
-  unique_id: 0x00158d008c756210_device_temperature_zigbee2mqtt
-  device_id: 1da4aea06a675be80f73bc4ba72958f7
-  original_name: Temperature
-  aliases:
-  - null
-  options:
-    sensor:
-      suggested_display_precision: 1
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x00158d008c756210_linkquality
-  id: 53d6ddb6272ba5cd130d0761fcce0a24
-  platform: mqtt
-  unique_id: 0x00158d008c756210_linkquality_zigbee2mqtt
-  device_id: 1da4aea06a675be80f73bc4ba72958f7
-  original_name: Linkquality
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0x00158d008c756210_power_outage_count
-  id: 426af3eaae0a21dbbcf730bdc69e89d5
-  platform: mqtt
-  unique_id: 0x00158d008c756210_power_outage_count_zigbee2mqtt
-  device_id: 1da4aea06a675be80f73bc4ba72958f7
-  original_name: Power outage count
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0x00158d008c756210_voltage
-  id: 8212983e65facfe55a3b067bc7542a4b
-  platform: mqtt
-  unique_id: 0x00158d008c756210_voltage_zigbee2mqtt
-  device_id: 1da4aea06a675be80f73bc4ba72958f7
-  original_name: Voltage
-  aliases:
-  - null
-  options:
-    sensor:
-      suggested_display_precision: 0
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x001788010d1935a6_linkquality
-  id: b88aed0b225527304e97517066b55ab1
-  platform: mqtt
-  unique_id: 0x001788010d1935a6_linkquality_zigbee2mqtt
-  device_id: 2f924b1cbf55792a4c859a3c21f2a6bb
-  original_name: Linkquality
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0x08fd52fffe5ea498_battery
-  id: d6e7b417f7f8be6e203d8f509fd7303a
-  platform: mqtt
-  unique_id: 0x08fd52fffe5ea498_battery_zigbee2mqtt
-  device_id: 5f0c36bbc73fcc5d55638b8304dddc7f
-  original_name: Battery
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x08fd52fffe5ea498_linkquality
-  id: 43831693ecba90ae8fcf73fd585ccdf4
-  platform: mqtt
-  unique_id: 0x08fd52fffe5ea498_linkquality_zigbee2mqtt
-  device_id: 5f0c36bbc73fcc5d55638b8304dddc7f
-  original_name: Linkquality
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0x08fd52fffe5ea498_voltage
-  id: 649969f02edc3e86907e8ba271264f10
-  platform: mqtt
-  unique_id: 0x08fd52fffe5ea498_voltage_zigbee2mqtt
-  device_id: 5f0c36bbc73fcc5d55638b8304dddc7f
-  original_name: Voltage
-  aliases:
-  - null
-  options:
-    sensor:
-      suggested_display_precision: 0
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x08fd52fffe6ed25e_battery
-  id: 26c9182b68d62b5560e047b42684541f
-  platform: mqtt
-  unique_id: 0x08fd52fffe6ed25e_battery_zigbee2mqtt
-  device_id: 4932e8a2eb71479b6d54d6bf0c7f741b
-  original_name: Battery
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x08fd52fffe6ed25e_linkquality
-  id: db99a55afeb0ea2e566351315b01140f
-  platform: mqtt
-  unique_id: 0x08fd52fffe6ed25e_linkquality_zigbee2mqtt
-  device_id: 4932e8a2eb71479b6d54d6bf0c7f741b
-  original_name: Linkquality
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0x08fd52fffe6ed25e_voltage
-  id: acd12b03cf01c240e1bf66a0e861c26f
-  platform: mqtt
-  unique_id: 0x08fd52fffe6ed25e_voltage_zigbee2mqtt
-  device_id: 4932e8a2eb71479b6d54d6bf0c7f741b
-  original_name: Voltage
-  aliases:
-  - null
-  options:
-    sensor:
-      suggested_display_precision: 0
-    conversation:
-      should_expose: false
 - entity_id: sensor.0x08fd52fffef625db_current
   id: a93f23ef95b47cb59fe4f1effe4e76a7
   platform: mqtt
@@ -2672,61 +2117,6 @@
       suggested_display_precision: 0
     conversation:
       should_expose: false
-- entity_id: sensor.0x348d13fffe292f95_humidity
-  id: 62f08036344e1a9c45a8db63f32bd7a0
-  platform: mqtt
-  unique_id: 0x348d13fffe292f95_humidity_zigbee2mqtt
-  device_id: 6ceb3f4cd0a1177be4b2430e1d19fcbd
-  original_name: Humidity
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: true
-- entity_id: sensor.0x348d13fffe292f95_linkquality
-  id: 0789c7b4b954d899bb4edacc00f7697f
-  platform: mqtt
-  unique_id: 0x348d13fffe292f95_linkquality_zigbee2mqtt
-  device_id: 6ceb3f4cd0a1177be4b2430e1d19fcbd
-  original_name: Linkquality
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0x348d13fffe292f95_pm25
-  id: b83925a7cfbbc923ab08fae3b06a2494
-  platform: mqtt
-  unique_id: 0x348d13fffe292f95_pm25_zigbee2mqtt
-  device_id: 6ceb3f4cd0a1177be4b2430e1d19fcbd
-  original_name: PM2.5
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: true
-- entity_id: sensor.0x348d13fffe292f95_temperature
-  id: 3655aeb346e42e47e3d31a5db52bd43e
-  platform: mqtt
-  unique_id: 0x348d13fffe292f95_temperature_zigbee2mqtt
-  device_id: 6ceb3f4cd0a1177be4b2430e1d19fcbd
-  original_name: Temperature
-  aliases:
-  - null
-  options:
-    sensor:
-      suggested_display_precision: 1
-    conversation:
-      should_expose: true
-- entity_id: sensor.0x348d13fffe292f95_voc_index
-  id: cc9ae449471853f88e62110e59282fa9
-  platform: mqtt
-  unique_id: 0x348d13fffe292f95_voc_index_zigbee2mqtt
-  device_id: 6ceb3f4cd0a1177be4b2430e1d19fcbd
-  original_name: VOC index
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
 - entity_id: sensor.0x348d13fffec87b72_current
   id: 51485c4880358ab5bacd04477243b3cd
   platform: mqtt
@@ -2788,26 +2178,6 @@
       suggested_display_precision: 0
     conversation:
       should_expose: false
-- entity_id: sensor.0x781c9dfffe0b2d4a_color_options
-  id: eaa26f59df3952d2dea7690d8284b0f0
-  platform: mqtt
-  unique_id: 0x781c9dfffe0b2d4a_color_options_zigbee2mqtt
-  device_id: b255da3e41234ae2845e5e0f208c58be
-  original_name: Color options
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0x781c9dfffe0b2d4a_linkquality
-  id: 5c52ee9401ada45cb0e88db01ebf6ac6
-  platform: mqtt
-  unique_id: 0x781c9dfffe0b2d4a_linkquality_zigbee2mqtt
-  device_id: b255da3e41234ae2845e5e0f208c58be
-  original_name: Linkquality
-  aliases:
-  - null
-  disabled_by: integration
 - entity_id: sensor.0x983268fffe011f16_illumination
   id: e042956d8884147f4bd760b698778a87
   platform: mqtt
@@ -2828,116 +2198,6 @@
   aliases:
   - null
   disabled_by: integration
-- entity_id: sensor.0xa4c1380d6560c17f_battery
-  id: 1017d570e077f48c46c4dc908e48e9a3
-  platform: mqtt
-  unique_id: 0xa4c1380d6560c17f_battery_zigbee2mqtt
-  device_id: b186ec1927ef302182bbaafda0bf1c25
-  original_name: Battery
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0xa4c1380d6560c17f_humidity
-  id: 098c9f19c2c42573e590a4aceee3d23c
-  platform: mqtt
-  unique_id: 0xa4c1380d6560c17f_humidity_zigbee2mqtt
-  device_id: b186ec1927ef302182bbaafda0bf1c25
-  original_name: Humidity
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: true
-- entity_id: sensor.0xa4c1380d6560c17f_linkquality
-  id: 53f1f7c2ddde6b24c3bfaf8fbb08945d
-  platform: mqtt
-  unique_id: 0xa4c1380d6560c17f_linkquality_zigbee2mqtt
-  device_id: b186ec1927ef302182bbaafda0bf1c25
-  original_name: Linkquality
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0xa4c1380d6560c17f_soil_moisture
-  id: 7fc79a32a2c97a53703e34f3fea9c4e9
-  platform: mqtt
-  unique_id: 0xa4c1380d6560c17f_soil_moisture_zigbee2mqtt
-  device_id: b186ec1927ef302182bbaafda0bf1c25
-  original_name: Moisture
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0xa4c1380d6560c17f_temperature
-  id: 21ddfbaa755609836cf9681a40d059e8
-  platform: mqtt
-  unique_id: 0xa4c1380d6560c17f_temperature_zigbee2mqtt
-  device_id: b186ec1927ef302182bbaafda0bf1c25
-  original_name: Temperature
-  aliases:
-  - null
-  options:
-    sensor:
-      suggested_display_precision: 1
-    conversation:
-      should_expose: true
-- entity_id: sensor.0xa4c13837fc018338_battery
-  id: e55563cd764715cfac7fac1d66c16634
-  platform: mqtt
-  unique_id: 0xa4c13837fc018338_battery_zigbee2mqtt
-  device_id: e94865b48e1bce7a0517a7144ec04f89
-  original_name: Battery
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0xa4c13837fc018338_humidity
-  id: 89a63510655fbed47c27fa614312db73
-  platform: mqtt
-  unique_id: 0xa4c13837fc018338_humidity_zigbee2mqtt
-  device_id: e94865b48e1bce7a0517a7144ec04f89
-  original_name: Humidity
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: true
-- entity_id: sensor.0xa4c13837fc018338_linkquality
-  id: dc040071b00d545689cfb52fdec06084
-  platform: mqtt
-  unique_id: 0xa4c13837fc018338_linkquality_zigbee2mqtt
-  device_id: e94865b48e1bce7a0517a7144ec04f89
-  original_name: Linkquality
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0xa4c13837fc018338_soil_moisture
-  id: c97f07bfa2a3d6b292dc4869c62bee38
-  platform: mqtt
-  unique_id: 0xa4c13837fc018338_soil_moisture_zigbee2mqtt
-  device_id: e94865b48e1bce7a0517a7144ec04f89
-  original_name: Moisture
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0xa4c13837fc018338_temperature
-  id: bbc668c2bd6b1fff8f1274d7f93d83a8
-  platform: mqtt
-  unique_id: 0xa4c13837fc018338_temperature_zigbee2mqtt
-  device_id: e94865b48e1bce7a0517a7144ec04f89
-  original_name: Temperature
-  aliases:
-  - null
-  options:
-    sensor:
-      suggested_display_precision: 1
-    conversation:
-      should_expose: true
 - entity_id: sensor.0xa4c1383be574225a_illuminance
   id: 8ec5d0a0d99a1b71a02a010d8e9a9e59
   platform: mqtt
@@ -2980,114 +2240,6 @@
   options:
     conversation:
       should_expose: false
-- entity_id: sensor.0xa4c138658ea42994_distance
-  id: d5e2ee1faf1ee9cc2d734f1a81e33a48
-  platform: mqtt
-  unique_id: 0xa4c138658ea42994_distance_zigbee2mqtt
-  device_id: 94d587e8bee0564ab127389bf82b697f
-  original_name: Distance
-  aliases:
-  - null
-  options:
-    sensor:
-      suggested_display_precision: 2
-    conversation:
-      should_expose: false
-- entity_id: sensor.0xa4c138658ea42994_illuminance
-  id: e8a14c58c0f58550b41c7a6d6ab0fde2
-  platform: mqtt
-  unique_id: 0xa4c138658ea42994_illuminance_zigbee2mqtt
-  device_id: 94d587e8bee0564ab127389bf82b697f
-  original_name: Illuminance
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0xa4c138658ea42994_linkquality
-  id: c4baa5738ea5dc23e6d660446b93b197
-  platform: mqtt
-  unique_id: 0xa4c138658ea42994_linkquality_zigbee2mqtt
-  device_id: 94d587e8bee0564ab127389bf82b697f
-  original_name: Linkquality
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0xa4c138658ea42994_state
-  id: de3f6605b6852862656b81c136cc7d37
-  platform: mqtt
-  unique_id: 0xa4c138658ea42994_state_zigbee2mqtt
-  device_id: 94d587e8bee0564ab127389bf82b697f
-  original_name: State
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0xa4c1388268bc795d_linkquality
-  id: 3db6207673f4976f25493ad60b9b9f30
-  platform: mqtt
-  unique_id: 0xa4c1388268bc795d_linkquality_zigbee2mqtt
-  device_id: ea3b6a422a3090a0b191f53a41d05ae7
-  original_name: Linkquality
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0xa4c138a59afc575f_battery
-  id: fef2455f2741492eeaff79286e23576b
-  platform: mqtt
-  unique_id: 0xa4c138a59afc575f_battery_zigbee2mqtt
-  device_id: d0b0af193414a58b71edf2888a788ce0
-  original_name: Battery
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0xa4c138a59afc575f_humidity
-  id: 9e162f1bbe660c4cdd29904b92b7aaac
-  platform: mqtt
-  unique_id: 0xa4c138a59afc575f_humidity_zigbee2mqtt
-  device_id: d0b0af193414a58b71edf2888a788ce0
-  original_name: Humidity
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: true
-- entity_id: sensor.0xa4c138a59afc575f_linkquality
-  id: a4b7ef09f07602c308876bcfd8ab60fa
-  platform: mqtt
-  unique_id: 0xa4c138a59afc575f_linkquality_zigbee2mqtt
-  device_id: d0b0af193414a58b71edf2888a788ce0
-  original_name: Linkquality
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.0xa4c138a59afc575f_soil_moisture
-  id: 64b4c8caa13dfa8902e7c47b8fe233d7
-  platform: mqtt
-  unique_id: 0xa4c138a59afc575f_soil_moisture_zigbee2mqtt
-  device_id: d0b0af193414a58b71edf2888a788ce0
-  original_name: Moisture
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.0xa4c138a59afc575f_temperature
-  id: 3b6dad477f179d9ee93568259b3e6e70
-  platform: mqtt
-  unique_id: 0xa4c138a59afc575f_temperature_zigbee2mqtt
-  device_id: d0b0af193414a58b71edf2888a788ce0
-  original_name: Temperature
-  aliases:
-  - null
-  options:
-    sensor:
-      suggested_display_precision: 1
-    conversation:
-      should_expose: true
 - entity_id: sensor.0xa4c138e5d4f73afa_battery
   id: bca32d4b7bd4115d7719a838635ce6d5
   platform: mqtt
@@ -3144,6 +2296,61 @@
   aliases:
   - null
   disabled_by: integration
+- entity_id: sensor.aqara_button_1_battery
+  id: a079bf8de017563f5d1953c469e8987f
+  platform: mqtt
+  unique_id: 0x00158d008c756210_battery_zigbee2mqtt
+  device_id: 1da4aea06a675be80f73bc4ba72958f7
+  original_name: Battery
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.aqara_button_1_device_temperature
+  id: aee1d507bda26a62757c2badd2d562ea
+  platform: mqtt
+  unique_id: 0x00158d008c756210_device_temperature_zigbee2mqtt
+  device_id: 1da4aea06a675be80f73bc4ba72958f7
+  original_name: Temperature
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 1
+    conversation:
+      should_expose: false
+- entity_id: sensor.aqara_button_1_linkquality
+  id: 53d6ddb6272ba5cd130d0761fcce0a24
+  platform: mqtt
+  unique_id: 0x00158d008c756210_linkquality_zigbee2mqtt
+  device_id: 1da4aea06a675be80f73bc4ba72958f7
+  original_name: Linkquality
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.aqara_button_1_power_outage_count
+  id: 426af3eaae0a21dbbcf730bdc69e89d5
+  platform: mqtt
+  unique_id: 0x00158d008c756210_power_outage_count_zigbee2mqtt
+  device_id: 1da4aea06a675be80f73bc4ba72958f7
+  original_name: Power outage count
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.aqara_button_1_voltage
+  id: 8212983e65facfe55a3b067bc7542a4b
+  platform: mqtt
+  unique_id: 0x00158d008c756210_voltage_zigbee2mqtt
+  device_id: 1da4aea06a675be80f73bc4ba72958f7
+  original_name: Voltage
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 0
+    conversation:
+      should_expose: false
 - entity_id: sensor.backup_backup_manager_state
   id: 3fdbcc3206e0d4bc2784fceff428b41f
   platform: backup
@@ -3186,6 +2393,114 @@
   aliases:
   - null
   options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.bed_light_strip_linkquality
+  id: 3db6207673f4976f25493ad60b9b9f30
+  platform: mqtt
+  unique_id: 0xa4c1388268bc795d_linkquality_zigbee2mqtt
+  device_id: ea3b6a422a3090a0b191f53a41d05ae7
+  original_name: Linkquality
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.bedroom_motion_sensor_battery
+  id: 9ca599514bd11859dbc0a3470b240e06
+  platform: mqtt
+  unique_id: 0x00158d008bc3cfdf_battery_zigbee2mqtt
+  device_id: f3042e96ab16fbb14c7160b963a42d3a
+  original_name: Battery
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.bedroom_motion_sensor_device_temperature
+  id: dfdfd1c76eb919ca9af305223357287c
+  platform: mqtt
+  unique_id: 0x00158d008bc3cfdf_device_temperature_zigbee2mqtt
+  device_id: f3042e96ab16fbb14c7160b963a42d3a
+  original_name: Temperature
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 1
+    conversation:
+      should_expose: false
+- entity_id: sensor.bedroom_motion_sensor_illuminance
+  id: f83d89f93dc5390ddf3784fd66460170
+  platform: mqtt
+  unique_id: 0x00158d008bc3cfdf_illuminance_zigbee2mqtt
+  device_id: f3042e96ab16fbb14c7160b963a42d3a
+  original_name: Illuminance
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.bedroom_motion_sensor_linkquality
+  id: 37b8717f0247419638779560adb8c33b
+  platform: mqtt
+  unique_id: 0x00158d008bc3cfdf_linkquality_zigbee2mqtt
+  device_id: f3042e96ab16fbb14c7160b963a42d3a
+  original_name: Linkquality
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.bedroom_motion_sensor_power_outage_count
+  id: d24f0a5383fa455655d39c0f9b215d8d
+  platform: mqtt
+  unique_id: 0x00158d008bc3cfdf_power_outage_count_zigbee2mqtt
+  device_id: f3042e96ab16fbb14c7160b963a42d3a
+  original_name: Power outage count
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.bedroom_motion_sensor_voltage
+  id: 666ac6015a7ac9a174ecee8283b1cf5e
+  platform: mqtt
+  unique_id: 0x00158d008bc3cfdf_voltage_zigbee2mqtt
+  device_id: f3042e96ab16fbb14c7160b963a42d3a
+  original_name: Voltage
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 0
+    conversation:
+      should_expose: false
+- entity_id: sensor.bedroom_switch_battery
+  id: 26c9182b68d62b5560e047b42684541f
+  platform: mqtt
+  unique_id: 0x08fd52fffe6ed25e_battery_zigbee2mqtt
+  device_id: 4932e8a2eb71479b6d54d6bf0c7f741b
+  original_name: Battery
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.bedroom_switch_linkquality
+  id: db99a55afeb0ea2e566351315b01140f
+  platform: mqtt
+  unique_id: 0x08fd52fffe6ed25e_linkquality_zigbee2mqtt
+  device_id: 4932e8a2eb71479b6d54d6bf0c7f741b
+  original_name: Linkquality
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.bedroom_switch_voltage
+  id: acd12b03cf01c240e1bf66a0e861c26f
+  platform: mqtt
+  unique_id: 0x08fd52fffe6ed25e_voltage_zigbee2mqtt
+  device_id: 4932e8a2eb71479b6d54d6bf0c7f741b
+  original_name: Voltage
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 0
     conversation:
       should_expose: false
 - entity_id: sensor.chrisinas_cache_device_1_status
@@ -3882,6 +3197,61 @@
   options:
     conversation:
       should_expose: false
+- entity_id: sensor.euphorbia_leuconeura_battery
+  id: e55563cd764715cfac7fac1d66c16634
+  platform: mqtt
+  unique_id: 0xa4c13837fc018338_battery_zigbee2mqtt
+  device_id: e94865b48e1bce7a0517a7144ec04f89
+  original_name: Battery
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.euphorbia_leuconeura_humidity
+  id: 89a63510655fbed47c27fa614312db73
+  platform: mqtt
+  unique_id: 0xa4c13837fc018338_humidity_zigbee2mqtt
+  device_id: e94865b48e1bce7a0517a7144ec04f89
+  original_name: Humidity
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: true
+- entity_id: sensor.euphorbia_leuconeura_linkquality
+  id: dc040071b00d545689cfb52fdec06084
+  platform: mqtt
+  unique_id: 0xa4c13837fc018338_linkquality_zigbee2mqtt
+  device_id: e94865b48e1bce7a0517a7144ec04f89
+  original_name: Linkquality
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.euphorbia_leuconeura_soil_moisture
+  id: c97f07bfa2a3d6b292dc4869c62bee38
+  platform: mqtt
+  unique_id: 0xa4c13837fc018338_soil_moisture_zigbee2mqtt
+  device_id: e94865b48e1bce7a0517a7144ec04f89
+  original_name: Moisture
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.euphorbia_leuconeura_temperature
+  id: bbc668c2bd6b1fff8f1274d7f93d83a8
+  platform: mqtt
+  unique_id: 0xa4c13837fc018338_temperature_zigbee2mqtt
+  device_id: e94865b48e1bce7a0517a7144ec04f89
+  original_name: Temperature
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 1
+    conversation:
+      should_expose: true
 - entity_id: sensor.euphorbia_soil
   id: 6b04bf1157ebf71baceebe7a036927a0
   platform: template
@@ -3890,82 +3260,6 @@
   aliases:
   - null
   options:
-    conversation:
-      should_expose: true
-- entity_id: sensor.ewelight_zb_dl01_lqi
-  id: b4cec213272a033f5d47547f6b562503
-  platform: zha
-  unique_id: a4:c1:38:82:68:bc:79:5d-1-0-lqi
-  device_id: de3bc63edf70aa1496efec6a3d6ecc2e
-  original_name: LQI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.ewelight_zb_dl01_rssi
-  id: eaeac842a4a9d79a1482f66e43c0306c
-  platform: zha
-  unique_id: a4:c1:38:82:68:bc:79:5d-1-0-rssi
-  device_id: de3bc63edf70aa1496efec6a3d6ecc2e
-  original_name: RSSI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.ewelink_snzb_02p_battery
-  id: 1c285f8033bff0584351f87852b9f371
-  platform: zha
-  unique_id: 44:9f:da:ff:fe:22:3f:61-1-1
-  device_id: 97a9c3baa82059499e0d3916140049bf
-  original_name: Battery
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    sensor:
-      suggested_display_precision: 0
-    conversation:
-      should_expose: false
-- entity_id: sensor.ewelink_snzb_02p_humidity
-  id: aad27d06aae90a913a2e277de13f8da7
-  platform: zha
-  unique_id: 44:9f:da:ff:fe:22:3f:61-1-1029
-  device_id: 97a9c3baa82059499e0d3916140049bf
-  original_name: Humidity
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: true
-- entity_id: sensor.ewelink_snzb_02p_lqi
-  id: 003d8e07135ebbc0ba16c580f6caf25e
-  platform: zha
-  unique_id: 44:9f:da:ff:fe:22:3f:61-1-0-lqi
-  device_id: 97a9c3baa82059499e0d3916140049bf
-  original_name: LQI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.ewelink_snzb_02p_rssi
-  id: d2be65ed0e09f800ccc85a4740e8f19c
-  platform: zha
-  unique_id: 44:9f:da:ff:fe:22:3f:61-1-0-rssi
-  device_id: 97a9c3baa82059499e0d3916140049bf
-  original_name: RSSI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.ewelink_snzb_02p_temperature
-  id: 668c493c579423a7c9aabace8ea973a0
-  platform: zha
-  unique_id: 44:9f:da:ff:fe:22:3f:61-1-1026
-  device_id: 97a9c3baa82059499e0d3916140049bf
-  original_name: Temperature
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    sensor:
-      suggested_display_precision: 1
     conversation:
       should_expose: true
 - entity_id: sensor.file_editor_cpu_percent
@@ -4004,183 +3298,121 @@
   aliases:
   - null
   disabled_by: integration
-- entity_id: sensor.hobeian_zg_303z_battery
-  id: 455911d6f36ae8932c377df0c17f73c6
-  platform: zha
-  unique_id: a4:c1:38:0d:65:60:c1:7f-1-1
-  device_id: 17f9a407383c93f3c5a1d5667f5fd38b
+- entity_id: sensor.gym_ceiling_light_zigbee_connectivity
+  id: 05b992a29f4714330949931e490b2769
+  platform: hue
+  unique_id: 71fe5942-c3a1-4238-a396-4380d53cffd7
+  device_id: 220682812dec33e04310aacc0869474b
+  original_name: Zigbee connectivity
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.gym_dimmer_switch_battery
+  id: 01b530f9fe4827dff3f86516cbddccb8
+  platform: hue
+  unique_id: 4b53de90-69be-48cf-b724-9584f64c1ef6
+  device_id: 9aacc95b244d81c075f23584cb921cab
   original_name: Battery
   aliases:
   - null
-  disabled_by: config_entry
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.gym_dimmer_switch_zigbee_connectivity
+  id: 6711cfd1e1617a8e195b0683fbc9fcd4
+  platform: hue
+  unique_id: 7284c4b8-e3f7-4680-bc55-e78090a4bb69
+  device_id: 9aacc95b244d81c075f23584cb921cab
+  original_name: Zigbee connectivity
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.hallway_light_color_options
+  id: eaa26f59df3952d2dea7690d8284b0f0
+  platform: mqtt
+  unique_id: 0x781c9dfffe0b2d4a_color_options_zigbee2mqtt
+  device_id: b255da3e41234ae2845e5e0f208c58be
+  original_name: Color options
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.hallway_light_linkquality
+  id: 5c52ee9401ada45cb0e88db01ebf6ac6
+  platform: mqtt
+  unique_id: 0x781c9dfffe0b2d4a_linkquality_zigbee2mqtt
+  device_id: b255da3e41234ae2845e5e0f208c58be
+  original_name: Linkquality
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.hallway_motion_sensor_battery
+  id: eafb619d4a9692d66c5d270c00efd076
+  platform: mqtt
+  unique_id: 0x00158d008bc3d235_battery_zigbee2mqtt
+  device_id: 3a94836cef7376d31ee03078aabafab4
+  original_name: Battery
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.hallway_motion_sensor_device_temperature
+  id: be07324d110855a43cd4755070f6f327
+  platform: mqtt
+  unique_id: 0x00158d008bc3d235_device_temperature_zigbee2mqtt
+  device_id: 3a94836cef7376d31ee03078aabafab4
+  original_name: Temperature
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 1
+    conversation:
+      should_expose: false
+- entity_id: sensor.hallway_motion_sensor_illuminance
+  id: 864633831cdfed69ed85e2d46f9678d5
+  platform: mqtt
+  unique_id: 0x00158d008bc3d235_illuminance_zigbee2mqtt
+  device_id: 3a94836cef7376d31ee03078aabafab4
+  original_name: Illuminance
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.hallway_motion_sensor_linkquality
+  id: 37911908e5f0afb54e61f890d3f36be3
+  platform: mqtt
+  unique_id: 0x00158d008bc3d235_linkquality_zigbee2mqtt
+  device_id: 3a94836cef7376d31ee03078aabafab4
+  original_name: Linkquality
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.hallway_motion_sensor_power_outage_count
+  id: 9954e95aad4395d51faa7d04a101b994
+  platform: mqtt
+  unique_id: 0x00158d008bc3d235_power_outage_count_zigbee2mqtt
+  device_id: 3a94836cef7376d31ee03078aabafab4
+  original_name: Power outage count
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.hallway_motion_sensor_voltage
+  id: 0ee1ca0e5d296d879314beb6da27c8e3
+  platform: mqtt
+  unique_id: 0x00158d008bc3d235_voltage_zigbee2mqtt
+  device_id: 3a94836cef7376d31ee03078aabafab4
+  original_name: Voltage
+  aliases:
+  - null
   options:
     sensor:
       suggested_display_precision: 0
     conversation:
       should_expose: false
-- entity_id: sensor.hobeian_zg_303z_battery_2
-  id: 2d3b3f46753200ea3c4dedc1d140606f
-  platform: zha
-  unique_id: a4:c1:38:37:fc:01:83:38-1-1
-  device_id: 94fb0090643249f3eb2a0f2f7185538e
-  original_name: Battery
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    sensor:
-      suggested_display_precision: 0
-    conversation:
-      should_expose: false
-- entity_id: sensor.hobeian_zg_303z_battery_3
-  id: 6810338f32b81d66331c4ea17da2aa98
-  platform: zha
-  unique_id: a4:c1:38:a5:9a:fc:57:5f-1-1
-  device_id: 68f89069e7a7d556992de0c39e5bae3d
-  original_name: Battery
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    sensor:
-      suggested_display_precision: 0
-    conversation:
-      should_expose: false
-- entity_id: sensor.hobeian_zg_303z_humidity
-  id: dbbda2445141a11468fe10fb93da8717
-  platform: zha
-  unique_id: a4:c1:38:0d:65:60:c1:7f-1-1029
-  device_id: 17f9a407383c93f3c5a1d5667f5fd38b
-  original_name: Humidity
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: true
-- entity_id: sensor.hobeian_zg_303z_humidity_2
-  id: 6dd09739b45810f98129c036b309a4e7
-  platform: zha
-  unique_id: a4:c1:38:37:fc:01:83:38-1-1029
-  device_id: 94fb0090643249f3eb2a0f2f7185538e
-  original_name: Humidity
-  name: Humidity
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: true
-    sensor:
-      display_precision: null
-- entity_id: sensor.hobeian_zg_303z_humidity_3
-  id: 81c54206b307c18baf8aa84675567e99
-  platform: zha
-  unique_id: a4:c1:38:a5:9a:fc:57:5f-1-1029
-  device_id: 68f89069e7a7d556992de0c39e5bae3d
-  original_name: Humidity
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: true
-- entity_id: sensor.hobeian_zg_303z_lqi
-  id: c3a1e1fb55a10c7b4729a4b229418c1a
-  platform: zha
-  unique_id: a4:c1:38:0d:65:60:c1:7f-1-0-lqi
-  device_id: 17f9a407383c93f3c5a1d5667f5fd38b
-  original_name: LQI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.hobeian_zg_303z_lqi_2
-  id: 0167c74da3bddaa9841dde11351b2dc0
-  platform: zha
-  unique_id: a4:c1:38:37:fc:01:83:38-1-0-lqi
-  device_id: 94fb0090643249f3eb2a0f2f7185538e
-  original_name: LQI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.hobeian_zg_303z_lqi_3
-  id: fd64141e41488a266a379e98f4536799
-  platform: zha
-  unique_id: a4:c1:38:a5:9a:fc:57:5f-1-0-lqi
-  device_id: 68f89069e7a7d556992de0c39e5bae3d
-  original_name: LQI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.hobeian_zg_303z_rssi
-  id: 29366a79eabae846ea0ccbbe50a9d518
-  platform: zha
-  unique_id: a4:c1:38:0d:65:60:c1:7f-1-0-rssi
-  device_id: 17f9a407383c93f3c5a1d5667f5fd38b
-  original_name: RSSI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.hobeian_zg_303z_rssi_2
-  id: 2af4e3b3dc8465b8fd3893e51f0adde5
-  platform: zha
-  unique_id: a4:c1:38:37:fc:01:83:38-1-0-rssi
-  device_id: 94fb0090643249f3eb2a0f2f7185538e
-  original_name: RSSI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.hobeian_zg_303z_rssi_3
-  id: ce0d816e9815db89d98232926ebe839b
-  platform: zha
-  unique_id: a4:c1:38:a5:9a:fc:57:5f-1-0-rssi
-  device_id: 68f89069e7a7d556992de0c39e5bae3d
-  original_name: RSSI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.hobeian_zg_303z_temperature
-  id: 86ad61817bc468960ca660ddae0991ba
-  platform: zha
-  unique_id: a4:c1:38:0d:65:60:c1:7f-1-1026
-  device_id: 17f9a407383c93f3c5a1d5667f5fd38b
-  original_name: Temperature
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    sensor:
-      suggested_display_precision: 1
-    conversation:
-      should_expose: true
-- entity_id: sensor.hobeian_zg_303z_temperature_2
-  id: 044347833795f12b71e731d8f1852f60
-  platform: zha
-  unique_id: a4:c1:38:37:fc:01:83:38-1-1026
-  device_id: 94fb0090643249f3eb2a0f2f7185538e
-  original_name: Temperature
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    sensor:
-      suggested_display_precision: 1
-    conversation:
-      should_expose: true
-- entity_id: sensor.hobeian_zg_303z_temperature_3
-  id: 3c34d3f39a8130ad897550ffcff5d9de
-  platform: zha
-  unique_id: a4:c1:38:a5:9a:fc:57:5f-1-1026
-  device_id: 68f89069e7a7d556992de0c39e5bae3d
-  original_name: Temperature
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    sensor:
-      suggested_display_precision: 1
-    conversation:
-      should_expose: true
 - entity_id: sensor.home_assistant_core_cpu_percent
   id: c74ee7bd4a6a886a8a9edc59af19c8fb
   platform: hassio
@@ -4381,26 +3613,61 @@
   aliases:
   - null
   disabled_by: integration
-- entity_id: sensor.hue_dimmer_switch_2_battery
-  id: 01b530f9fe4827dff3f86516cbddccb8
-  platform: hue
-  unique_id: 4b53de90-69be-48cf-b724-9584f64c1ef6
-  device_id: 9aacc95b244d81c075f23584cb921cab
-  original_name: Battery
+- entity_id: sensor.ikea_air_quality_sensor_humidity
+  id: 62f08036344e1a9c45a8db63f32bd7a0
+  platform: mqtt
+  unique_id: 0x348d13fffe292f95_humidity_zigbee2mqtt
+  device_id: 6ceb3f4cd0a1177be4b2430e1d19fcbd
+  original_name: Humidity
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: true
+- entity_id: sensor.ikea_air_quality_sensor_linkquality
+  id: 0789c7b4b954d899bb4edacc00f7697f
+  platform: mqtt
+  unique_id: 0x348d13fffe292f95_linkquality_zigbee2mqtt
+  device_id: 6ceb3f4cd0a1177be4b2430e1d19fcbd
+  original_name: Linkquality
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.ikea_air_quality_sensor_pm25
+  id: b83925a7cfbbc923ab08fae3b06a2494
+  platform: mqtt
+  unique_id: 0x348d13fffe292f95_pm25_zigbee2mqtt
+  device_id: 6ceb3f4cd0a1177be4b2430e1d19fcbd
+  original_name: PM2.5
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: true
+- entity_id: sensor.ikea_air_quality_sensor_temperature
+  id: 3655aeb346e42e47e3d31a5db52bd43e
+  platform: mqtt
+  unique_id: 0x348d13fffe292f95_temperature_zigbee2mqtt
+  device_id: 6ceb3f4cd0a1177be4b2430e1d19fcbd
+  original_name: Temperature
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 1
+    conversation:
+      should_expose: true
+- entity_id: sensor.ikea_air_quality_sensor_voc_index
+  id: cc9ae449471853f88e62110e59282fa9
+  platform: mqtt
+  unique_id: 0x348d13fffe292f95_voc_index_zigbee2mqtt
+  device_id: 6ceb3f4cd0a1177be4b2430e1d19fcbd
+  original_name: VOC index
   aliases:
   - null
   options:
     conversation:
       should_expose: false
-- entity_id: sensor.hue_dimmer_switch_2_zigbee_connectivity
-  id: 6711cfd1e1617a8e195b0683fbc9fcd4
-  platform: hue
-  unique_id: 7284c4b8-e3f7-4680-bc55-e78090a4bb69
-  device_id: 9aacc95b244d81c075f23584cb921cab
-  original_name: Zigbee connectivity
-  aliases:
-  - null
-  disabled_by: integration
 - entity_id: sensor.iphone_von_kim_app_version
   id: 4a39808cd61bc8d0a43c593024b83c67
   platform: mobile_app
@@ -4567,102 +3834,48 @@
   options:
     conversation:
       should_expose: false
-- entity_id: sensor.lumi_lumi_remote_b1acn01_battery
-  id: 6309df27bdc716fde31e9a847881c4f5
-  platform: zha
-  unique_id: 00:15:8d:00:8c:75:62:10-1-1
-  device_id: d2b2e533e204a416a9dccbe334b09030
+- entity_id: sensor.living_room_ceiling_light_zigbee_connectivity
+  id: f15920bb3436a09225709ad33cd26f40
+  platform: hue
+  unique_id: 5eff0c08-84ee-424c-828a-365654ffc107
+  device_id: d9566bd1d1db0abbb2f42039381a4492
+  original_name: Zigbee connectivity
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.living_room_switch_battery
+  id: d6e7b417f7f8be6e203d8f509fd7303a
+  platform: mqtt
+  unique_id: 0x08fd52fffe5ea498_battery_zigbee2mqtt
+  device_id: 5f0c36bbc73fcc5d55638b8304dddc7f
   original_name: Battery
   aliases:
   - null
-  disabled_by: config_entry
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.living_room_switch_linkquality
+  id: 43831693ecba90ae8fcf73fd585ccdf4
+  platform: mqtt
+  unique_id: 0x08fd52fffe5ea498_linkquality_zigbee2mqtt
+  device_id: 5f0c36bbc73fcc5d55638b8304dddc7f
+  original_name: Linkquality
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.living_room_switch_voltage
+  id: 649969f02edc3e86907e8ba271264f10
+  platform: mqtt
+  unique_id: 0x08fd52fffe5ea498_voltage_zigbee2mqtt
+  device_id: 5f0c36bbc73fcc5d55638b8304dddc7f
+  original_name: Voltage
+  aliases:
+  - null
   options:
     sensor:
       suggested_display_precision: 0
     conversation:
       should_expose: false
-- entity_id: sensor.lumi_lumi_remote_b1acn01_lqi
-  id: d32ffa7fd3f89c17fc52f0c466fa9d62
-  platform: zha
-  unique_id: 00:15:8d:00:8c:75:62:10-1-0-lqi
-  device_id: d2b2e533e204a416a9dccbe334b09030
-  original_name: LQI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.lumi_lumi_remote_b1acn01_rssi
-  id: b338a4cdf5ce14057c41533f8793aff1
-  platform: zha
-  unique_id: 00:15:8d:00:8c:75:62:10-1-0-rssi
-  device_id: d2b2e533e204a416a9dccbe334b09030
-  original_name: RSSI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.lumi_lumi_sensor_motion_aq2_lqi
-  id: 4ffe65facfa7de661432faf33c56647a
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c3:cf:df-1-0-lqi
-  device_id: c67af7688b444ce25d186725d4d51f3a
-  original_name: LQI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.lumi_lumi_sensor_motion_aq2_rssi
-  id: c19c03e341ad6f3eabd28663cf6e7a4d
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c3:cf:df-1-0-rssi
-  device_id: c67af7688b444ce25d186725d4d51f3a
-  original_name: RSSI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.lumi_lumi_vibration_aq1_battery
-  id: d3423bd2ca316d7d793e4a6a4d0054be
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c1:c1:e1-1-1
-  device_id: 630c86f08f09182876d35b1ef4f35e05
-  original_name: Battery
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    sensor:
-      suggested_display_precision: 0
-    conversation:
-      should_expose: false
-- entity_id: sensor.lumi_lumi_vibration_aq1_device_temperature
-  id: 64612fa60231354a001566ad6e22b5a1
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c1:c1:e1-1-2
-  device_id: 630c86f08f09182876d35b1ef4f35e05
-  original_name: Device temperature
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    sensor:
-      suggested_display_precision: 1
-    conversation:
-      should_expose: false
-- entity_id: sensor.lumi_lumi_vibration_aq1_lqi
-  id: 509c57d6841ab3087a1834ea37ef40fa
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c1:c1:e1-1-0-lqi
-  device_id: 630c86f08f09182876d35b1ef4f35e05
-  original_name: LQI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.lumi_lumi_vibration_aq1_rssi
-  id: 0c766ac9dff262ea8f75a97ca9d0e0fa
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c1:c1:e1-1-0-rssi
-  device_id: 630c86f08f09182876d35b1ef4f35e05
-  original_name: RSSI
-  aliases:
-  - null
-  disabled_by: integration
 - entity_id: sensor.matter_server_cpu_percent
   id: 27703cbeee0f017858a23a2d92ee44b9
   platform: hassio
@@ -4699,32 +3912,6 @@
   aliases:
   - null
   disabled_by: integration
-- entity_id: sensor.mini_human_breath_sensor_illuminance
-  id: 2c0b2eb769f89eaa4fc28e21aeb185b8
-  platform: zha
-  unique_id: a4:c1:38:65:8e:a4:29:94-1-1024
-  device_id: c44e74ae9b13879fe054ffd909b1c6d3
-  original_name: Illuminance
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: false
-- entity_id: sensor.mini_human_breath_sensor_target_distance
-  id: 0c566891fe97653781ed4743141bb4d3
-  platform: zha
-  unique_id: a4:c1:38:65:8e:a4:29:94-1-distance
-  device_id: c44e74ae9b13879fe054ffd909b1c6d3
-  original_name: Target distance
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    sensor:
-      suggested_display_precision: 2
-    conversation:
-      should_expose: false
 - entity_id: sensor.mosquitto_broker_cpu_percent
   id: 5f0ee8c60bf98e3d03aa93497e7a9d38
   platform: hassio
@@ -4761,6 +3948,59 @@
   aliases:
   - null
   disabled_by: integration
+- entity_id: sensor.office_ceiling_light_linkquality
+  id: b88aed0b225527304e97517066b55ab1
+  platform: mqtt
+  unique_id: 0x001788010d1935a6_linkquality_zigbee2mqtt
+  device_id: 2f924b1cbf55792a4c859a3c21f2a6bb
+  original_name: Linkquality
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.office_presence_sensor_distance
+  id: d5e2ee1faf1ee9cc2d734f1a81e33a48
+  platform: mqtt
+  unique_id: 0xa4c138658ea42994_distance_zigbee2mqtt
+  device_id: 94d587e8bee0564ab127389bf82b697f
+  original_name: Distance
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 2
+    conversation:
+      should_expose: false
+- entity_id: sensor.office_presence_sensor_illuminance
+  id: e8a14c58c0f58550b41c7a6d6ab0fde2
+  platform: mqtt
+  unique_id: 0xa4c138658ea42994_illuminance_zigbee2mqtt
+  device_id: 94d587e8bee0564ab127389bf82b697f
+  original_name: Illuminance
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.office_presence_sensor_linkquality
+  id: c4baa5738ea5dc23e6d660446b93b197
+  platform: mqtt
+  unique_id: 0xa4c138658ea42994_linkquality_zigbee2mqtt
+  device_id: 94d587e8bee0564ab127389bf82b697f
+  original_name: Linkquality
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: sensor.office_presence_sensor_state
+  id: de3f6605b6852862656b81c136cc7d37
+  platform: mqtt
+  unique_id: 0xa4c138658ea42994_state_zigbee2mqtt
+  device_id: 94d587e8bee0564ab127389bf82b697f
+  original_name: State
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
 - entity_id: sensor.pfuus_lampe_zigbee_connectivity
   id: 398f1606625c381f5544ba17762b7ec6
   platform: hue
@@ -4770,64 +4010,37 @@
   aliases:
   - null
   disabled_by: integration
-- entity_id: sensor.philips_915005997201_lqi
-  id: 6831caaa6567f253c7f24c0dcf0896a7
-  platform: zha
-  unique_id: 00:17:88:01:0d:19:35:a6-11-0-lqi
-  device_id: 2a22955ad018b004d424708693511668
-  original_name: LQI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.philips_915005997201_rssi
-  id: b87bf0dbc405e2b5a3e14a056e1f0015
-  platform: zha
-  unique_id: 00:17:88:01:0d:19:35:a6-11-0-rssi
-  device_id: 2a22955ad018b004d424708693511668
-  original_name: RSSI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.quara_motion_sensor_stube_battery
-  id: f262810ea9a4f3c94b08222f88c19fa8
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c3:cf:df-1-1
-  device_id: c67af7688b444ce25d186725d4d51f3a
+- entity_id: sensor.schlumbergera_battery
+  id: 1017d570e077f48c46c4dc908e48e9a3
+  platform: mqtt
+  unique_id: 0xa4c1380d6560c17f_battery_zigbee2mqtt
+  device_id: b186ec1927ef302182bbaafda0bf1c25
   original_name: Battery
   aliases:
   - null
-  disabled_by: config_entry
   options:
-    sensor:
-      suggested_display_precision: 0
     conversation:
       should_expose: false
-- entity_id: sensor.quara_motion_sensor_stube_device_temperature
-  id: fe8d16ac91559cae1e73f262338ceaaa
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c3:cf:df-1-2
-  device_id: c67af7688b444ce25d186725d4d51f3a
-  original_name: Device temperature
+- entity_id: sensor.schlumbergera_humidity
+  id: 098c9f19c2c42573e590a4aceee3d23c
+  platform: mqtt
+  unique_id: 0xa4c1380d6560c17f_humidity_zigbee2mqtt
+  device_id: b186ec1927ef302182bbaafda0bf1c25
+  original_name: Humidity
   aliases:
   - null
-  disabled_by: config_entry
   options:
-    sensor:
-      suggested_display_precision: 1
     conversation:
-      should_expose: false
-- entity_id: sensor.quara_motion_sensor_stube_illuminance
-  id: b32aee5bea818cbb0b2790e6626574c5
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c3:cf:df-1-1024
-  device_id: c67af7688b444ce25d186725d4d51f3a
-  original_name: Illuminance
+      should_expose: true
+- entity_id: sensor.schlumbergera_linkquality
+  id: 53f1f7c2ddde6b24c3bfaf8fbb08945d
+  platform: mqtt
+  unique_id: 0xa4c1380d6560c17f_linkquality_zigbee2mqtt
+  device_id: b186ec1927ef302182bbaafda0bf1c25
+  original_name: Linkquality
   aliases:
   - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: false
+  disabled_by: integration
 - entity_id: sensor.schlumbergera_soil
   id: 0fed4916470b26d70a361cf02f6b5ab3
   platform: template
@@ -4838,6 +4051,30 @@
   options:
     conversation:
       should_expose: true
+- entity_id: sensor.schlumbergera_soil_moisture
+  id: 7fc79a32a2c97a53703e34f3fea9c4e9
+  platform: mqtt
+  unique_id: 0xa4c1380d6560c17f_soil_moisture_zigbee2mqtt
+  device_id: b186ec1927ef302182bbaafda0bf1c25
+  original_name: Moisture
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.schlumbergera_temperature
+  id: 21ddfbaa755609836cf9681a40d059e8
+  platform: mqtt
+  unique_id: 0xa4c1380d6560c17f_temperature_zigbee2mqtt
+  device_id: b186ec1927ef302182bbaafda0bf1c25
+  original_name: Temperature
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 1
+    conversation:
+      should_expose: true
 - entity_id: sensor.sonos_favorites
   id: 92fdc7921811a2932feb4fe865206e3e
   platform: sonos
@@ -4846,12 +4083,34 @@
   aliases:
   - null
   disabled_by: integration
-- entity_id: sensor.sport_zimmer_zigbee_connectivity
-  id: 05b992a29f4714330949931e490b2769
-  platform: hue
-  unique_id: 71fe5942-c3a1-4238-a396-4380d53cffd7
-  device_id: 220682812dec33e04310aacc0869474b
-  original_name: Zigbee connectivity
+- entity_id: sensor.strelitzia_battery
+  id: fef2455f2741492eeaff79286e23576b
+  platform: mqtt
+  unique_id: 0xa4c138a59afc575f_battery_zigbee2mqtt
+  device_id: d0b0af193414a58b71edf2888a788ce0
+  original_name: Battery
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.strelitzia_humidity
+  id: 9e162f1bbe660c4cdd29904b92b7aaac
+  platform: mqtt
+  unique_id: 0xa4c138a59afc575f_humidity_zigbee2mqtt
+  device_id: d0b0af193414a58b71edf2888a788ce0
+  original_name: Humidity
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: true
+- entity_id: sensor.strelitzia_linkquality
+  id: a4b7ef09f07602c308876bcfd8ab60fa
+  platform: mqtt
+  unique_id: 0xa4c138a59afc575f_linkquality_zigbee2mqtt
+  device_id: d0b0af193414a58b71edf2888a788ce0
+  original_name: Linkquality
   aliases:
   - null
   disabled_by: integration
@@ -4865,15 +4124,30 @@
   options:
     conversation:
       should_expose: true
-- entity_id: sensor.stubaaaa_zigbee_connectivity
-  id: f15920bb3436a09225709ad33cd26f40
-  platform: hue
-  unique_id: 5eff0c08-84ee-424c-828a-365654ffc107
-  device_id: d9566bd1d1db0abbb2f42039381a4492
-  original_name: Zigbee connectivity
+- entity_id: sensor.strelitzia_soil_moisture
+  id: 64b4c8caa13dfa8902e7c47b8fe233d7
+  platform: mqtt
+  unique_id: 0xa4c138a59afc575f_soil_moisture_zigbee2mqtt
+  device_id: d0b0af193414a58b71edf2888a788ce0
+  original_name: Moisture
   aliases:
   - null
-  disabled_by: integration
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.strelitzia_temperature
+  id: 3b6dad477f179d9ee93568259b3e6e70
+  platform: mqtt
+  unique_id: 0xa4c138a59afc575f_temperature_zigbee2mqtt
+  device_id: d0b0af193414a58b71edf2888a788ce0
+  original_name: Temperature
+  aliases:
+  - null
+  options:
+    sensor:
+      suggested_display_precision: 1
+    conversation:
+      should_expose: true
 - entity_id: sensor.sun_next_dawn
   id: 1d32cf256b012b893470adadcf9f633d
   platform: sun
@@ -4991,24 +4265,6 @@
   unique_id: core_ssh_version
   device_id: 785a89b4d96341dc55fe1e62180c498d
   original_name: Version
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.tze204_gkfbdvyx_ts0601_lqi
-  id: 7adb13f19a3bbd3092df45a82761cf93
-  platform: zha
-  unique_id: a4:c1:38:65:8e:a4:29:94-1-0-lqi
-  device_id: c44e74ae9b13879fe054ffd909b1c6d3
-  original_name: LQI
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: sensor.tze204_gkfbdvyx_ts0601_rssi
-  id: 77eea1a7bcc5f28b8fc73180597ce9fe
-  platform: zha
-  unique_id: a4:c1:38:65:8e:a4:29:94-1-0-rssi
-  device_id: c44e74ae9b13879fe054ffd909b1c6d3
-  original_name: RSSI
   aliases:
   - null
   disabled_by: integration
@@ -5193,28 +4449,6 @@
   options:
     conversation:
       should_expose: true
-- entity_id: switch.0xa4c138658ea42994_find_switch
-  id: 1b42b5fd4c242e17e38cf82409ffc8b9
-  platform: mqtt
-  unique_id: 0xa4c138658ea42994_switch_find_switch_zigbee2mqtt
-  device_id: 94d587e8bee0564ab127389bf82b697f
-  original_name: Find switch
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: true
-- entity_id: switch.0xa4c1388268bc795d_do_not_disturb
-  id: 0bb2724c6b8ee0683eab1172ddd7690f
-  platform: mqtt
-  unique_id: 0xa4c1388268bc795d_switch_do_not_disturb_zigbee2mqtt
-  device_id: ea3b6a422a3090a0b191f53a41d05ae7
-  original_name: Do not disturb
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: true
 - entity_id: switch.0xa4c138e5d4f73afa
   id: 55418bffe1fd5c3f7750e22989699752
   platform: mqtt
@@ -5266,6 +4500,57 @@
   options:
     conversation:
       should_expose: false
+- entity_id: switch.bed_light_strip_do_not_disturb
+  id: 0bb2724c6b8ee0683eab1172ddd7690f
+  platform: mqtt
+  unique_id: 0xa4c1388268bc795d_switch_do_not_disturb_zigbee2mqtt
+  device_id: ea3b6a422a3090a0b191f53a41d05ae7
+  original_name: Do not disturb
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: true
+- entity_id: switch.family_room_crossfade
+  id: 4ea5a8594b958523ca8e62a8be9fa383
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-cross_fade
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Crossfade
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: switch.family_room_loudness
+  id: f3f48795dcc0903835131eee8d3b2bea
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-loudness
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Loudness
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: switch.family_room_status_light
+  id: 88f342a47e2fa6aa14bf3d365a361695
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-status_light
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Status light
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: switch.family_room_touch_controls
+  id: 4b14d680f01f12b1be79f5cb5630a58e
+  platform: sonos
+  unique_id: RINCON_74CA6074823801400-buttons_enabled
+  device_id: 3fa21279b11d93f2c50b415738c000d1
+  original_name: Touch controls
+  aliases:
+  - null
+  disabled_by: integration
 - entity_id: switch.family_room_tv_autoplay
   id: 4cda1cdc3dfeb192fd206702beea017e
   platform: sonos
@@ -5367,6 +4652,46 @@
   options:
     conversation:
       should_expose: false
+- entity_id: switch.living_room_crossfade
+  id: 43af5cdfbe4dab9d0c08e57a69104213
+  platform: sonos
+  unique_id: RINCON_74CA607E2D9601400-cross_fade
+  device_id: cced51bd056667be1707cc84fabdc326
+  original_name: Crossfade
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: switch.living_room_loudness
+  id: 56559a962a40d857f52a5f1652ddb622
+  platform: sonos
+  unique_id: RINCON_74CA607E2D9601400-loudness
+  device_id: cced51bd056667be1707cc84fabdc326
+  original_name: Loudness
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: switch.living_room_status_light
+  id: 12d771e99ced92eae77f708b51e95bad
+  platform: sonos
+  unique_id: RINCON_74CA607E2D9601400-status_light
+  device_id: cced51bd056667be1707cc84fabdc326
+  original_name: Status light
+  aliases:
+  - null
+  disabled_by: integration
+- entity_id: switch.living_room_touch_controls
+  id: 393cd40272948da034c8185aa52d474a
+  platform: sonos
+  unique_id: RINCON_74CA607E2D9601400-buttons_enabled
+  device_id: cced51bd056667be1707cc84fabdc326
+  original_name: Touch controls
+  aliases:
+  - null
+  disabled_by: integration
 - entity_id: switch.living_room_tv_autoplay
   id: a5231442cf263f0b8977592a79b7fc92
   platform: sonos
@@ -5397,18 +4722,6 @@
   aliases:
   - null
   disabled_by: integration
-- entity_id: switch.mini_human_breath_sensor_distance_tracking
-  id: 366a128d3794aad05a615246c7d7e6c4
-  platform: zha
-  unique_id: a4:c1:38:65:8e:a4:29:94-1-distance_tracking
-  device_id: c44e74ae9b13879fe054ffd909b1c6d3
-  original_name: Distance tracking
-  aliases:
-  - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: false
 - entity_id: switch.mosquitto_broker
   id: f874441bcbd81d14c23e8b1221803b26
   platform: hassio
@@ -5435,91 +4748,22 @@
   aliases:
   - null
   disabled_by: integration
+- entity_id: switch.office_presence_sensor_find_switch
+  id: 1b42b5fd4c242e17e38cf82409ffc8b9
+  platform: mqtt
+  unique_id: 0xa4c138658ea42994_switch_find_switch_zigbee2mqtt
+  device_id: 94d587e8bee0564ab127389bf82b697f
+  original_name: Find switch
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: true
 - entity_id: switch.terminal_ssh
   id: 10250ee7d1afffde747bccf6a65e15e3
   platform: hassio
   unique_id: core_ssh_state
   device_id: 785a89b4d96341dc55fe1e62180c498d
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: switch.unnamed_room_crossfade
-  id: 43af5cdfbe4dab9d0c08e57a69104213
-  platform: sonos
-  unique_id: RINCON_74CA607E2D9601400-cross_fade
-  device_id: cced51bd056667be1707cc84fabdc326
-  original_name: Crossfade
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: switch.unnamed_room_crossfade_2
-  id: 4ea5a8594b958523ca8e62a8be9fa383
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-cross_fade
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Crossfade
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: switch.unnamed_room_loudness
-  id: 56559a962a40d857f52a5f1652ddb622
-  platform: sonos
-  unique_id: RINCON_74CA607E2D9601400-loudness
-  device_id: cced51bd056667be1707cc84fabdc326
-  original_name: Loudness
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: switch.unnamed_room_loudness_2
-  id: f3f48795dcc0903835131eee8d3b2bea
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-loudness
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Loudness
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: switch.unnamed_room_status_light
-  id: 12d771e99ced92eae77f708b51e95bad
-  platform: sonos
-  unique_id: RINCON_74CA607E2D9601400-status_light
-  device_id: cced51bd056667be1707cc84fabdc326
-  original_name: Status light
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: switch.unnamed_room_status_light_2
-  id: 88f342a47e2fa6aa14bf3d365a361695
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-status_light
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Status light
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: switch.unnamed_room_touch_controls
-  id: 393cd40272948da034c8185aa52d474a
-  platform: sonos
-  unique_id: RINCON_74CA607E2D9601400-buttons_enabled
-  device_id: cced51bd056667be1707cc84fabdc326
-  original_name: Touch controls
-  aliases:
-  - null
-  disabled_by: integration
-- entity_id: switch.unnamed_room_touch_controls_2
-  id: 4b14d680f01f12b1be79f5cb5630a58e
-  platform: sonos
-  unique_id: RINCON_74CA6074823801400-buttons_enabled
-  device_id: 3fa21279b11d93f2c50b415738c000d1
-  original_name: Touch controls
   aliases:
   - null
   disabled_by: integration
@@ -5584,36 +4828,6 @@
   options:
     conversation:
       should_expose: false
-- entity_id: update.0x001788010d1935a6
-  id: d4b16a9025b0509fe1ef5e76b74355b2
-  platform: mqtt
-  unique_id: 0x001788010d1935a6_update_zigbee2mqtt
-  device_id: 2f924b1cbf55792a4c859a3c21f2a6bb
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: update.0x08fd52fffe5ea498
-  id: 43e4e7cd20ae0d9722ef92ce63e9f145
-  platform: mqtt
-  unique_id: 0x08fd52fffe5ea498_update_zigbee2mqtt
-  device_id: 5f0c36bbc73fcc5d55638b8304dddc7f
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: update.0x08fd52fffe6ed25e
-  id: af6333f313918b41d45f9fe8f5be0632
-  platform: mqtt
-  unique_id: 0x08fd52fffe6ed25e_update_zigbee2mqtt
-  device_id: 4932e8a2eb71479b6d54d6bf0c7f741b
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
 - entity_id: update.0x08fd52fffef625db
   id: bc8f3edf5dd7ea161e4219d2f0b87afe
   platform: mqtt
@@ -5634,31 +4848,11 @@
   options:
     conversation:
       should_expose: false
-- entity_id: update.0x348d13fffe292f95
-  id: 91bc97b5913b7166371696a34505062e
-  platform: mqtt
-  unique_id: 0x348d13fffe292f95_update_zigbee2mqtt
-  device_id: 6ceb3f4cd0a1177be4b2430e1d19fcbd
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
 - entity_id: update.0x348d13fffec87b72
   id: 7324989d1a36c7f213d8c9371b2b7274
   platform: mqtt
   unique_id: 0x348d13fffec87b72_update_zigbee2mqtt
   device_id: b948af30eeafe78066f7ce155cc9f024
-  aliases:
-  - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: update.0x781c9dfffe0b2d4a
-  id: ec17aa23e1df24631a343513e8c4026c
-  platform: mqtt
-  unique_id: 0x781c9dfffe0b2d4a_update_zigbee2mqtt
-  device_id: b255da3e41234ae2845e5e0f208c58be
   aliases:
   - null
   options:
@@ -5685,6 +4879,16 @@
   options:
     conversation:
       should_expose: false
+- entity_id: update.bedroom_switch
+  id: af6333f313918b41d45f9fe8f5be0632
+  platform: mqtt
+  unique_id: 0x08fd52fffe6ed25e_update_zigbee2mqtt
+  device_id: 4932e8a2eb71479b6d54d6bf0c7f741b
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
 - entity_id: update.chrisinas_dsm_update
   id: 7b3acf18af628d4cae27a7d4a0678b67
   platform: synology_dsm
@@ -5693,18 +4897,6 @@
   original_name: DSM update
   aliases:
   - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: update.ewelink_snzb_02p_firmware
-  id: 38b973d6e07bc82e779c4e754fab900f
-  platform: zha
-  unique_id: 44:9f:da:ff:fe:22:3f:61-1-25-firmware_update
-  device_id: 97a9c3baa82059499e0d3916140049bf
-  original_name: Firmware
-  aliases:
-  - null
-  disabled_by: config_entry
   options:
     conversation:
       should_expose: false
@@ -5725,6 +4917,16 @@
   unique_id: '172733314'
   device_id: 2e4e14f62bc92a7c076dcd1966a9be36
   original_name: Update
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: update.hallway_light
+  id: ec17aa23e1df24631a343513e8c4026c
+  platform: mqtt
+  unique_id: 0x781c9dfffe0b2d4a_update_zigbee2mqtt
+  device_id: b255da3e41234ae2845e5e0f208c58be
   aliases:
   - null
   options:
@@ -5763,15 +4965,23 @@
   options:
     conversation:
       should_expose: false
-- entity_id: update.lumi_lumi_vibration_aq1_firmware
-  id: 77b96eabdde40938001fc5f37f8f3e41
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c1:c1:e1-1-25-firmware_update
-  device_id: 630c86f08f09182876d35b1ef4f35e05
-  original_name: Firmware
+- entity_id: update.ikea_air_quality_sensor
+  id: 91bc97b5913b7166371696a34505062e
+  platform: mqtt
+  unique_id: 0x348d13fffe292f95_update_zigbee2mqtt
+  device_id: 6ceb3f4cd0a1177be4b2430e1d19fcbd
   aliases:
   - null
-  disabled_by: config_entry
+  options:
+    conversation:
+      should_expose: false
+- entity_id: update.living_room_switch
+  id: 43e4e7cd20ae0d9722ef92ce63e9f145
+  platform: mqtt
+  unique_id: 0x08fd52fffe5ea498_update_zigbee2mqtt
+  device_id: 5f0c36bbc73fcc5d55638b8304dddc7f
+  aliases:
+  - null
   options:
     conversation:
       should_expose: false
@@ -5783,18 +4993,6 @@
   original_name: Update
   aliases:
   - null
-  options:
-    conversation:
-      should_expose: false
-- entity_id: update.mini_human_breath_sensor_firmware
-  id: 4bc958585efa9be8ab969a0dd416fd7e
-  platform: zha
-  unique_id: a4:c1:38:65:8e:a4:29:94-1-25-firmware_update
-  device_id: c44e74ae9b13879fe054ffd909b1c6d3
-  original_name: Firmware
-  aliases:
-  - null
-  disabled_by: config_entry
   options:
     conversation:
       should_expose: false
@@ -5831,27 +5029,13 @@
   options:
     conversation:
       should_expose: false
-- entity_id: update.philips_915005997201_firmware
-  id: 04402b094aa8af3487e4551e8d14e70b
-  platform: zha
-  unique_id: 00:17:88:01:0d:19:35:a6-11-25-firmware_update
-  device_id: 2a22955ad018b004d424708693511668
-  original_name: Firmware
+- entity_id: update.office_ceiling_light
+  id: d4b16a9025b0509fe1ef5e76b74355b2
+  platform: mqtt
+  unique_id: 0x001788010d1935a6_update_zigbee2mqtt
+  device_id: 2f924b1cbf55792a4c859a3c21f2a6bb
   aliases:
   - null
-  disabled_by: config_entry
-  options:
-    conversation:
-      should_expose: false
-- entity_id: update.quara_motion_sensor_stube_firmware
-  id: f7204a048ce6189507fbc165e360c7d6
-  platform: zha
-  unique_id: 00:15:8d:00:8b:c3:cf:df-1-25-firmware_update
-  device_id: c67af7688b444ce25d186725d4d51f3a
-  original_name: Firmware
-  aliases:
-  - null
-  disabled_by: config_entry
   options:
     conversation:
       should_expose: false

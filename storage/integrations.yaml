@@ -81,14 +81,6 @@
   state: loaded
   pref_disable_new_entities: false
   pref_disable_polling: false
-- domain: homekit
-  title: HASS Bridge:21064
-  entry_id: 01KDB0ZMN46PR6RWWSK88Q68M1
-  source: user
-  state: not_loaded
-  disabled_by: user
-  pref_disable_new_entities: false
-  pref_disable_polling: false
 - domain: hue
   title: Hue Bridge 0017882b562f
   entry_id: 01KABBQJ3DBNBDRET798T1S8FR
@@ -178,13 +170,5 @@
   entry_id: 01KRG0B2ZVX53QSF0047P8W28C
   source: zeroconf
   state: loaded
-  pref_disable_new_entities: false
-  pref_disable_polling: false
-- domain: zha
-  title: Sonoff Zigbee 3.0 USB Dongle Plus
-  entry_id: 01KCPCYF8X1V4HSBK77R147ZJX
-  source: usb
-  state: not_loaded
-  disabled_by: user
   pref_disable_new_entities: false
   pref_disable_polling: false

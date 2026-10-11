@@ -58,7 +58,7 @@ addons:
   slug: 45df7312_zigbee2mqtt
   repository: 45df7312
   version: 2.14.2-1
-  state: error
+  state: started
   boot: auto
   auto_update: true
   watchdog: true

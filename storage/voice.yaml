@@ -1,43 +1,35 @@
 exposed_entities:
-  binary_sensor.quara_motion_sensor_stube:
-    conversation: true
-  light.0x001788010d1935a6:
-    conversation: true
-  light.0x781c9dfffe0b2d4a:
-    conversation: true
-  light.0xa4c1388268bc795d:
+  light.bed_light_strip:
     conversation: true
   light.entire_home:
     conversation: true
-  light.ewelight_zb_dl01:
+  light.gym_ceiling_light:
+    conversation: true
+  light.hallway_light:
     conversation: true
   light.hue_color_lamp_1:
+    conversation: true
+  light.living_room_ceiling_light:
+    conversation: true
+  light.office_ceiling_light:
     conversation: true
   light.pfuus_lampe:
     conversation: true
   light.pfuusruum:
     conversation: true
-  light.philips_915005997201:
-    conversation: true
-  light.sport_zimmer:
-    conversation: true
   light.sportzimmer:
-    conversation: true
-  light.stubaaaa:
     conversation: true
   light.stube:
     conversation: true
+  media_player.family_room:
+    conversation: true
   media_player.kitchen:
     conversation: true
-  media_player.kitchen_2:
+  media_player.kitchen_homepod:
+    conversation: true
+  media_player.living_room:
     conversation: true
   media_player.shitpod:
-    conversation: true
-  media_player.unnamed_room:
-    conversation: true
-  media_player.unnamed_room_2:
-    conversation: true
-  scene.chill_out_eveninf:
     conversation: true
   scene.entire_home_arise:
     conversation: true
@@ -58,6 +50,8 @@ exposed_entities:
   scene.entire_home_storybook:
     conversation: true
   scene.entire_home_unwind:
+    conversation: true
+  scene.living_room_chill_evening:
     conversation: true
   scene.sportzimmer_concentrate:
     conversation: true
@@ -83,45 +77,29 @@ exposed_entities:
     conversation: true
   scene.stube_unwind:
     conversation: true
-  sensor.0x348d13fffe292f95_humidity:
+  sensor.euphorbia_leuconeura_humidity:
     conversation: true
-  sensor.0x348d13fffe292f95_pm25:
-    conversation: true
-  sensor.0x348d13fffe292f95_temperature:
-    conversation: true
-  sensor.0xa4c1380d6560c17f_humidity:
-    conversation: true
-  sensor.0xa4c1380d6560c17f_temperature:
-    conversation: true
-  sensor.0xa4c13837fc018338_humidity:
-    conversation: true
-  sensor.0xa4c13837fc018338_temperature:
-    conversation: true
-  sensor.0xa4c138a59afc575f_humidity:
-    conversation: true
-  sensor.0xa4c138a59afc575f_temperature:
+  sensor.euphorbia_leuconeura_temperature:
     conversation: true
   sensor.euphorbia_soil:
     conversation: true
-  sensor.ewelink_snzb_02p_humidity:
+  sensor.ikea_air_quality_sensor_humidity:
     conversation: true
-  sensor.ewelink_snzb_02p_temperature:
+  sensor.ikea_air_quality_sensor_pm25:
     conversation: true
-  sensor.hobeian_zg_303z_humidity:
+  sensor.ikea_air_quality_sensor_temperature:
     conversation: true
-  sensor.hobeian_zg_303z_humidity_2:
-    conversation: true
-  sensor.hobeian_zg_303z_humidity_3:
-    conversation: true
-  sensor.hobeian_zg_303z_temperature:
-    conversation: true
-  sensor.hobeian_zg_303z_temperature_2:
-    conversation: true
-  sensor.hobeian_zg_303z_temperature_3:
+  sensor.schlumbergera_humidity:
     conversation: true
   sensor.schlumbergera_soil:
     conversation: true
+  sensor.schlumbergera_temperature:
+    conversation: true
+  sensor.strelitzia_humidity:
+    conversation: true
   sensor.strelitzia_soil:
+    conversation: true
+  sensor.strelitzia_temperature:
     conversation: true
   switch.0x08fd52fffef625db:
     conversation: true
@@ -131,15 +109,15 @@ exposed_entities:
     conversation: true
   switch.0xa4c1383be574225a_indicator:
     conversation: true
-  switch.0xa4c138658ea42994_find_switch:
-    conversation: true
-  switch.0xa4c1388268bc795d_do_not_disturb:
-    conversation: true
   switch.0xa4c138e5d4f73afa:
     conversation: true
   switch.0xa4c138e5d4f73afa_reverse:
     conversation: true
   switch.0xa4c138e5d4f73afa_touch:
+    conversation: true
+  switch.bed_light_strip_do_not_disturb:
+    conversation: true
+  switch.office_presence_sensor_find_switch:
     conversation: true
   switch.zigbee2mqtt_bridge_permit_join:
     conversation: true
