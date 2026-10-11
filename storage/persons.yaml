@@ -1,0 +1,6 @@
+- id: chris
+  name: Chris
+  user_id: 5619ba7947e54c0db87cf65af26e3ab5
+  device_trackers:
+  - device_tracker.christophers_iphone
+  - device_tracker.iphone_von_kim

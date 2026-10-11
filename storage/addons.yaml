@@ -1,0 +1,126 @@
+repositories:
+- name: 'Home Assistant App: Zigbee2MQTT'
+  slug: 45df7312
+  source: https://github.com/zigbee2mqtt/hassio-zigbee2mqtt
+- name: ESPHome
+  slug: 5c53de3b
+  source: https://github.com/esphome/home-assistant-addon
+- name: Music Assistant
+  slug: d5369777
+  source: https://github.com/music-assistant/home-assistant-addon
+- name: Home Assistant Community Apps
+  slug: a0d7b954
+  source: https://github.com/hassio-addons/repository
+addons:
+- name: File editor
+  slug: core_configurator
+  repository: core
+  version: 6.2.0
+  state: started
+  boot: auto
+  auto_update: false
+  watchdog: false
+  options:
+    dirsfirst: false
+    enforce_basepath: true
+    git: true
+    ignore_pattern:
+    - __pycache__
+    - .cloud
+    - .storage
+    - deps
+    log_level: info
+    ssh_keys: []
+- name: Mosquitto broker
+  slug: core_mosquitto
+  repository: core
+  version: 7.1.1
+  state: started
+  boot: auto
+  auto_update: false
+  watchdog: true
+  network:
+    1883/tcp: 1883
+    1884/tcp: 1884
+    8883/tcp: 8883
+    8884/tcp: 8884
+  options:
+    logins: []
+    log_dest: []
+    log_type: []
+    require_certificate: <redacted>
+    certfile: <redacted>
+    keyfile: <redacted>
+    customize:
+      active: false
+      folder: mosquitto
+- name: Zigbee2MQTT
+  slug: 45df7312_zigbee2mqtt
+  repository: 45df7312
+  version: 2.14.2-1
+  state: error
+  boot: auto
+  auto_update: true
+  watchdog: true
+  network:
+    8485/tcp: 8485
+    8099/tcp: null
+  options:
+    data_path: /config/zigbee2mqtt
+    socat:
+      enabled: false
+      master: pty,raw,echo=0,link=/tmp/ttyZ2M,mode=777
+      slave: tcp-listen:8485,keepalive,nodelay,reuseaddr,keepidle=1,keepintvl=1,keepcnt=5
+      options: -d -d
+      log: false
+    mqtt:
+      server: mqtt://core-mosquitto
+      user: chris
+      password: <redacted>
+    serial:
+      port: /dev/serial/by-id/usb-ITead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_483ff5da099eef11a0b0cba661ce3355-if00-port0
+      adapter: zstack
+- name: Matter Server
+  slug: core_matter_server
+  repository: core
+  version: 9.2.0
+  state: started
+  boot: auto
+  auto_update: false
+  watchdog: false
+  network:
+    5580/tcp: null
+  options:
+    log_level: info
+    beta: false
+    enable_test_net_dcl: false
+    time_sync: auto
+- name: Terminal & SSH
+  slug: core_ssh
+  repository: core
+  version: 10.5.0
+  state: started
+  boot: auto
+  auto_update: true
+  watchdog: false
+  network:
+    22/tcp: null
+  options:
+    authorized_keys: []
+    password: ''
+    apks: []
+    server:
+      tcp_forwarding: false
+- name: AirSonos
+  slug: a0d7b954_airsonos
+  repository: a0d7b954
+  version: 5.2.3
+  state: stopped
+  boot: auto
+  auto_update: false
+  watchdog: false
+  options:
+    port: 49152
+    latency_rtp: 1000
+    latency_http: 2000
+    drift: false

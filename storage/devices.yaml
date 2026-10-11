@@ -1,0 +1,895 @@
+- id: 750a55b4dd4545a6c05353845c3e1ba2
+  name: Kitchen (2)
+  manufacturer: Apple
+  model: HomePod Mini
+  integrations:
+  - apple_tv
+  area_id: kitchen_2
+  identifiers:
+  - - apple_tv
+    - D6:9D:83:9C:7E:34
+  connections:
+  - - mac
+    - d6:9d:83:9c:7e:34
+- id: e9d89cb1bdfcf4f33aa76611971e9d82
+  name: ShitPod
+  manufacturer: Apple
+  model: HomePod Mini
+  integrations:
+  - apple_tv
+  area_id: entire_home
+  identifiers:
+  - - apple_tv
+    - 72:41:DA:17:E6:73
+  connections:
+  - - mac
+    - 72:41:da:17:e6:73
+- id: 94c725deb1a9c20311299f6b957d39ed
+  name: Backup
+  manufacturer: Home Assistant
+  model: Home Assistant Backup
+  integrations:
+  - backup
+  identifiers:
+  - - backup
+    - backup_manager
+- id: 28443d99536d0379e27130fd3787e186
+  name: Google Translate en com
+  manufacturer: Google
+  model: Google Translate TTS
+  integrations:
+  - google_translate
+  identifiers:
+  - - google_translate
+    - 01KABB8AJJFBGA8CMZZVHTMH1J
+- id: 2e4e14f62bc92a7c076dcd1966a9be36
+  name: HACS
+  manufacturer: hacs.xyz
+  integrations:
+  - hacs
+  identifiers:
+  - - hacs
+    - 0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd
+- id: 3f08de5a414052615bcd50ae90f5f2ca
+  name: Mushroom
+  manufacturer: piitaya
+  model: plugin
+  integrations:
+  - hacs
+  identifiers:
+  - - hacs
+    - '444350375'
+- id: b15a92f49da800beb427344340b0a543
+  name: Mushroom Themes
+  manufacturer: piitaya
+  model: theme
+  integrations:
+  - hacs
+  identifiers:
+  - - hacs
+    - '456201687'
+- id: 331634acb2fa9da4d7aa5ead1479b6ab
+  name: AirSonos
+  manufacturer: Home Assistant Community Apps
+  model: Home Assistant App
+  integrations:
+  - hassio
+  identifiers:
+  - - hassio
+    - a0d7b954_airsonos
+- id: 2466309d997fced29842321fda5a64fc
+  name: File editor
+  manufacturer: Official apps
+  model: Home Assistant App
+  integrations:
+  - hassio
+  identifiers:
+  - - hassio
+    - core_configurator
+- id: c6261b2c5605b22daed02aec94e697b5
+  name: Home Assistant Core
+  manufacturer: Home Assistant
+  model: Home Assistant Core
+  integrations:
+  - hassio
+  identifiers:
+  - - hassio
+    - core
+- id: 2649319b58a2bc23b97fedcbe5d9572b
+  name: Home Assistant Host
+  manufacturer: Home Assistant
+  model: Home Assistant Host
+  integrations:
+  - hassio
+  identifiers:
+  - - hassio
+    - host
+- id: 840df2a2efeb9f9e9465120d28ab08d6
+  name: Home Assistant Operating System
+  manufacturer: Home Assistant
+  model: Home Assistant Operating System
+  integrations:
+  - hassio
+  identifiers:
+  - - hassio
+    - OS
+- id: 2c78bb437e52d3a3e6dd1372cc57844c
+  name: Home Assistant Supervisor
+  manufacturer: Home Assistant
+  model: Home Assistant Supervisor
+  integrations:
+  - hassio
+  identifiers:
+  - - hassio
+    - supervisor
+- id: 0b982df585cec63e99f98a52110d969d
+  name: Matter Server
+  manufacturer: Official apps
+  model: Home Assistant App
+  integrations:
+  - hassio
+  identifiers:
+  - - hassio
+    - core_matter_server
+- id: f01332d56d9a037d3928d9c4ffa8c38b
+  name: Mosquitto broker
+  manufacturer: Official apps
+  model: Home Assistant App
+  integrations:
+  - hassio
+  identifiers:
+  - - hassio
+    - core_mosquitto
+- id: 785a89b4d96341dc55fe1e62180c498d
+  name: Terminal & SSH
+  manufacturer: Official apps
+  model: Home Assistant App
+  integrations:
+  - hassio
+  identifiers:
+  - - hassio
+    - core_ssh
+- id: 1d5167c57d1844ba4c7dfeccc0dca093
+  name: Zigbee2MQTT
+  manufacturer: 'Home Assistant App: Zigbee2MQTT'
+  model: Home Assistant App
+  integrations:
+  - hassio
+  identifiers:
+  - - hassio
+    - 45df7312_zigbee2mqtt
+- id: 17add18ed2e50019b86accf806cb28ed
+  name: HASS Bridge A3:21066
+  name_by_user: Light Bridge
+  manufacturer: Home Assistant
+  model: HomeBridge
+  integrations:
+  - homekit
+  identifiers:
+  - - homekit
+    - 01KDB6S4JZEP6YKMWD1SKN26D3
+    - homekit.bridge
+  connections:
+  - - mac
+    - 6e:1e:ff:b6:c3:94
+- id: 9c92af3ad2aea70fcfdf531756bd6eb2
+  name: HASS Bridge G8:21067
+  name_by_user: Switch Bridge
+  manufacturer: Home Assistant
+  model: HomeBridge
+  integrations:
+  - homekit
+  identifiers:
+  - - homekit
+    - 01KDGW9PHKCC0ER4WK2C15P8SV
+    - homekit.bridge
+  connections:
+  - - mac
+    - 8b:67:37:7a:f7:61
+- id: 2c620cd83d532a0b53c6c3329a668e07
+  name: HASS Bridge WY:21065
+  name_by_user: Sensor Bridge
+  manufacturer: Home Assistant
+  model: HomeBridge
+  integrations:
+  - homekit
+  identifiers:
+  - - homekit
+    - 01KDB3B36VTF8ENC0PHY51WQD7
+    - homekit.bridge
+  connections:
+  - - mac
+    - c7:0c:3b:e6:e6:33
+- id: c3fb476c1e49c68096b84c94b5d99dba
+  name: HASS Bridge:21064
+  name_by_user: Apple Bridge
+  manufacturer: Home Assistant
+  model: HomeBridge
+  integrations:
+  - homekit
+  disabled_by: config_entry
+  identifiers:
+  - - homekit
+    - 01KDB0ZMN46PR6RWWSK88Q68M1
+    - homekit.bridge
+  connections:
+  - - mac
+    - 53:6d:dd:0e:97:cf
+- id: 82e9daff3a4d3489e525d9feeec834ce
+  name: Büro
+  manufacturer: Signify Netherlands B.V.
+  model: Room
+  integrations:
+  - hue
+  area_id: buro
+  identifiers:
+  - - hue
+    - 99532490-cf6f-4bba-b838-5ed1fe265881
+  via_device_id: 0c7cbc97987734d03b73fa863d2204e9
+- id: 0c75907c3aa885f6e0fb1d67ea4330a3
+  name: Entire Home
+  manufacturer: Signify Netherlands B.V.
+  model: Zone
+  integrations:
+  - hue
+  identifiers:
+  - - hue
+    - 1f4b779d-8169-4753-8add-520cca2f7ab5
+  via_device_id: 0c7cbc97987734d03b73fa863d2204e9
+- id: 0c7cbc97987734d03b73fa863d2204e9
+  name: Hue Bridge
+  manufacturer: Signify Netherlands B.V.
+  model: Hue Bridge
+  integrations:
+  - hue
+  identifiers:
+  - - hue
+    - 001788fffe2b562f
+  - - hue
+    - 5f8d718b-7354-4090-8fd0-5e09fedfa5aa
+  connections:
+  - - mac
+    - 00:17:88:2b:56:2f
+  - - mac
+    - 00:17:88:01:01:6b:56:2f
+- id: 15ccfc9d46c265620164e67a866465ca
+  name: Hue dimmer switch 1
+  manufacturer: Signify Netherlands B.V.
+  model: Hue dimmer switch
+  integrations:
+  - hue
+  identifiers:
+  - - hue
+    - ea3d50e3-0433-4182-99bb-a6a16b9d7482
+  connections:
+  - - mac
+    - 00:17:88:01:0b:d8:1d:3f
+  via_device_id: 0c7cbc97987734d03b73fa863d2204e9
+- id: 9aacc95b244d81c075f23584cb921cab
+  name: Hue dimmer switch 2
+  manufacturer: Signify Netherlands B.V.
+  model: Hue dimmer switch
+  integrations:
+  - hue
+  area_id: sportzimmer
+  identifiers:
+  - - hue
+    - 82cb3931-3d3e-4c62-aea9-59d9017af1e7
+  connections:
+  - - mac
+    - 00:17:88:01:0b:d8:17:75
+  via_device_id: 0c7cbc97987734d03b73fa863d2204e9
+- id: 73002c26ad3b5417145e1577fd48e3b3
+  name: Niconic
+  manufacturer: Signify Netherlands B.V.
+  model: Hue color lamp
+  integrations:
+  - hue
+  identifiers:
+  - - hue
+    - 9686288f-2878-430a-82ce-c46942d7223c
+  connections:
+  - - mac
+    - 00:17:88:01:0e:1d:4b:e9
+  via_device_id: 0c7cbc97987734d03b73fa863d2204e9
+- id: c10d0925fe648f52aeda1989ece285f8
+  name: Pfuus lampe
+  manufacturer: Signify Netherlands B.V.
+  model: Hue Iris
+  integrations:
+  - hue
+  area_id: pfuusruum
+  identifiers:
+  - - hue
+    - 40820c1f-109e-4cf3-a4e9-02e41abf62ef
+  connections:
+  - - mac
+    - 00:17:88:01:0b:42:72:6e
+  via_device_id: 0c7cbc97987734d03b73fa863d2204e9
+- id: 996a173713a630309b181bcac52a1c70
+  name: Pfuusruum
+  manufacturer: Signify Netherlands B.V.
+  model: Room
+  integrations:
+  - hue
+  area_id: pfuusruum
+  identifiers:
+  - - hue
+    - 6db3f396-4f9e-4766-98f5-75cf67b16116
+  via_device_id: 0c7cbc97987734d03b73fa863d2204e9
+- id: 220682812dec33e04310aacc0869474b
+  name: Sport zimmer
+  manufacturer: Signify Netherlands B.V.
+  model: Hue Infuse ceiling
+  integrations:
+  - hue
+  area_id: sportzimmer
+  identifiers:
+  - - hue
+    - 2eccf8ea-e1d7-4051-a7eb-1f245eea7dfd
+  connections:
+  - - mac
+    - 00:17:88:01:0d:19:39:e9
+  via_device_id: 0c7cbc97987734d03b73fa863d2204e9
+- id: 096198bfe4d44ee15d957ef3884df204
+  name: Sportzimmer
+  manufacturer: Signify Netherlands B.V.
+  model: Room
+  integrations:
+  - hue
+  area_id: sportzimmer
+  identifiers:
+  - - hue
+    - 71f06323-3053-47bc-a1ec-54280497a329
+  via_device_id: 0c7cbc97987734d03b73fa863d2204e9
+- id: d9566bd1d1db0abbb2f42039381a4492
+  name: Stubaaaa
+  manufacturer: Signify Netherlands B.V.
+  model: Hue Infuse ceiling
+  integrations:
+  - hue
+  area_id: stube
+  identifiers:
+  - - hue
+    - 57d6e023-2343-4018-b4d2-3cad9a399b5f
+  connections:
+  - - mac
+    - 00:17:88:01:0c:bb:3a:33
+  via_device_id: 0c7cbc97987734d03b73fa863d2204e9
+- id: 37f38220a6b9299b68f47f80813259c5
+  name: Stube
+  manufacturer: Signify Netherlands B.V.
+  model: Room
+  integrations:
+  - hue
+  area_id: stube
+  identifiers:
+  - - hue
+    - 0804d1f0-327f-4004-9918-35c47ff80e84
+  via_device_id: 0c7cbc97987734d03b73fa863d2204e9
+- id: cb94fc3dbdd7a6873ebb319d45d4b22c
+  name: HP Color LaserJet MFP M477fdw
+  manufacturer: Hewlett-Packard
+  model: HP Color LaserJet MFP M477fdw
+  integrations:
+  - ipp
+  area_id: buro
+  identifiers:
+  - - ipp
+    - 564e434b-4d32-4832-4242-b00cd1dc77e9
+- id: 7dd520d66932ada68ae3b17148c6334e
+  name: Forecast
+  manufacturer: Met.no
+  model: Forecast
+  integrations:
+  - met
+  identifiers:
+  - - met
+    - 01KABB8BBPRR7J5KVDGARXC789
+- id: be6bc9384ae588e5ab5c98bae2f7b681
+  name: Christopher’s iPhone
+  manufacturer: Apple
+  model: iPhone17,3
+  integrations:
+  - mobile_app
+  identifiers:
+  - - mobile_app
+    - D228E194-8D7F-4B84-BBB7-D166FFA0138B
+- id: 9fbe02152ee433a820831aeb34a5dfe7
+  name: iPhone von Kim
+  manufacturer: Apple
+  model: iPhone17,3
+  integrations:
+  - mobile_app
+  identifiers:
+  - - mobile_app
+    - 280FCD90-5C6C-4083-A9E9-A0B53DB36FEF
+- id: 29818e07a7cfffd81ccff0b9c158498b
+  name: '0x983268fffe011f16'
+  manufacturer: SONOFF
+  model: Zigbee occupancy sensor
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0x983268fffe011f16
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: adb80959cca1f85472517d2b345be0b2
+  name: '0xa4c1383be574225a'
+  manufacturer: Tuya
+  model: 5.8Ghz/24Ghz Human presence sensor
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0xa4c1383be574225a
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: 4ae14dd185cc61fe09c2bd52e6784298
+  name: '0xa4c138e5d4f73afa'
+  manufacturer: Tuya
+  model: Zigbee fingerbot plus
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0xa4c138e5d4f73afa
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: 1da4aea06a675be80f73bc4ba72958f7
+  name: Aqara Button 1
+  manufacturer: Aqara
+  model: Wireless mini switch
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0x00158d008c756210
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: ea3b6a422a3090a0b191f53a41d05ae7
+  name: Bed Light Strip
+  manufacturer: YSRSAI
+  model: Zigbee LED controller (Dimmer)
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0xa4c1388268bc795d
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: 4932e8a2eb71479b6d54d6bf0c7f741b
+  name: Bedroom
+  manufacturer: IKEA
+  model: RODRET wireless dimmer/power switch
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0x08fd52fffe6ed25e
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: f3042e96ab16fbb14c7160b963a42d3a
+  name: Bedroom PIR
+  manufacturer: Aqara
+  model: Motion sensor
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0x00158d008bc3cfdf
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: e94865b48e1bce7a0517a7144ec04f89
+  name: Euphorbia Leuconeura
+  manufacturer: COOLO
+  model: Soil moisture sensor
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0xa4c13837fc018338
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: b255da3e41234ae2845e5e0f208c58be
+  name: Hallway
+  manufacturer: IKEA
+  model: TRADFRI bulb E26/27, white spectrum, globe, opal, 1055/1100/1160 lm
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0x781c9dfffe0b2d4a
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: 3a94836cef7376d31ee03078aabafab4
+  name: Hallway PIR
+  manufacturer: Aqara
+  model: Motion sensor
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0x00158d008bc3d235
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: 6ceb3f4cd0a1177be4b2430e1d19fcbd
+  name: Ikea Air Quality Sensor
+  manufacturer: IKEA
+  model: VINDSTYRKA air quality and humidity sensor
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0x348d13fffe292f95
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: 5f0c36bbc73fcc5d55638b8304dddc7f
+  name: Livingroom
+  manufacturer: IKEA
+  model: RODRET wireless dimmer/power switch
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0x08fd52fffe5ea498
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: 2f924b1cbf55792a4c859a3c21f2a6bb
+  name: Office Ceiling Light
+  manufacturer: Philips
+  model: Hue Bluetooth white & color ambiance ceiling lamp Infuse medium
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0x001788010d1935a6
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: 94d587e8bee0564ab127389bf82b697f
+  name: Office Presence Sensor
+  manufacturer: Tuya
+  model: 24G MmWave radar human presence motion sensor (added distance switch)
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0xa4c138658ea42994
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: 1a3f2426bbfd65a4267221d7db3e28c0
+  name: Remote Plug 1
+  manufacturer: IKEA
+  model: INSPELNING smart plug
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0x08fd52fffef625db
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: b186ec1927ef302182bbaafda0bf1c25
+  name: Schlumbergera
+  manufacturer: COOLO
+  model: Soil moisture sensor
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0xa4c1380d6560c17f
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: b948af30eeafe78066f7ce155cc9f024
+  name: Smart Plug 2
+  manufacturer: IKEA
+  model: INSPELNING smart plug
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0x348d13fffec87b72
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: 3a887255aef80448cdbdc3b65cac09bf
+  name: Smart Plug 3
+  manufacturer: IKEA
+  model: INSPELNING smart plug
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0x180df9fffe10ff75
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: d0b0af193414a58b71edf2888a788ce0
+  name: Strelitzia
+  manufacturer: COOLO
+  model: Soil moisture sensor
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0xa4c138a59afc575f
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: 49490a46208c34189cce08e1a56ba266
+  name: Vibration Sensor
+  manufacturer: Aqara
+  model: Vibration sensor
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_0x00158d008bc1c1e1
+  via_device_id: df944cbd21a76bb4812b1dd4b91ef3ac
+- id: df944cbd21a76bb4812b1dd4b91ef3ac
+  name: Zigbee2MQTT Bridge
+  manufacturer: Zigbee2MQTT
+  model: Bridge
+  integrations:
+  - mqtt
+  identifiers:
+  - - mqtt
+    - zigbee2mqtt_bridge_0x00124b0031dd7675
+- id: 3fa21279b11d93f2c50b415738c000d1
+  name: Family Room
+  manufacturer: Sonos
+  model: Era 100
+  integrations:
+  - sonos
+  area_id: unnamed_room
+  identifiers:
+  - - sonos
+    - RINCON_74CA6074823801400
+  connections:
+  - - upnp
+    - uuid:RINCON_74CA6074823801400
+  - - mac
+    - 74:ca:60:74:82:38
+- id: a5dcc0f594aee238a34c864b42c14642
+  name: Kitchen
+  manufacturer: Sonos
+  model: Era 100
+  integrations:
+  - sonos
+  area_id: kitchen
+  identifiers:
+  - - sonos
+    - RINCON_74CA607E318601400
+  connections:
+  - - upnp
+    - uuid:RINCON_74CA607E318601400
+  - - mac
+    - 74:ca:60:7e:31:86
+- id: cced51bd056667be1707cc84fabdc326
+  name: Living Room
+  name_by_user: Living room
+  manufacturer: Sonos
+  model: Era 100
+  integrations:
+  - sonos
+  area_id: living_room
+  identifiers:
+  - - sonos
+    - RINCON_74CA607E2D9601400
+  connections:
+  - - mac
+    - 74:ca:60:7e:2d:96
+  - - upnp
+    - uuid:RINCON_74CA607E2D9601400
+- id: 2f2ebbe581049ad52cbc631294e52ac0
+  name: Sun
+  integrations:
+  - sun
+  identifiers:
+  - - sun
+    - 01KABB05JJ1ACM4N7JS01RV0QX
+- id: cb3a61298226638b10543b3614dbd36f
+  name: ChrisiNas
+  manufacturer: Synology
+  model: DS920+
+  integrations:
+  - synology_dsm
+  identifiers:
+  - - synology_dsm
+    - 21C0TER3SBBDK
+  connections:
+  - - mac
+    - 90:09:d0:0e:1b:0a
+  - - mac
+    - 90:09:d0:0e:1b:09
+- id: 1ef518a7654ea132d248e76cabfc6e19
+  name: ChrisiNas (Cache device 1)
+  manufacturer: Silicon Motion
+  model: Patriot P300 512GB
+  integrations:
+  - synology_dsm
+  identifiers:
+  - - synology_dsm
+    - 21C0TER3SBBDK_nvme1n1
+  via_device_id: cb3a61298226638b10543b3614dbd36f
+- id: 26f7d7923fe7b2e7fa802c0ebf3dd5fe
+  name: ChrisiNas (Cache device 2)
+  manufacturer: Sandisk
+  model: WDC WDS200T2B0C-00PXH0
+  integrations:
+  - synology_dsm
+  identifiers:
+  - - synology_dsm
+    - 21C0TER3SBBDK_nvme0n1
+  via_device_id: cb3a61298226638b10543b3614dbd36f
+- id: 2871520d23edfb6a2f00bdcd13936107
+  name: ChrisiNas (Drive 1)
+  manufacturer: 'WDC     '
+  model: WD101EFBX-68B0AN0
+  integrations:
+  - synology_dsm
+  identifiers:
+  - - synology_dsm
+    - 21C0TER3SBBDK_sata1
+  via_device_id: cb3a61298226638b10543b3614dbd36f
+- id: e9e2ef62d8a7c8d90451bcdd180ec5a7
+  name: ChrisiNas (Drive 2)
+  manufacturer: Seagate
+  model: ST12000VN0008-2PH103
+  integrations:
+  - synology_dsm
+  identifiers:
+  - - synology_dsm
+    - 21C0TER3SBBDK_sata2
+  via_device_id: cb3a61298226638b10543b3614dbd36f
+- id: 3f20e11708a76c147e90237fc278013b
+  name: ChrisiNas (Volume 1)
+  manufacturer: Synology
+  model: DS920+
+  integrations:
+  - synology_dsm
+  identifiers:
+  - - synology_dsm
+    - 21C0TER3SBBDK_volume_1
+  via_device_id: cb3a61298226638b10543b3614dbd36f
+- id: 17f9a407383c93f3c5a1d5667f5fd38b
+  name: HOBEIAN ZG-303Z
+  name_by_user: Weihnachts Kakti
+  manufacturer: HOBEIAN
+  model: ZG-303Z
+  integrations:
+  - zha
+  area_id: living_room
+  disabled_by: config_entry
+  identifiers:
+  - - zha
+    - a4:c1:38:0d:65:60:c1:7f
+  connections:
+  - - zigbee
+    - a4:c1:38:0d:65:60:c1:7f
+  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
+- id: 94fb0090643249f3eb2a0f2f7185538e
+  name: HOBEIAN ZG-303Z
+  name_by_user: Spucki Palme
+  manufacturer: HOBEIAN
+  model: ZG-303Z
+  integrations:
+  - zha
+  disabled_by: config_entry
+  identifiers:
+  - - zha
+    - a4:c1:38:37:fc:01:83:38
+  connections:
+  - - zigbee
+    - a4:c1:38:37:fc:01:83:38
+  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
+- id: 68f89069e7a7d556992de0c39e5bae3d
+  name: HOBEIAN ZG-303Z
+  name_by_user: Grosse Diva
+  manufacturer: HOBEIAN
+  model: ZG-303Z
+  integrations:
+  - zha
+  disabled_by: config_entry
+  identifiers:
+  - - zha
+    - a4:c1:38:a5:9a:fc:57:5f
+  connections:
+  - - zigbee
+    - a4:c1:38:a5:9a:fc:57:5f
+  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
+- id: d2b2e533e204a416a9dccbe334b09030
+  name: LUMI lumi.remote.b1acn01
+  manufacturer: LUMI
+  model: lumi.remote.b1acn01
+  integrations:
+  - zha
+  disabled_by: config_entry
+  identifiers:
+  - - zha
+    - 00:15:8d:00:8c:75:62:10
+  connections:
+  - - zigbee
+    - 00:15:8d:00:8c:75:62:10
+  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
+- id: c67af7688b444ce25d186725d4d51f3a
+  name: LUMI lumi.sensor_motion.aq2
+  name_by_user: Quara Motion Sensor Stube
+  manufacturer: LUMI
+  model: lumi.sensor_motion.aq2
+  integrations:
+  - zha
+  area_id: stube
+  disabled_by: config_entry
+  identifiers:
+  - - zha
+    - 00:15:8d:00:8b:c3:cf:df
+  connections:
+  - - zigbee
+    - 00:15:8d:00:8b:c3:cf:df
+  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
+- id: 630c86f08f09182876d35b1ef4f35e05
+  name: LUMI lumi.vibration.aq1
+  manufacturer: LUMI
+  model: lumi.vibration.aq1
+  integrations:
+  - zha
+  disabled_by: config_entry
+  identifiers:
+  - - zha
+    - 00:15:8d:00:8b:c1:c1:e1
+  connections:
+  - - zigbee
+    - 00:15:8d:00:8b:c1:c1:e1
+  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
+- id: 2a22955ad018b004d424708693511668
+  name: Philips 915005997201
+  manufacturer: Philips
+  model: '915005997201'
+  integrations:
+  - zha
+  disabled_by: config_entry
+  identifiers:
+  - - zha
+    - 00:17:88:01:0d:19:35:a6
+  connections:
+  - - zigbee
+    - 00:17:88:01:0d:19:35:a6
+  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
+- id: 3ab429f5a9a5266d79c4a4b53e5890b4
+  name: Texas Instruments CC2652
+  manufacturer: Texas Instruments
+  model: CC2652
+  integrations:
+  - zha
+  disabled_by: config_entry
+  identifiers:
+  - - zha
+    - 00:12:4b:00:31:dd:76:75
+  connections:
+  - - zigbee
+    - 00:12:4b:00:31:dd:76:75
+- id: c44e74ae9b13879fe054ffd909b1c6d3
+  name: _TZE204_gkfbdvyx TS0601
+  name_by_user: Mini Human Breath Sensor
+  manufacturer: _TZE204_gkfbdvyx
+  model: TS0601
+  integrations:
+  - zha
+  area_id: stube
+  disabled_by: config_entry
+  identifiers:
+  - - zha
+    - a4:c1:38:65:8e:a4:29:94
+  connections:
+  - - zigbee
+    - a4:c1:38:65:8e:a4:29:94
+  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
+- id: de3bc63edf70aa1496efec6a3d6ecc2e
+  name: eWeLight ZB-DL01
+  name_by_user: Bettlicht
+  manufacturer: eWeLight
+  model: ZB-DL01
+  integrations:
+  - zha
+  area_id: bedroom
+  disabled_by: config_entry
+  identifiers:
+  - - zha
+    - a4:c1:38:82:68:bc:79:5d
+  connections:
+  - - zigbee
+    - a4:c1:38:82:68:bc:79:5d
+  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4
+- id: 97a9c3baa82059499e0d3916140049bf
+  name: eWeLink SNZB-02P
+  manufacturer: eWeLink
+  model: SNZB-02P
+  integrations:
+  - zha
+  disabled_by: config_entry
+  identifiers:
+  - - zha
+    - 44:9f:da:ff:fe:22:3f:61
+  connections:
+  - - zigbee
+    - 44:9f:da:ff:fe:22:3f:61
+  via_device_id: 3ab429f5a9a5266d79c4a4b53e5890b4

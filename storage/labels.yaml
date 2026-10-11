@@ -1,0 +1,8 @@
+- label_id: high_importance_notification
+  name: High Importance Notification
+  color: red
+  icon: mdi:alarm-light
+- label_id: plant_management
+  name: Plant Management
+  color: green
+  icon: mdi:flower-outline

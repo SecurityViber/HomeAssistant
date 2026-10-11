@@ -1,0 +1,12 @@
+- url_path: map
+  title: Map
+  icon: mdi:map
+  mode: storage
+  require_admin: false
+  show_in_sidebar: true
+- url_path: chris-kims-leader-intelligence
+  title: Habitat Control
+  icon: mdi:home
+  mode: storage
+  require_admin: false
+  show_in_sidebar: true

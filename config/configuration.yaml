@@ -1,0 +1,44 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+# ───────── Template Sensoren für Apple Home ─────────
+template:
+  - sensor:
+      - name: "Euphorbia Soil"
+        unique_id: euphorbia_soil_hk
+        device_class: humidity
+        unit_of_measurement: "%"
+        state: >
+          {% set v = states('sensor.0xa4c13837fc018338_soil_moisture') %}
+          {{ (v | float) | round(0) if v not in ['unknown','unavailable','none',''] else 'unknown' }}
+        availability: >
+          {{ states('sensor.0xa4c13837fc018338_soil_moisture') not in ['unknown','unavailable','none',''] }}
+
+      - name: "Schlumbergera Soil"
+        unique_id: schlumbergera_soil_hk
+        device_class: humidity
+        unit_of_measurement: "%"
+        state: >
+          {% set v = states('sensor.0xa4c1380d6560c17f_soil_moisture') %}
+          {{ (v | float) | round(0) if v not in ['unknown','unavailable','none',''] else 'unknown' }}
+        availability: >
+          {{ states('sensor.0xa4c1380d6560c17f_soil_moisture') not in ['unknown','unavailable','none',''] }}
+          
+      - name: "Strelitzia Soil"
+        unique_id: strelitzia_soil_hk
+        device_class: humidity
+        unit_of_measurement: "%"
+        state: >
+          {% set v = states('sensor.0xa4c138a59afc575f_soil_moisture') %}
+          {{ (v | float) | round(0) if v not in ['unknown','unavailable','none',''] else 'unknown' }}
+        availability: >
+          {{ states('sensor.0xa4c138a59afc575f_soil_moisture') not in ['unknown','unavailable','none',''] }}

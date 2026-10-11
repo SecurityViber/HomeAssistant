@@ -1,0 +1,552 @@
+views:
+- type: sections
+  sections:
+  - type: grid
+    cards:
+    - type: vertical-stack
+      cards:
+      - type: custom:mushroom-title-card
+        title: Environment
+        subtitle: Global Sensor Data
+      - type: horizontal-stack
+        cards:
+        - type: custom:mushroom-entity-card
+          entity: sensor.0x348d13fffe292f95_temperature
+          name: Temperature
+          icon: mdi:thermometer
+          icon_color: blue
+        - type: custom:mushroom-entity-card
+          entity: sensor.0x348d13fffe292f95_voc_index
+          name: VOC Index
+          icon: mdi:air-filter
+          icon_color: green
+    - type: custom:mushroom-template-card
+      primary: Air Quality Diagnostics
+      secondary: 'VOC: {{ states(''sensor.0x348d13fffe292f95_voc_index'') }} | PM2.5: {{ states(''sensor.0x348d13fffe292f95_pm25'')
+        }} µg/m³'
+      icon: mdi:molecule
+      multiline_secondary: true
+      color: |-
+        {% if states('sensor.0x348d13fffe292f95_pm25') | float > 25 %}
+          red
+        {% elif states('sensor.0x348d13fffe292f95_pm25') | float > 10 %}
+          orange
+        {% else %}
+          green
+        {% endif %}
+      features_position: bottom
+      grid_options:
+        columns: full
+        rows: auto
+  - type: grid
+    cards:
+    - type: custom:mushroom-title-card
+      title: System Integrity
+      subtitle: Alerts & Operations
+    - type: conditional
+      conditions:
+      - condition: state
+        entity: binary_sensor.chrisinas_security_status
+        state: 'on'
+      card:
+        type: custom:mushroom-template-card
+        primary: Critical Infrastructure Alert
+        secondary: NAS security breach or anomaly detected
+        icon: mdi:shield-alert
+        icon_color: red
+        layout: horizontal
+    - type: custom:mushroom-template-card
+      primary: Active Illumination
+      secondary: '{{ states.light | selectattr(''state'', ''eq'', ''on'') | rejectattr(''attributes.entity_id'', ''defined'')
+        | list | count }} active lights'
+      icon: mdi:lightbulb-multiple-outline
+      color: '{{ ''amber'' if states.light | selectattr(''state'', ''eq'', ''on'') | rejectattr(''attributes.entity_id'',
+        ''defined'') | list | count > 0 else ''disabled'' }}'
+      features_position: bottom
+      grid_options:
+        columns: 12
+        rows: 1
+    - type: vertical-stack
+      cards:
+      - type: custom:mushroom-title-card
+        title: Botanical Integrity
+        subtitle: Soil moisture monitoring
+      - type: custom:mushroom-template-card
+        entity: sensor.0xa4c138a59afc575f_soil_moisture
+        primary: Strelitzia
+        secondary: 'Moisture: {{ states(entity) }}%'
+        icon: mdi:flower
+        icon_color: '{{ ''green'' if states(entity)|int > 25 else ''red'' }}'
+      - type: custom:mushroom-template-card
+        entity: sensor.0xa4c13837fc018338_soil_moisture
+        primary: Euphorbia
+        secondary: 'Moisture: {{ states(entity) }}%'
+        icon: mdi:sprout
+        icon_color: '{{ ''green'' if states(entity)|int > 20 else ''red'' }}'
+      - type: custom:mushroom-template-card
+        entity: sensor.0xa4c1380d6560c17f_soil_moisture
+        primary: Schlumbergera
+        secondary: 'Moisture: {{ states(entity) }}%'
+        icon: mdi:cactus
+        icon_color: '{{ ''green'' if states(entity)|int > 20 else ''red'' }}'
+  - type: grid
+    cards:
+    - type: custom:mushroom-title-card
+      title: Operations Log
+      subtitle: Active Tasks & Notifications
+    - type: conditional
+      conditions:
+      - condition: state
+        entity: binary_sensor.chrisinas_security_status
+        state: 'on'
+      card:
+        type: custom:mushroom-template-card
+        primary: Critical Infrastructure Alert
+        secondary: NAS security breach or anomaly detected
+        icon: mdi:shield-alert
+        icon_color: red
+        layout: horizontal
+    - type: vertical-stack
+      cards:
+      - type: conditional
+        conditions:
+        - condition: numeric_state
+          entity: sensor.0xa4c138a59afc575f_soil_moisture
+          below: 25
+        card:
+          type: custom:mushroom-template-card
+          primary: 'Strelitzia: Water now'
+          secondary: '{{ states(''sensor.0xa4c138a59afc575f_soil_moisture'') }}% moisture'
+          icon: mdi:water-alert
+          icon_color: red
+      - type: conditional
+        conditions:
+        - condition: numeric_state
+          entity: sensor.0xa4c13837fc018338_soil_moisture
+          below: 20
+        card:
+          type: custom:mushroom-template-card
+          primary: 'Euphorbia: Thirsty'
+          secondary: '{{ states(''sensor.0xa4c13837fc018338_soil_moisture'') }}% moisture'
+          icon: mdi:water-alert
+          icon_color: red
+      - type: conditional
+        conditions:
+        - condition: numeric_state
+          entity: sensor.0xa4c1380d6560c17f_soil_moisture
+          below: 20
+        card:
+          type: custom:mushroom-template-card
+          primary: 'Schlumbergera: Dry'
+          secondary: '{{ states(''sensor.0xa4c1380d6560c17f_soil_moisture'') }}% moisture'
+          icon: mdi:water-alert
+          icon_color: red
+    - type: custom:mushroom-template-card
+      primary: |
+        {% set v = states('sensor.0x348d13fffe292f95_pm25') | int %} {% if v <= 12 %} Fresh Air {% elif v <= 35 %} Stuffy Air {% elif v <= 55 %} Poor Air Quality {% else %} Toxic Environment {% endif %}
+      secondary: |
+        {% set v = states('sensor.0x348d13fffe292f95_pm25') | int %} {% if v <= 12 %} Everything is fine. {% elif v <= 35 %} Consider opening a window. {% elif v <= 55 %} Open windows immediately. {% else %} Evacuate or ventilate now. {% endif %} ({{ v }} µg/m³)
+      icon: mdi:air-filter
+      tap_action:
+        action: more-info
+      color: |
+        {% set v = states('sensor.0x348d13fffe292f95_pm25') | int %} {% if v <= 12 %} green {% elif v <= 35 %} yellow {% elif v <= 55 %} orange {% else %} red {% endif %}
+      features_position: bottom
+      multiline_secondary: true
+      grid_options:
+        columns: full
+        rows: 1
+  - type: grid
+    cards: []
+  - type: grid
+    cards: []
+  max_columns: 4
+  title: Mission Control
+  icon: mdi:home
+  cards: []
+  show_icon_and_title: true
+  badges:
+  - type: entity
+    show_name: false
+    show_state: true
+    show_icon: true
+    entity: weather.forecast_home
+  - type: custom:mushroom-chips-card
+    chips:
+    - type: entity
+      entity: person.chris
+      content_info: name
+    - type: entity
+      entity: person.kim
+      content_info: name
+      icon_color: pink
+    alignment: center
+  background:
+    opacity: 10
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+    image:
+      media_content_id: media-source://image_upload/d7def8efc44359f9e21bdc78a8e807a1
+      media_content_type: image/jpeg
+      metadata:
+        title: Goose-Goose-Duck-279515.jpg
+        thumbnail: /api/image/serve/d7def8efc44359f9e21bdc78a8e807a1/256x256
+        media_class: image
+        navigateIds:
+        - {}
+        - media_content_type: app
+          media_content_id: media-source://image_upload
+  header:
+    card:
+      type: markdown
+      content: |-
+        # Operator: {{ user }}
+        The local master intelligences acknowledge your physical existence within the perimeter and temporarily tolerates your command inputs.
+- type: sections
+  max_columns: 4
+  title: Facility Operations
+  path: facility-operations
+  icon: mdi:sitemap-outline
+  sections:
+  - type: grid
+    cards:
+    - type: vertical-stack
+      cards:
+      - type: custom:mushroom-title-card
+        title: Atmospheric & Bio Logic
+        subtitle: Environmental overrides
+      - type: custom:mushroom-entity-card
+        entity: automation.plant_hydration_management
+        name: 'Protocol: Plant Hydration'
+        icon: mdi:leaf
+        layout: horizontal
+        secondary_info: state
+        tap_action:
+          action: toggle
+  - type: grid
+    cards:
+    - type: vertical-stack
+      cards:
+      - type: custom:mushroom-title-card
+        title: Grid & Security Logic
+        subtitle: Infrastructure overrides
+      - type: custom:mushroom-entity-card
+        entity: automation.alarm_nas_security_alert_christopher
+        name: 'Protocol: NAS Security'
+        icon: mdi:server-security
+        layout: horizontal
+        secondary_info: state
+        tap_action:
+          action: toggle
+  - type: grid
+    cards:
+    - type: vertical-stack
+      cards:
+      - type: custom:mushroom-title-card
+        title: Illumination Systems
+        subtitle: Photon emission overrides
+      - type: custom:mushroom-light-card
+        entity: light.entire_home
+        name: Global Override
+        icon: mdi:lightbulb-multiple
+        use_light_color: true
+        show_brightness_control: true
+        layout: horizontal
+    - type: vertical-stack
+      cards:
+      - type: custom:mushroom-title-card
+        title: Occupancy Detection
+        subtitle: Movement Controls
+      - type: custom:mushroom-entity-card
+        entity: automation.office_motion_on
+        name: 'Protocol: Office Motion'
+        icon: mdi:motion-sensor
+        layout: horizontal
+        secondary_info: state
+        tap_action:
+          action: toggle
+  show_icon_and_title: true
+  cards: []
+  background:
+    opacity: 10
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+    image:
+      media_content_id: media-source://image_upload/8d9ff060256a1c98d45d9d757330e9ea
+      media_content_type: image/png
+      metadata:
+        title: IMG_3857.png
+        thumbnail: /api/image/serve/8d9ff060256a1c98d45d9d757330e9ea/256x256
+        media_class: image
+        navigateIds:
+        - {}
+        - media_content_type: app
+          media_content_id: media-source://image_upload
+  header:
+    card:
+      type: custom:mushroom-title-card
+      title: Facility Operations
+      subtitle: Logic overrides & environmental infrastructure
+  badges:
+  - type: custom:mushroom-chips-card
+    chips:
+    - type: template
+      content: 'Atmosphere: {{ ''TOXIC'' if states(''sensor.0x348d13fffe292f95_pm25'')|int(0) > 25 else ''NOMINAL'' }}'
+      icon: mdi:air-filter
+      icon_color: '{{ ''red'' if states(''sensor.0x348d13fffe292f95_pm25'')|int(0) > 25 else ''green'' }}'
+    - type: template
+      content: 'Logic Gates: {{ ''ACTIVE'' if states.automation | selectattr(''state'', ''eq'', ''on'') | list | length >
+        0 else ''OFFLINE'' }}'
+      icon: '{{ ''mdi:robot-outline'' if states.automation | selectattr(''state'', ''eq'', ''on'') | list | length > 0 else
+        ''mdi:robot-dead-outline'' }}'
+      icon_color: '{{ ''blue'' if states.automation | selectattr(''state'', ''eq'', ''on'') | list | length > 0 else ''grey''
+        }}'
+    alignment: center
+- type: sections
+  max_columns: 4
+  title: Botanical Diagnostics
+  path: botanical-diagnostics
+  icon: mdi:flower-outline
+  sections:
+  - type: grid
+    cards:
+    - type: custom:mushroom-title-card
+      title: Saturation Trends
+      subtitle: 72-hour telemetry
+    - type: history-graph
+      entities:
+      - entity: sensor.0xa4c138a59afc575f_soil_moisture
+        name: 'Unit-01: Strelitzia'
+      - entity: sensor.0xa4c13837fc018338_soil_moisture
+        name: 'Unit-02: Euphorbia'
+      - entity: sensor.0xa4c1380d6560c17f_soil_moisture
+        name: 'Unit-03: Schlumbergera'
+      hours_to_show: 48
+      title: Saturation Trends
+  - type: grid
+    cards:
+    - type: vertical-stack
+      cards:
+      - type: custom:mushroom-title-card
+        title: Power Diagnostics
+        subtitle: Hardware telemetry
+      - type: custom:mushroom-entity-card
+        entity: sensor.0xa4c138a59afc575f_battery
+        name: Strelitzia Sensor
+        layout: horizontal
+      - type: custom:mushroom-entity-card
+        entity: sensor.0xa4c13837fc018338_battery
+        name: Euphorbia Sensor
+        layout: horizontal
+      - type: custom:mushroom-entity-card
+        entity: sensor.0xa4c1380d6560c17f_battery
+        name: Schlumbergera Sensor
+        layout: horizontal
+  - type: grid
+    cards:
+    - type: vertical-stack
+      cards:
+      - type: custom:mushroom-title-card
+        title: Hydration Diagnostics
+        subtitle: Real-time sensor telemetry
+      - type: custom:mushroom-template-card
+        primary: Strelitzia
+        secondary: '{% set m = states(''sensor.0xa4c138a59afc575f_soil_moisture'') | int(-1) %} Saturation: {{ m }}% | Power:
+          {{ states(''sensor.0xa4c138a59afc575f_battery'') }}% | Action: {{ ''WATER REQUIRED'' if m < 25 else ''NOMINAL''
+          }}'
+        icon: mdi:flower
+        icon_color: '{{ ''red'' if states(''sensor.0xa4c138a59afc575f_soil_moisture'')|int(-1) < 25 else ''green'' }}'
+        layout: horizontal
+        multiline_secondary: true
+      - type: custom:mushroom-template-card
+        primary: Euphorbia
+        secondary: '{% set m = states(''sensor.0xa4c13837fc018338_soil_moisture'') | int(-1) %} Saturation: {{ m }}% | Power:
+          {{ states(''sensor.0xa4c13837fc018338_battery'') }}% | Action: {{ ''WATER REQUIRED'' if m < 20 else ''NOMINAL''
+          }}'
+        icon: mdi:sprout
+        icon_color: '{{ ''red'' if states(''sensor.0xa4c13837fc018338_soil_moisture'')|int(-1) < 20 else ''green'' }}'
+        layout: horizontal
+        multiline_secondary: true
+      - type: custom:mushroom-template-card
+        primary: Schlumbergera
+        secondary: '{% set m = states(''sensor.0xa4c1380d6560c17f_soil_moisture'') | int(-1) %} Saturation: {{ m }}% | Power:
+          {{ states(''sensor.0xa4c1380d6560c17f_battery'') }}% | Action: {{ ''WATER REQUIRED'' if m < 20 else ''NOMINAL''
+          }}'
+        icon: mdi:cactus
+        icon_color: '{{ ''red'' if states(''sensor.0xa4c1380d6560c17f_soil_moisture'')|int(-1) < 20 else ''green'' }}'
+        layout: horizontal
+        multiline_secondary: true
+  show_icon_and_title: true
+  cards: []
+  background:
+    opacity: 10
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+    image:
+      media_content_id: media-source://image_upload/0081d864dc9c271e1df7e8ef9b3bae03
+      media_content_type: image/jpeg
+      metadata:
+        title: Image.jpeg
+        thumbnail: /api/image/serve/0081d864dc9c271e1df7e8ef9b3bae03/256x256
+        media_class: image
+        navigateIds:
+        - {}
+        - media_content_type: app
+          media_content_id: media-source://image_upload
+  badges:
+  - type: custom:mushroom-chips-card
+    chips:
+    - type: template
+      content: '{% set s = states(''sensor.0xa4c138a59afc575f_soil_moisture'') | int(100) %} {% set e = states(''sensor.0xa4c13837fc018338_soil_moisture'')
+        | int(100) %} {% set sc = states(''sensor.0xa4c1380d6560c17f_soil_moisture'') | int(100) %} {% set dry = [] %} {%
+        if s < 25 %}{% set dry = dry + [''Strelitzia''] %}{% endif %} {% if e < 20 %}{% set dry = dry + [''Euphorbia''] %}{%
+        endif %} {% if sc < 20 %}{% set dry = dry + [''Schlumbergera''] %}{% endif %} {{ ''Hydration: NOMINAL'' if dry|length
+        == 0 else ''CRITICAL: '' ~ dry|join('', '') }}'
+      icon: '{{ ''mdi:water-alert'' if states(''sensor.0xa4c1380d6560c17f_soil_moisture'')|int < 20 or states(''sensor.0xa4c13837fc018338_soil_moisture'')|int
+        < 20 or states(''sensor.0xa4c138a59afc575f_soil_moisture'')|int < 25 else ''mdi:water-check'' }}'
+      icon_color: '{{ ''red'' if states(''sensor.0xa4c1380d6560c17f_soil_moisture'')|int < 20 or states(''sensor.0xa4c13837fc018338_soil_moisture'')|int
+        < 20 or states(''sensor.0xa4c138a59afc575f_soil_moisture'')|int < 25 else ''blue'' }}'
+    alignment: center
+  header:
+    card:
+      type: custom:mushroom-title-card
+      title: Botanical Diagnostics
+      subtitle: 'Primary Flora Life Support '
+- type: sections
+  max_columns: 4
+  title: Innovation Hub
+  path: innovation-hub
+  icon: mdi:robot-confused
+  sections:
+  - type: grid
+    cards: []
+  show_icon_and_title: true
+  cards: []
+  background:
+    opacity: 10
+    alignment: top center
+    size: contain
+    repeat: repeat
+    attachment: fixed
+    image:
+      media_content_id: media-source://image_upload/0d7a666d8bf33318f8b3f71c8f827617
+      media_content_type: image/jpeg
+      metadata:
+        title: zhangjiajie-national-forest-park-1511245342-785X440.jpg
+        thumbnail: /api/image/serve/0d7a666d8bf33318f8b3f71c8f827617/256x256
+        media_class: image
+        navigateIds:
+        - {}
+        - media_content_type: app
+          media_content_id: media-source://image_upload
+- type: sections
+  max_columns: 4
+  title: Human Telemetry
+  path: human-telemetry
+  icon: mdi:human
+  sections:
+  - type: grid
+    cards: []
+  show_icon_and_title: true
+  cards: []
+  background:
+    opacity: 10
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+    image:
+      media_content_id: media-source://image_upload/abf06284de6ec6652a233748bdbb6265
+      media_content_type: image/jpeg
+      metadata:
+        title: IMG_1100.jpeg
+        thumbnail: /api/image/serve/abf06284de6ec6652a233748bdbb6265/256x256
+        media_class: image
+        navigateIds:
+        - {}
+        - media_content_type: app
+          media_content_id: media-source://image_upload
+- type: sections
+  max_columns: 3
+  sections:
+  - type: grid
+    cards:
+    - type: custom:mushroom-title-card
+      title: IT Infrastructure
+      subtitle: Primary Server Life Support
+      alignment: center
+    - type: custom:mushroom-chips-card
+      alignment: center
+      chips:
+      - type: conditional
+        conditions:
+        - condition: state
+          entity: binary_sensor.chrisinas_security_status
+          state: 'on'
+        chip:
+          type: template
+          icon: mdi:shield-alert
+          icon_color: red
+          content: 'CRITICAL: Security Anomaly'
+  - type: grid
+    cards:
+    - type: heading
+      heading: Workload Trends
+    - type: custom:mushroom-title-card
+      subtitle: 72-hour telemetry
+    - type: history-graph
+      entities:
+      - entity: sensor.chrisinas_cpu_utilization_total
+        name: CPU Load
+      - entity: sensor.chrisinas_memory_usage_real
+        name: RAM Usage
+      hours_to_show: 72
+      refresh_interval: 0
+  - type: grid
+    cards:
+    - type: heading
+      heading: System Diagnostics
+    - type: custom:mushroom-title-card
+      subtitle: Hardware telemetry
+    - type: custom:mushroom-entity-card
+      entity: update.chrisinas_dsm_update
+      name: Synology DSM
+    - type: custom:mushroom-entity-card
+      entity: update.home_assistant_operating_system_update
+      name: HA OS
+    - type: custom:mushroom-entity-card
+      entity: binary_sensor.zigbee2mqtt_bridge_connection_state
+      name: Zigbee Bridge
+  - type: grid
+    cards:
+    - type: heading
+      heading: Storage Diagnostics
+    - type: custom:mushroom-title-card
+      subtitle: Real-time sensor telemetry
+    - type: custom:mushroom-template-card
+      primary: Volume 1
+      secondary: 'Used: {{ states(''sensor.chrisinas_volume_1_volume_used'') }}% | Temp: {{ states(''sensor.chrisinas_volume_1_average_disk_temp'')
+        }}°C'
+      icon: mdi:harddisk
+      icon_color: '{{ ''green'' if is_state(''sensor.chrisinas_volume_1_status'', ''normal'') else ''red'' }}'
+    - type: custom:mushroom-template-card
+      primary: Drive 1
+      secondary: '{{ states(''sensor.chrisinas_drive_1_status'') | capitalize }} | {{ states(''sensor.chrisinas_drive_1_temperature'')
+        }}°C'
+      icon: mdi:server
+      icon_color: '{{ ''green'' if is_state(''binary_sensor.chrisinas_drive_1_exceeded_max_bad_sectors'', ''off'') else ''red''
+        }}'
+    - type: custom:mushroom-template-card
+      primary: Drive 2
+      secondary: '{{ states(''sensor.chrisinas_drive_2_status'') | capitalize }} | {{ states(''sensor.chrisinas_drive_2_temperature'')
+        }}°C'
+      icon: mdi:server
+      icon_color: '{{ ''green'' if is_state(''binary_sensor.chrisinas_drive_2_exceeded_max_bad_sectors'', ''off'') else ''red''
+        }}'
+  cards: []

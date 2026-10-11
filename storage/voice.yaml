@@ -1,0 +1,162 @@
+exposed_entities:
+  binary_sensor.quara_motion_sensor_stube:
+    conversation: true
+  light.0x001788010d1935a6:
+    conversation: true
+  light.0x781c9dfffe0b2d4a:
+    conversation: true
+  light.0xa4c1388268bc795d:
+    conversation: true
+  light.entire_home:
+    conversation: true
+  light.ewelight_zb_dl01:
+    conversation: true
+  light.hue_color_lamp_1:
+    conversation: true
+  light.pfuus_lampe:
+    conversation: true
+  light.pfuusruum:
+    conversation: true
+  light.philips_915005997201:
+    conversation: true
+  light.sport_zimmer:
+    conversation: true
+  light.sportzimmer:
+    conversation: true
+  light.stubaaaa:
+    conversation: true
+  light.stube:
+    conversation: true
+  media_player.kitchen:
+    conversation: true
+  media_player.kitchen_2:
+    conversation: true
+  media_player.shitpod:
+    conversation: true
+  media_player.unnamed_room:
+    conversation: true
+  media_player.unnamed_room_2:
+    conversation: true
+  scene.chill_out_eveninf:
+    conversation: true
+  scene.entire_home_arise:
+    conversation: true
+  scene.entire_home_festive_fun:
+    conversation: true
+  scene.entire_home_golden_hours:
+    conversation: true
+  scene.entire_home_golden_star:
+    conversation: true
+  scene.entire_home_nighttime:
+    conversation: true
+  scene.entire_home_savanna_sunset:
+    conversation: true
+  scene.entire_home_shine:
+    conversation: true
+  scene.entire_home_sleepy:
+    conversation: true
+  scene.entire_home_storybook:
+    conversation: true
+  scene.entire_home_unwind:
+    conversation: true
+  scene.sportzimmer_concentrate:
+    conversation: true
+  scene.sportzimmer_energize:
+    conversation: true
+  scene.sportzimmer_nightlight:
+    conversation: true
+  scene.sportzimmer_read:
+    conversation: true
+  scene.sportzimmer_relax:
+    conversation: true
+  scene.stube_arise:
+    conversation: true
+  scene.stube_golden_hours_2:
+    conversation: true
+  scene.stube_nighttime:
+    conversation: true
+  scene.stube_shine:
+    conversation: true
+  scene.stube_sleepy:
+    conversation: true
+  scene.stube_storybook:
+    conversation: true
+  scene.stube_unwind:
+    conversation: true
+  sensor.0x348d13fffe292f95_humidity:
+    conversation: true
+  sensor.0x348d13fffe292f95_pm25:
+    conversation: true
+  sensor.0x348d13fffe292f95_temperature:
+    conversation: true
+  sensor.0xa4c1380d6560c17f_humidity:
+    conversation: true
+  sensor.0xa4c1380d6560c17f_temperature:
+    conversation: true
+  sensor.0xa4c13837fc018338_humidity:
+    conversation: true
+  sensor.0xa4c13837fc018338_temperature:
+    conversation: true
+  sensor.0xa4c138a59afc575f_humidity:
+    conversation: true
+  sensor.0xa4c138a59afc575f_temperature:
+    conversation: true
+  sensor.euphorbia_soil:
+    conversation: true
+  sensor.ewelink_snzb_02p_humidity:
+    conversation: true
+  sensor.ewelink_snzb_02p_temperature:
+    conversation: true
+  sensor.hobeian_zg_303z_humidity:
+    conversation: true
+  sensor.hobeian_zg_303z_humidity_2:
+    conversation: true
+  sensor.hobeian_zg_303z_humidity_3:
+    conversation: true
+  sensor.hobeian_zg_303z_temperature:
+    conversation: true
+  sensor.hobeian_zg_303z_temperature_2:
+    conversation: true
+  sensor.hobeian_zg_303z_temperature_3:
+    conversation: true
+  sensor.schlumbergera_soil:
+    conversation: true
+  sensor.strelitzia_soil:
+    conversation: true
+  switch.0x08fd52fffef625db:
+    conversation: true
+  switch.0x180df9fffe10ff75:
+    conversation: true
+  switch.0x348d13fffec87b72:
+    conversation: true
+  switch.0xa4c1383be574225a_indicator:
+    conversation: true
+  switch.0xa4c138658ea42994_find_switch:
+    conversation: true
+  switch.0xa4c1388268bc795d_do_not_disturb:
+    conversation: true
+  switch.0xa4c138e5d4f73afa:
+    conversation: true
+  switch.0xa4c138e5d4f73afa_reverse:
+    conversation: true
+  switch.0xa4c138e5d4f73afa_touch:
+    conversation: true
+  switch.zigbee2mqtt_bridge_permit_join:
+    conversation: true
+  todo.shopping_list:
+    conversation: true
+preferred_pipeline: 01kabb03cs06c42btrvt4byqv0
+pipelines:
+- conversation_engine: conversation.home_assistant
+  conversation_language: en
+  language: en
+  name: Home Assistant
+  stt_engine: null
+  stt_language: null
+  tts_engine: null
+  tts_language: null
+  tts_voice: null
+  wake_word_entity: null
+  wake_word_id: null
+  prefer_local_intents: false
+  id: 01kabb03cs06c42btrvt4byqv0

@@ -1,0 +1,70 @@
+- id: '1763584680418'
+  name: Chill out eveninf
+  entities:
+    light.stubaaaa:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - 'off'
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      - underwater
+      - cosmos
+      - sunbeam
+      - enchant
+      - sunrise
+      - sunset
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: 'off'
+      color_mode: color_temp
+      brightness: 122
+      color_temp_kelvin: 2000
+      color_temp: 500
+      hs_color:
+      - 30.601
+      - 94.547
+      rgb_color:
+      - 255
+      - 137
+      - 14
+      xy_color:
+      - 0.598
+      - 0.383
+      mode: normal
+      dynamics: none
+      friendly_name: Stubaaaa
+      supported_features: 44
+      state: 'on'
+    media_player.unnamed_room:
+      group_members:
+      - media_player.unnamed_room
+      - media_player.kitchen
+      volume_level: 0.2
+      is_volume_muted: false
+      media_content_id: x-sonos-vli:RINCON_74CA607E2D9601400:1,airplay:ca8eb30a46c24e6886143c36d9b1dc77
+      media_content_type: music
+      media_duration: 183
+      media_position: 0
+      media_position_updated_at: '2025-11-19T20:37:03.898700+00:00'
+      media_title: du weißt doch genau, dass ich immer nur an dich denk
+      media_artist: Cordoba78
+      media_album_name: du weißt doch genau, dass ich immer nur an dich denk
+      source: AirPlay
+      shuffle: false
+      repeat: 'off'
+      queue_size: 1
+      device_class: speaker
+      entity_picture: /api/media_player_proxy/media_player.unnamed_room?token=9f67579fd2f4a0ec0917ed2e72a7c96df66266fe30ab7e3ba91573238d7c80a2&cache=fbe4bbe9404823ff
+      friendly_name: Living room
+      supported_features: 4127295
+      state: playing
+  icon: mdi:thermometer
+  metadata: {}

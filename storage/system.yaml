@@ -1,0 +1,5 @@
+core: 2026.9.4
+supervisor: 2026.09.3
+channel: stable
+os: '18.3'
+board: green

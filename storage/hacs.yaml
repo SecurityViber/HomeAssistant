@@ -1,0 +1,9 @@
+- repository: hacs/integration
+  category: integration
+  version: 2.0.5
+- repository: piitaya/lovelace-mushroom
+  category: plugin
+  version: v5.2.3
+- repository: piitaya/lovelace-mushroom-themes
+  category: theme
+  version: v0.0.11
