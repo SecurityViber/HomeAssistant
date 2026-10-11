@@ -1,2 +1,8 @@
 - type: module
   url: /hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375523
+- type: module
+  url: /hacsfiles/apexcharts-card/apexcharts-card.js?hacstag=331701152223
+- type: module
+  url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js?hacstag=1512800620130
+- type: module
+  url: /hacsfiles/Bubble-Card/bubble-card.js?hacstag=680112919341

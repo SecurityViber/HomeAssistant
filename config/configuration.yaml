@@ -42,3 +42,64 @@ template:
           {{ (v | float) | round(0) if v not in ['unknown','unavailable','none',''] else 'unknown' }}
         availability: >
           {{ states('sensor.strelitzia_soil_moisture') not in ['unknown','unavailable','none',''] }}
+
+
+  # ───────── Status sensors for the dashboard (Master Caution, Power Grid) ─────────
+  - sensor:
+      - name: "Low Battery Devices"
+        unique_id: low_battery_devices
+        icon: mdi:battery-alert-variant-outline
+        state: >
+          {% set ns = namespace(d=[]) %}
+          {% for s in states.sensor | selectattr('attributes.device_class', 'defined')
+               | selectattr('attributes.device_class', 'eq', 'battery')
+               | rejectattr('entity_id', 'search', 'iphone|^sensor[.]0x') %}
+            {% if s.state | is_number and s.state | float < 20 %}{% set ns.d = ns.d + [s.name | replace(' Battery', '')] %}{% endif %}
+          {% endfor %}
+          {{ ns.d | count }}
+        attributes:
+          devices: >
+            {% set ns = namespace(d=[]) %}
+            {% for s in states.sensor | selectattr('attributes.device_class', 'defined')
+                 | selectattr('attributes.device_class', 'eq', 'battery')
+                 | rejectattr('entity_id', 'search', 'iphone|^sensor[.]0x') %}
+              {% if s.state | is_number and s.state | float < 20 %}{% set ns.d = ns.d + [s.name | replace(' Battery', '')] %}{% endif %}
+            {% endfor %}
+            {{ ns.d }}
+
+      - name: "Dry Plants"
+        unique_id: dry_plants
+        icon: mdi:water-alert-outline
+        state: >
+          {% set p = [('Strelitzia', 'sensor.strelitzia_soil_moisture', 25),
+                      ('Euphorbia', 'sensor.euphorbia_leuconeura_soil_moisture', 20),
+                      ('Schlumbergera', 'sensor.schlumbergera_soil_moisture', 20)] %}
+          {% set ns = namespace(d=[]) %}
+          {% for name, e, t in p %}{% if states(e) | is_number and states(e) | float < t %}{% set ns.d = ns.d + [name] %}{% endif %}{% endfor %}
+          {{ ns.d | count }}
+        attributes:
+          plants: >
+            {% set p = [('Strelitzia', 'sensor.strelitzia_soil_moisture', 25),
+                        ('Euphorbia', 'sensor.euphorbia_leuconeura_soil_moisture', 20),
+                        ('Schlumbergera', 'sensor.schlumbergera_soil_moisture', 20)] %}
+            {% set ns = namespace(d=[]) %}
+            {% for name, e, t in p %}{% if states(e) | is_number and states(e) | float < t %}{% set ns.d = ns.d + [name] %}{% endif %}{% endfor %}
+            {{ ns.d }}
+
+      - name: "Pending Updates"
+        unique_id: pending_updates
+        icon: mdi:package-up
+        state: "{{ states.update | selectattr('state', 'eq', 'on') | list | count }}"
+        attributes:
+          updates: "{{ states.update | selectattr('state', 'eq', 'on') | map(attribute='name') | list }}"
+
+  - binary_sensor:
+      - name: "Master Caution"
+        unique_id: master_caution
+        icon: mdi:alert-octagram-outline
+        state: >
+          {{ is_state('binary_sensor.zigbee2mqtt_bridge_connection_state', 'off')
+             or is_state('binary_sensor.chrisinas_security_status', 'on')
+             or states('sensor.low_battery_devices') | int(0) > 0
+             or states('sensor.dry_plants') | int(0) > 0
+             or states('sensor.pending_updates') | int(0) > 0 }}

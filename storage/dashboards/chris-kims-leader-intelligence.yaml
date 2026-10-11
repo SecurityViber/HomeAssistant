@@ -3,6 +3,180 @@ views:
   sections:
   - type: grid
     cards:
+    - type: custom:mushroom-title-card
+      title: Master Caution
+      subtitle: Active alerts & advisories
+    - type: conditional
+      conditions:
+      - condition: state
+        entity: binary_sensor.master_caution
+        state: 'off'
+      card:
+        type: custom:mushroom-template-card
+        primary: All systems nominal
+        secondary: No active alerts
+        icon: mdi:shield-check
+        icon_color: green
+        layout: horizontal
+        multiline_secondary: true
+    - type: conditional
+      conditions:
+      - condition: state
+        entity: binary_sensor.zigbee2mqtt_bridge_connection_state
+        state: 'off'
+      card:
+        type: custom:mushroom-template-card
+        primary: ZIGBEE NETWORK OFFLINE
+        secondary: Lights, sensors and switches unreachable. Check the USB stick and Zigbee2MQTT.
+        icon: mdi:zigbee
+        icon_color: red
+        layout: horizontal
+        multiline_secondary: true
+    - type: conditional
+      conditions:
+      - condition: state
+        entity: binary_sensor.chrisinas_security_status
+        state: 'on'
+      card:
+        type: custom:mushroom-template-card
+        primary: NAS SECURITY ANOMALY
+        secondary: Security anomaly detected on ChrisiNas.
+        icon: mdi:shield-alert
+        icon_color: red
+        layout: horizontal
+        multiline_secondary: true
+    - type: conditional
+      conditions:
+      - condition: numeric_state
+        entity: sensor.dry_plants
+        above: 0
+      card:
+        type: custom:mushroom-template-card
+        primary: HYDRATION REQUIRED
+        secondary: '{{ state_attr(''sensor.dry_plants'', ''plants'') | join('', '') }}'
+        icon: mdi:water-alert
+        icon_color: red
+        layout: horizontal
+        multiline_secondary: true
+        tap_action:
+          action: navigate
+          navigation_path: /chris-kims-leader-intelligence/botanical-diagnostics
+    - type: conditional
+      conditions:
+      - condition: numeric_state
+        entity: sensor.low_battery_devices
+        above: 0
+      card:
+        type: custom:mushroom-template-card
+        primary: LOW POWER
+        secondary: 'Replace batteries: {{ state_attr(''sensor.low_battery_devices'', ''devices'') | join('', '') }}'
+        icon: mdi:battery-alert-variant-outline
+        icon_color: amber
+        layout: horizontal
+        multiline_secondary: true
+        tap_action:
+          action: navigate
+          navigation_path: /chris-kims-leader-intelligence/facility-operations
+    - type: conditional
+      conditions:
+      - condition: numeric_state
+        entity: sensor.pending_updates
+        above: 0
+      card:
+        type: custom:mushroom-template-card
+        primary: UPDATES AVAILABLE
+        secondary: '{{ state_attr(''sensor.pending_updates'', ''updates'') | join('', '') }}'
+        icon: mdi:package-up
+        icon_color: blue
+        layout: horizontal
+        multiline_secondary: true
+        tap_action:
+          action: navigate
+          navigation_path: /config/updates
+  - type: grid
+    cards:
+    - type: custom:mushroom-title-card
+      title: Sectors
+      subtitle: Facility map
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      name: Living Room
+      icon: mdi:sofa
+      button_action:
+        tap_action:
+          action: navigate
+          navigation_path: '#living-room'
+      grid_options:
+        columns: 6
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      name: Kitchen
+      icon: mdi:countertop-outline
+      button_action:
+        tap_action:
+          action: navigate
+          navigation_path: '#kitchen'
+      grid_options:
+        columns: 6
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      name: Bedroom
+      icon: mdi:bed-outline
+      button_action:
+        tap_action:
+          action: navigate
+          navigation_path: '#bedroom'
+      grid_options:
+        columns: 6
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      name: Office
+      icon: mdi:desk
+      button_action:
+        tap_action:
+          action: navigate
+          navigation_path: '#office'
+      grid_options:
+        columns: 6
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      name: Gym
+      icon: mdi:dumbbell
+      button_action:
+        tap_action:
+          action: navigate
+          navigation_path: '#gym'
+      grid_options:
+        columns: 6
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      name: Hallway
+      icon: mdi:door
+      button_action:
+        tap_action:
+          action: navigate
+          navigation_path: '#hallway'
+      grid_options:
+        columns: 6
+    - type: custom:bubble-card
+      card_type: button
+      button_type: name
+      name: Innovation Hub
+      icon: mdi:lightbulb-on-outline
+      button_action:
+        tap_action:
+          action: navigate
+          navigation_path: '#innovation-hub'
+      grid_options:
+        columns: 6
+  - type: grid
+    cards:
     - type: vertical-stack
       cards:
       - type: custom:mushroom-title-card
@@ -43,18 +217,6 @@ views:
     - type: custom:mushroom-title-card
       title: System Integrity
       subtitle: Alerts & Operations
-    - type: conditional
-      conditions:
-      - condition: state
-        entity: binary_sensor.chrisinas_security_status
-        state: 'on'
-      card:
-        type: custom:mushroom-template-card
-        primary: Critical Infrastructure Alert
-        secondary: NAS security breach or anomaly detected
-        icon: mdi:shield-alert
-        icon_color: red
-        layout: horizontal
     - type: custom:mushroom-template-card
       primary: Active Illumination
       secondary: '{{ states.light | selectattr(''state'', ''eq'', ''on'') | rejectattr(''attributes.entity_id'', ''defined'')
@@ -94,53 +256,6 @@ views:
     - type: custom:mushroom-title-card
       title: Operations Log
       subtitle: Active Tasks & Notifications
-    - type: conditional
-      conditions:
-      - condition: state
-        entity: binary_sensor.chrisinas_security_status
-        state: 'on'
-      card:
-        type: custom:mushroom-template-card
-        primary: Critical Infrastructure Alert
-        secondary: NAS security breach or anomaly detected
-        icon: mdi:shield-alert
-        icon_color: red
-        layout: horizontal
-    - type: vertical-stack
-      cards:
-      - type: conditional
-        conditions:
-        - condition: numeric_state
-          entity: sensor.strelitzia_soil_moisture
-          below: 25
-        card:
-          type: custom:mushroom-template-card
-          primary: 'Strelitzia: Water now'
-          secondary: '{{ states(''sensor.strelitzia_soil_moisture'') }}% moisture'
-          icon: mdi:water-alert
-          icon_color: red
-      - type: conditional
-        conditions:
-        - condition: numeric_state
-          entity: sensor.euphorbia_leuconeura_soil_moisture
-          below: 20
-        card:
-          type: custom:mushroom-template-card
-          primary: 'Euphorbia: Thirsty'
-          secondary: '{{ states(''sensor.euphorbia_leuconeura_soil_moisture'') }}% moisture'
-          icon: mdi:water-alert
-          icon_color: red
-      - type: conditional
-        conditions:
-        - condition: numeric_state
-          entity: sensor.schlumbergera_soil_moisture
-          below: 20
-        card:
-          type: custom:mushroom-template-card
-          primary: 'Schlumbergera: Dry'
-          secondary: '{{ states(''sensor.schlumbergera_soil_moisture'') }}% moisture'
-          icon: mdi:water-alert
-          icon_color: red
     - type: custom:mushroom-template-card
       primary: |
         {% set v = states('sensor.ikea_air_quality_sensor_pm25') | int %} {% if v <= 12 %} Fresh Air {% elif v <= 35 %} Stuffy Air {% elif v <= 55 %} Poor Air Quality {% else %} Toxic Environment {% endif %}
@@ -157,9 +272,362 @@ views:
         columns: full
         rows: 1
   - type: grid
-    cards: []
-  - type: grid
-    cards: []
+    cards:
+    - type: custom:bubble-card
+      card_type: pop-up
+      hash: '#living-room'
+      name: Living Room
+      icon: mdi:sofa
+      entity: light.living_room_ceiling_light
+      cards:
+      - type: custom:mushroom-light-card
+        entity: light.living_room_ceiling_light
+        name: Ceiling Light
+        layout: horizontal
+        show_brightness_control: true
+        use_light_color: true
+      - type: custom:mushroom-light-card
+        entity: light.stube
+        name: All Lights
+        layout: horizontal
+        show_brightness_control: true
+        use_light_color: true
+      - type: custom:mushroom-media-player-card
+        entity: media_player.living_room
+        name: Sonos
+        use_media_info: true
+        show_volume_level: true
+        collapsible_controls: false
+        media_controls:
+        - previous
+        - play_pause_stop
+        - next
+        volume_controls:
+        - volume_mute
+        - volume_set
+        - volume_buttons
+      - type: custom:mushroom-chips-card
+        alignment: center
+        chips:
+        - type: entity
+          entity: scene.living_room_chill_evening
+          name: Chill Evening
+          content_info: name
+          icon: mdi:sofa-outline
+          tap_action:
+            action: perform-action
+            perform_action: scene.turn_on
+            target:
+              entity_id: scene.living_room_chill_evening
+        - type: entity
+          entity: scene.stube_arise
+          name: Arise
+          content_info: name
+          icon: mdi:weather-sunset-up
+          tap_action:
+            action: perform-action
+            perform_action: scene.turn_on
+            target:
+              entity_id: scene.stube_arise
+        - type: entity
+          entity: scene.stube_golden_hours_2
+          name: Golden Hours
+          content_info: name
+          icon: mdi:weather-sunset
+          tap_action:
+            action: perform-action
+            perform_action: scene.turn_on
+            target:
+              entity_id: scene.stube_golden_hours_2
+        - type: entity
+          entity: scene.stube_nighttime
+          name: Nighttime
+          content_info: name
+          icon: mdi:weather-night
+          tap_action:
+            action: perform-action
+            perform_action: scene.turn_on
+            target:
+              entity_id: scene.stube_nighttime
+        - type: entity
+          entity: scene.stube_shine
+          name: Shine
+          content_info: name
+          icon: mdi:white-balance-sunny
+          tap_action:
+            action: perform-action
+            perform_action: scene.turn_on
+            target:
+              entity_id: scene.stube_shine
+        - type: entity
+          entity: scene.stube_sleepy
+          name: Sleepy
+          content_info: name
+          icon: mdi:sleep
+          tap_action:
+            action: perform-action
+            perform_action: scene.turn_on
+            target:
+              entity_id: scene.stube_sleepy
+        - type: entity
+          entity: scene.stube_storybook
+          name: Storybook
+          content_info: name
+          icon: mdi:book-open-variant
+          tap_action:
+            action: perform-action
+            perform_action: scene.turn_on
+            target:
+              entity_id: scene.stube_storybook
+        - type: entity
+          entity: scene.stube_unwind
+          name: Unwind
+          content_info: name
+          icon: mdi:sofa-outline
+          tap_action:
+            action: perform-action
+            perform_action: scene.turn_on
+            target:
+              entity_id: scene.stube_unwind
+    - type: custom:bubble-card
+      card_type: pop-up
+      hash: '#kitchen'
+      name: Kitchen
+      icon: mdi:countertop-outline
+      cards:
+      - type: custom:mushroom-media-player-card
+        entity: media_player.kitchen
+        name: Sonos
+        use_media_info: true
+        show_volume_level: true
+        collapsible_controls: false
+        media_controls:
+        - previous
+        - play_pause_stop
+        - next
+        volume_controls:
+        - volume_mute
+        - volume_set
+        - volume_buttons
+      - type: custom:mushroom-media-player-card
+        entity: media_player.kitchen_homepod
+        name: HomePod
+        use_media_info: true
+        show_volume_level: true
+        collapsible_controls: false
+        media_controls:
+        - previous
+        - play_pause_stop
+        - next
+        volume_controls:
+        - volume_mute
+        - volume_set
+        - volume_buttons
+      - type: custom:mushroom-media-player-card
+        entity: media_player.shitpod
+        name: ShitPod
+        use_media_info: true
+        show_volume_level: true
+        collapsible_controls: false
+        media_controls:
+        - previous
+        - play_pause_stop
+        - next
+        volume_controls:
+        - volume_mute
+        - volume_set
+        - volume_buttons
+    - type: custom:bubble-card
+      card_type: pop-up
+      hash: '#bedroom'
+      name: Bedroom
+      icon: mdi:bed-outline
+      entity: light.bed_light_strip
+      cards:
+      - type: custom:mushroom-light-card
+        entity: light.bed_light_strip
+        name: Bed Light Strip
+        layout: horizontal
+        show_brightness_control: true
+        use_light_color: true
+      - type: custom:mushroom-light-card
+        entity: light.bedroom_lamp
+        name: Bedroom Lamp
+        layout: horizontal
+        show_brightness_control: true
+        use_light_color: true
+      - type: custom:mushroom-light-card
+        entity: light.pfuusruum
+        name: All Hue Lights
+        layout: horizontal
+        show_brightness_control: true
+        use_light_color: true
+      - type: custom:mushroom-entity-card
+        entity: binary_sensor.bedroom_motion_sensor_occupancy
+        name: Motion
+        layout: horizontal
+        icon: mdi:motion-sensor
+      - type: custom:mushroom-entity-card
+        entity: automation.bedroom_light_on_with_presence
+        name: 'Protocol: Bed Light'
+        layout: horizontal
+        tap_action:
+          action: toggle
+        icon: mdi:robot-outline
+    - type: custom:bubble-card
+      card_type: pop-up
+      hash: '#office'
+      name: Office
+      icon: mdi:desk
+      entity: light.office_ceiling_light
+      cards:
+      - type: custom:mushroom-light-card
+        entity: light.office_ceiling_light
+        name: Ceiling Light
+        layout: horizontal
+        show_brightness_control: true
+        use_light_color: true
+      - type: custom:mushroom-entity-card
+        entity: binary_sensor.office_presence_sensor_presence
+        name: Presence
+        layout: horizontal
+        icon: mdi:account-search-outline
+      - type: custom:mushroom-entity-card
+        entity: sensor.office_presence_sensor_illuminance
+        name: Illuminance
+        layout: horizontal
+        icon: mdi:brightness-5
+      - type: custom:mushroom-template-card
+        primary: HP Color LaserJet
+        secondary: '{{ states(''sensor.hp_color_laserjet_mfp_m477fdw'') | capitalize }} | K {{ states(''sensor.hp_color_laserjet_mfp_m477fdw_black_cartridge_hp_cf410x'')
+          }}% C {{ states(''sensor.hp_color_laserjet_mfp_m477fdw_cyan_cartridge_hp_cf411x'') }}% M {{ states(''sensor.hp_color_laserjet_mfp_m477fdw_magenta_cartridge_hp_cf413x'')
+          }}% Y {{ states(''sensor.hp_color_laserjet_mfp_m477fdw_yellow_cartridge_hp_cf412x'') }}%'
+        icon: mdi:printer
+        icon_color: blue
+        layout: horizontal
+        multiline_secondary: true
+    - type: custom:bubble-card
+      card_type: pop-up
+      hash: '#gym'
+      name: Gym
+      icon: mdi:dumbbell
+      entity: light.gym_ceiling_light
+      cards:
+      - type: custom:mushroom-light-card
+        entity: light.gym_ceiling_light
+        name: Ceiling Light
+        layout: horizontal
+        show_brightness_control: true
+        use_light_color: true
+      - type: custom:mushroom-light-card
+        entity: light.sportzimmer
+        name: All Lights
+        layout: horizontal
+        show_brightness_control: true
+        use_light_color: true
+      - type: custom:mushroom-chips-card
+        alignment: center
+        chips:
+        - type: entity
+          entity: scene.sportzimmer_concentrate
+          name: Concentrate
+          content_info: name
+          icon: mdi:target
+          tap_action:
+            action: perform-action
+            perform_action: scene.turn_on
+            target:
+              entity_id: scene.sportzimmer_concentrate
+        - type: entity
+          entity: scene.sportzimmer_energize
+          name: Energize
+          content_info: name
+          icon: mdi:lightning-bolt
+          tap_action:
+            action: perform-action
+            perform_action: scene.turn_on
+            target:
+              entity_id: scene.sportzimmer_energize
+        - type: entity
+          entity: scene.sportzimmer_nightlight
+          name: Nightlight
+          content_info: name
+          icon: mdi:lightbulb-night-outline
+          tap_action:
+            action: perform-action
+            perform_action: scene.turn_on
+            target:
+              entity_id: scene.sportzimmer_nightlight
+        - type: entity
+          entity: scene.sportzimmer_read
+          name: Read
+          content_info: name
+          icon: mdi:book-open-page-variant
+          tap_action:
+            action: perform-action
+            perform_action: scene.turn_on
+            target:
+              entity_id: scene.sportzimmer_read
+        - type: entity
+          entity: scene.sportzimmer_relax
+          name: Relax
+          content_info: name
+          icon: mdi:spa-outline
+          tap_action:
+            action: perform-action
+            perform_action: scene.turn_on
+            target:
+              entity_id: scene.sportzimmer_relax
+      - type: custom:mushroom-entity-card
+        entity: sensor.gym_dimmer_switch_battery
+        name: Dimmer Switch Battery
+        layout: horizontal
+        icon: mdi:battery
+    - type: custom:bubble-card
+      card_type: pop-up
+      hash: '#hallway'
+      name: Hallway
+      icon: mdi:door
+      entity: light.hallway_light
+      cards:
+      - type: custom:mushroom-light-card
+        entity: light.hallway_light
+        name: Hallway Light
+        layout: horizontal
+        show_brightness_control: true
+        use_light_color: true
+      - type: custom:mushroom-entity-card
+        entity: binary_sensor.hallway_motion_sensor_occupancy
+        name: Motion
+        layout: horizontal
+        icon: mdi:motion-sensor
+      - type: custom:mushroom-entity-card
+        entity: automation.hallway_light_follows_presence
+        name: 'Protocol: Hallway Light'
+        layout: horizontal
+        tap_action:
+          action: toggle
+        icon: mdi:robot-outline
+    - type: custom:bubble-card
+      card_type: pop-up
+      hash: '#innovation-hub'
+      name: Innovation Hub
+      icon: mdi:lightbulb-on-outline
+      cards:
+      - type: custom:mushroom-media-player-card
+        entity: media_player.innovation_hub
+        name: Sonos
+        use_media_info: true
+        show_volume_level: true
+        collapsible_controls: false
+        media_controls:
+        - previous
+        - play_pause_stop
+        - next
+        volume_controls:
+        - volume_mute
+        - volume_set
+        - volume_buttons
   max_columns: 4
   title: Mission Control
   icon: mdi:home
@@ -267,6 +735,364 @@ views:
         secondary_info: state
         tap_action:
           action: toggle
+  - type: grid
+    cards:
+    - type: custom:mushroom-title-card
+      title: Lighting Presets
+      subtitle: Hue scene protocols
+    - type: custom:mushroom-chips-card
+      chips:
+      - type: template
+        content: Living Room
+        icon: mdi:sofa
+        icon_color: amber
+      - type: entity
+        entity: scene.living_room_chill_evening
+        name: Chill Evening
+        content_info: name
+        icon: mdi:sofa-outline
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.living_room_chill_evening
+      - type: entity
+        entity: scene.stube_arise
+        name: Arise
+        content_info: name
+        icon: mdi:weather-sunset-up
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.stube_arise
+      - type: entity
+        entity: scene.stube_golden_hours_2
+        name: Golden Hours
+        content_info: name
+        icon: mdi:weather-sunset
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.stube_golden_hours_2
+      - type: entity
+        entity: scene.stube_nighttime
+        name: Nighttime
+        content_info: name
+        icon: mdi:weather-night
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.stube_nighttime
+      - type: entity
+        entity: scene.stube_shine
+        name: Shine
+        content_info: name
+        icon: mdi:white-balance-sunny
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.stube_shine
+      - type: entity
+        entity: scene.stube_sleepy
+        name: Sleepy
+        content_info: name
+        icon: mdi:sleep
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.stube_sleepy
+      - type: entity
+        entity: scene.stube_storybook
+        name: Storybook
+        content_info: name
+        icon: mdi:book-open-variant
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.stube_storybook
+      - type: entity
+        entity: scene.stube_unwind
+        name: Unwind
+        content_info: name
+        icon: mdi:sofa-outline
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.stube_unwind
+    - type: custom:mushroom-chips-card
+      chips:
+      - type: template
+        content: Gym
+        icon: mdi:dumbbell
+        icon_color: amber
+      - type: entity
+        entity: scene.sportzimmer_concentrate
+        name: Concentrate
+        content_info: name
+        icon: mdi:target
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.sportzimmer_concentrate
+      - type: entity
+        entity: scene.sportzimmer_energize
+        name: Energize
+        content_info: name
+        icon: mdi:lightning-bolt
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.sportzimmer_energize
+      - type: entity
+        entity: scene.sportzimmer_nightlight
+        name: Nightlight
+        content_info: name
+        icon: mdi:lightbulb-night-outline
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.sportzimmer_nightlight
+      - type: entity
+        entity: scene.sportzimmer_read
+        name: Read
+        content_info: name
+        icon: mdi:book-open-page-variant
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.sportzimmer_read
+      - type: entity
+        entity: scene.sportzimmer_relax
+        name: Relax
+        content_info: name
+        icon: mdi:spa-outline
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.sportzimmer_relax
+    - type: custom:mushroom-chips-card
+      chips:
+      - type: template
+        content: Entire Home
+        icon: mdi:home-lightbulb-outline
+        icon_color: amber
+      - type: entity
+        entity: scene.entire_home_arise
+        name: Arise
+        content_info: name
+        icon: mdi:weather-sunset-up
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.entire_home_arise
+      - type: entity
+        entity: scene.entire_home_festive_fun
+        name: Festive Fun
+        content_info: name
+        icon: mdi:party-popper
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.entire_home_festive_fun
+      - type: entity
+        entity: scene.entire_home_golden_hours
+        name: Golden Hours
+        content_info: name
+        icon: mdi:weather-sunset
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.entire_home_golden_hours
+      - type: entity
+        entity: scene.entire_home_golden_star
+        name: Golden Star
+        content_info: name
+        icon: mdi:star-four-points-outline
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.entire_home_golden_star
+      - type: entity
+        entity: scene.entire_home_nighttime
+        name: Nighttime
+        content_info: name
+        icon: mdi:weather-night
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.entire_home_nighttime
+      - type: entity
+        entity: scene.entire_home_savanna_sunset
+        name: Savanna Sunset
+        content_info: name
+        icon: mdi:weather-sunset-down
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.entire_home_savanna_sunset
+      - type: entity
+        entity: scene.entire_home_shine
+        name: Shine
+        content_info: name
+        icon: mdi:white-balance-sunny
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.entire_home_shine
+      - type: entity
+        entity: scene.entire_home_sleepy
+        name: Sleepy
+        content_info: name
+        icon: mdi:sleep
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.entire_home_sleepy
+      - type: entity
+        entity: scene.entire_home_storybook
+        name: Storybook
+        content_info: name
+        icon: mdi:book-open-variant
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.entire_home_storybook
+      - type: entity
+        entity: scene.entire_home_unwind
+        name: Unwind
+        content_info: name
+        icon: mdi:sofa-outline
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.entire_home_unwind
+  - type: grid
+    cards:
+    - type: custom:mushroom-title-card
+      title: Power Grid
+      subtitle: Battery telemetry
+    - type: custom:mushroom-template-card
+      entity: sensor.aqara_button_1_battery
+      primary: Aqara Button 1
+      secondary: '{{ states(entity) }}%'
+      icon: '{% set b = states(entity) | int(0) %}{{ ''mdi:battery'' if b >= 95 else ''mdi:battery-outline'' if b < 10 else
+        ''mdi:battery-'' ~ (b // 10 * 10) }}'
+      icon_color: '{% set b = states(entity) | int(0) %}{{ ''red'' if b < 20 else ''amber'' if b < 40 else ''green'' }}'
+      layout: horizontal
+      grid_options:
+        columns: 6
+    - type: custom:mushroom-template-card
+      entity: sensor.bedroom_motion_sensor_battery
+      primary: Bedroom Motion Sensor
+      secondary: '{{ states(entity) }}%'
+      icon: '{% set b = states(entity) | int(0) %}{{ ''mdi:battery'' if b >= 95 else ''mdi:battery-outline'' if b < 10 else
+        ''mdi:battery-'' ~ (b // 10 * 10) }}'
+      icon_color: '{% set b = states(entity) | int(0) %}{{ ''red'' if b < 20 else ''amber'' if b < 40 else ''green'' }}'
+      layout: horizontal
+      grid_options:
+        columns: 6
+    - type: custom:mushroom-template-card
+      entity: sensor.bedroom_switch_battery
+      primary: Bedroom Switch
+      secondary: '{{ states(entity) }}%'
+      icon: '{% set b = states(entity) | int(0) %}{{ ''mdi:battery'' if b >= 95 else ''mdi:battery-outline'' if b < 10 else
+        ''mdi:battery-'' ~ (b // 10 * 10) }}'
+      icon_color: '{% set b = states(entity) | int(0) %}{{ ''red'' if b < 20 else ''amber'' if b < 40 else ''green'' }}'
+      layout: horizontal
+      grid_options:
+        columns: 6
+    - type: custom:mushroom-template-card
+      entity: sensor.euphorbia_leuconeura_battery
+      primary: Euphorbia Leuconeura
+      secondary: '{{ states(entity) }}%'
+      icon: '{% set b = states(entity) | int(0) %}{{ ''mdi:battery'' if b >= 95 else ''mdi:battery-outline'' if b < 10 else
+        ''mdi:battery-'' ~ (b // 10 * 10) }}'
+      icon_color: '{% set b = states(entity) | int(0) %}{{ ''red'' if b < 20 else ''amber'' if b < 40 else ''green'' }}'
+      layout: horizontal
+      grid_options:
+        columns: 6
+    - type: custom:mushroom-template-card
+      entity: sensor.gym_dimmer_switch_battery
+      primary: Gym Dimmer Switch
+      secondary: '{{ states(entity) }}%'
+      icon: '{% set b = states(entity) | int(0) %}{{ ''mdi:battery'' if b >= 95 else ''mdi:battery-outline'' if b < 10 else
+        ''mdi:battery-'' ~ (b // 10 * 10) }}'
+      icon_color: '{% set b = states(entity) | int(0) %}{{ ''red'' if b < 20 else ''amber'' if b < 40 else ''green'' }}'
+      layout: horizontal
+      grid_options:
+        columns: 6
+    - type: custom:mushroom-template-card
+      entity: sensor.hallway_motion_sensor_battery
+      primary: Hallway Motion Sensor
+      secondary: '{{ states(entity) }}%'
+      icon: '{% set b = states(entity) | int(0) %}{{ ''mdi:battery'' if b >= 95 else ''mdi:battery-outline'' if b < 10 else
+        ''mdi:battery-'' ~ (b // 10 * 10) }}'
+      icon_color: '{% set b = states(entity) | int(0) %}{{ ''red'' if b < 20 else ''amber'' if b < 40 else ''green'' }}'
+      layout: horizontal
+      grid_options:
+        columns: 6
+    - type: custom:mushroom-template-card
+      entity: sensor.hue_dimmer_switch_1_battery
+      primary: Hue dimmer switch 1
+      secondary: '{{ states(entity) }}%'
+      icon: '{% set b = states(entity) | int(0) %}{{ ''mdi:battery'' if b >= 95 else ''mdi:battery-outline'' if b < 10 else
+        ''mdi:battery-'' ~ (b // 10 * 10) }}'
+      icon_color: '{% set b = states(entity) | int(0) %}{{ ''red'' if b < 20 else ''amber'' if b < 40 else ''green'' }}'
+      layout: horizontal
+      grid_options:
+        columns: 6
+    - type: custom:mushroom-template-card
+      entity: sensor.living_room_switch_battery
+      primary: Living Room Switch
+      secondary: '{{ states(entity) }}%'
+      icon: '{% set b = states(entity) | int(0) %}{{ ''mdi:battery'' if b >= 95 else ''mdi:battery-outline'' if b < 10 else
+        ''mdi:battery-'' ~ (b // 10 * 10) }}'
+      icon_color: '{% set b = states(entity) | int(0) %}{{ ''red'' if b < 20 else ''amber'' if b < 40 else ''green'' }}'
+      layout: horizontal
+      grid_options:
+        columns: 6
+    - type: custom:mushroom-template-card
+      entity: sensor.schlumbergera_battery
+      primary: Schlumbergera
+      secondary: '{{ states(entity) }}%'
+      icon: '{% set b = states(entity) | int(0) %}{{ ''mdi:battery'' if b >= 95 else ''mdi:battery-outline'' if b < 10 else
+        ''mdi:battery-'' ~ (b // 10 * 10) }}'
+      icon_color: '{% set b = states(entity) | int(0) %}{{ ''red'' if b < 20 else ''amber'' if b < 40 else ''green'' }}'
+      layout: horizontal
+      grid_options:
+        columns: 6
+    - type: custom:mushroom-template-card
+      entity: sensor.strelitzia_battery
+      primary: Strelitzia
+      secondary: '{{ states(entity) }}%'
+      icon: '{% set b = states(entity) | int(0) %}{{ ''mdi:battery'' if b >= 95 else ''mdi:battery-outline'' if b < 10 else
+        ''mdi:battery-'' ~ (b // 10 * 10) }}'
+      icon_color: '{% set b = states(entity) | int(0) %}{{ ''red'' if b < 20 else ''amber'' if b < 40 else ''green'' }}'
+      layout: horizontal
+      grid_options:
+        columns: 6
   show_icon_and_title: true
   cards: []
   background:
@@ -327,6 +1153,53 @@ views:
         name: 'Unit-03: Schlumbergera'
       hours_to_show: 48
       title: Saturation Trends
+  - type: grid
+    cards:
+    - type: custom:mushroom-title-card
+      title: Hydration Sparklines
+      subtitle: 7-day trend
+    - type: custom:mini-graph-card
+      name: Strelitzia
+      hours_to_show: 168
+      points_per_hour: 1
+      line_width: 3
+      smoothing: true
+      show:
+        fill: fade
+        labels: false
+      entities:
+      - entity: sensor.strelitzia_soil_moisture
+      line_color: '#4caf50'
+      grid_options:
+        columns: 4
+    - type: custom:mini-graph-card
+      name: Euphorbia
+      hours_to_show: 168
+      points_per_hour: 1
+      line_width: 3
+      smoothing: true
+      show:
+        fill: fade
+        labels: false
+      entities:
+      - entity: sensor.euphorbia_leuconeura_soil_moisture
+      line_color: '#03a9f4'
+      grid_options:
+        columns: 4
+    - type: custom:mini-graph-card
+      name: Schlumbergera
+      hours_to_show: 168
+      points_per_hour: 1
+      line_width: 3
+      smoothing: true
+      show:
+        fill: fade
+        labels: false
+      entities:
+      - entity: sensor.schlumbergera_soil_moisture
+      line_color: '#e91e63'
+      grid_options:
+        columns: 4
   - type: grid
     cards:
     - type: vertical-stack
@@ -423,7 +1296,55 @@ views:
   icon: mdi:robot-confused
   sections:
   - type: grid
-    cards: []
+    cards:
+    - type: custom:mushroom-title-card
+      title: Audio Systems
+      subtitle: Sector broadcast
+    - type: custom:mushroom-media-player-card
+      entity: media_player.innovation_hub
+      name: Sonos
+      use_media_info: true
+      show_volume_level: true
+      collapsible_controls: false
+      media_controls:
+      - previous
+      - play_pause_stop
+      - next
+      volume_controls:
+      - volume_mute
+      - volume_set
+      - volume_buttons
+  - type: grid
+    cards:
+    - type: custom:mushroom-title-card
+      title: Acoustic Calibration
+      subtitle: Speaker tuning
+    - type: custom:mushroom-number-card
+      entity: number.innovation_hub_bass
+      name: Bass
+      icon: mdi:sine-wave
+    - type: custom:mushroom-number-card
+      entity: number.innovation_hub_treble
+      name: Treble
+      icon: mdi:waveform
+    - type: custom:mushroom-number-card
+      entity: number.innovation_hub_balance
+      name: Balance
+      icon: mdi:scale-balance
+    - type: custom:mushroom-entity-card
+      entity: switch.innovation_hub_loudness
+      name: Loudness
+      layout: horizontal
+      tap_action:
+        action: toggle
+      icon: mdi:volume-plus
+    - type: custom:mushroom-entity-card
+      entity: switch.innovation_hub_crossfade
+      name: Crossfade
+      layout: horizontal
+      tap_action:
+        action: toggle
+      icon: mdi:shuffle-variant
   show_icon_and_title: true
   cards: []
   background:
@@ -443,6 +1364,11 @@ views:
         - {}
         - media_content_type: app
           media_content_id: media-source://image_upload
+  header:
+    card:
+      type: custom:mushroom-title-card
+      title: Innovation Hub
+      subtitle: Research & Development Sector
 - type: sections
   max_columns: 4
   title: Human Telemetry
@@ -479,6 +1405,32 @@ views:
       - type: custom:mushroom-title-card
         title: Body Composition
         subtitle: Latest scan
+      - type: horizontal-stack
+        cards:
+        - type: custom:mini-graph-card
+          name: Mass · 7d
+          hours_to_show: 168
+          points_per_hour: 1
+          line_width: 3
+          smoothing: true
+          show:
+            fill: fade
+            labels: false
+          entities:
+          - entity: sensor.withings_weight
+          line_color: '#ff9800'
+        - type: custom:mini-graph-card
+          name: Fat · 7d
+          hours_to_show: 168
+          points_per_hour: 1
+          line_width: 3
+          smoothing: true
+          show:
+            fill: fade
+            labels: false
+          entities:
+          - entity: sensor.withings_fat_ratio
+          line_color: '#e91e63'
       - type: custom:mushroom-entity-card
         entity: sensor.withings_weight
         name: Total Mass
@@ -544,20 +1496,63 @@ views:
     - type: custom:mushroom-title-card
       title: Mass Trends
       subtitle: 30-day telemetry
-    - type: history-graph
-      title: Mass Trends
-      hours_to_show: 720
-      entities:
+    - type: custom:apexcharts-card
+      graph_span: 30d
+      header:
+        show: true
+        title: Mass Trends
+        show_states: true
+        colorize_states: true
+      yaxis:
+      - decimals: 1
+        apex_config:
+          forceNiceScale: true
+      series:
       - entity: sensor.withings_weight
         name: Total Mass
+        curve: smooth
+        stroke_width: 2
+        extend_to: now
+      - entity: sensor.withings_weight
+        name: 7-day average
+        curve: smooth
+        stroke_width: 3
+        opacity: 0.6
+        group_by:
+          func: avg
+          duration: 7d
+        show:
+          in_header: false
       - entity: sensor.withings_weight_goal
         name: Target
-    - type: history-graph
-      title: Composition Trends
-      hours_to_show: 720
-      entities:
+        curve: stepline
+        stroke_width: 2
+        stroke_dash: 6
+        extend_to: now
+    - type: custom:apexcharts-card
+      graph_span: 30d
+      header:
+        show: true
+        title: Composition Trends
+        show_states: true
+        colorize_states: true
+      yaxis:
+      - id: pct
+        decimals: 1
+      - id: kg
+        opposite: true
+        decimals: 1
+      series:
       - entity: sensor.withings_fat_ratio
         name: Fat Ratio
+        yaxis_id: pct
+        curve: smooth
+        extend_to: now
+      - entity: sensor.withings_muscle_mass
+        name: Muscle Mass
+        yaxis_id: kg
+        curve: smooth
+        extend_to: now
   - type: grid
     cards:
     - type: vertical-stack
@@ -589,6 +1584,116 @@ views:
           media_content_id: media-source://image_upload
 - type: sections
   max_columns: 3
+  title: Audio Systems
+  path: audio-systems
+  icon: mdi:speaker-multiple
+  show_icon_and_title: true
+  cards: []
+  header:
+    card:
+      type: custom:mushroom-title-card
+      title: Audio Systems
+      subtitle: Acoustic Broadcast Network
+  background:
+    opacity: 10
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+    image:
+      media_content_id: media-source://image_upload/d7f4879b0c277df64029850440f7fe12
+      media_content_type: image/jpeg
+      metadata:
+        title: spaceman_3840x2160_xtrafondos.com.jpg
+        thumbnail: /api/image/serve/d7f4879b0c277df64029850440f7fe12/256x256
+        media_class: image
+        navigateIds:
+        - {}
+        - media_content_type: app
+          media_content_id: media-source://image_upload
+  sections:
+  - type: grid
+    cards:
+    - type: custom:mushroom-title-card
+      title: Sonos Array
+      subtitle: Multi-room speakers
+    - type: custom:mushroom-media-player-card
+      entity: media_player.living_room
+      name: Living Room
+      use_media_info: true
+      show_volume_level: true
+      collapsible_controls: false
+      media_controls:
+      - previous
+      - play_pause_stop
+      - next
+      volume_controls:
+      - volume_mute
+      - volume_set
+      - volume_buttons
+    - type: custom:mushroom-media-player-card
+      entity: media_player.kitchen
+      name: Kitchen
+      use_media_info: true
+      show_volume_level: true
+      collapsible_controls: false
+      media_controls:
+      - previous
+      - play_pause_stop
+      - next
+      volume_controls:
+      - volume_mute
+      - volume_set
+      - volume_buttons
+    - type: custom:mushroom-media-player-card
+      entity: media_player.innovation_hub
+      name: Innovation Hub
+      use_media_info: true
+      show_volume_level: true
+      collapsible_controls: false
+      media_controls:
+      - previous
+      - play_pause_stop
+      - next
+      volume_controls:
+      - volume_mute
+      - volume_set
+      - volume_buttons
+  - type: grid
+    cards:
+    - type: custom:mushroom-title-card
+      title: HomePod Relay
+      subtitle: AirPlay endpoints
+    - type: custom:mushroom-media-player-card
+      entity: media_player.kitchen_homepod
+      name: Kitchen HomePod
+      use_media_info: true
+      show_volume_level: true
+      collapsible_controls: false
+      media_controls:
+      - previous
+      - play_pause_stop
+      - next
+      volume_controls:
+      - volume_mute
+      - volume_set
+      - volume_buttons
+    - type: custom:mushroom-media-player-card
+      entity: media_player.shitpod
+      name: ShitPod
+      use_media_info: true
+      show_volume_level: true
+      collapsible_controls: false
+      media_controls:
+      - previous
+      - play_pause_stop
+      - next
+      volume_controls:
+      - volume_mute
+      - volume_set
+      - volume_buttons
+- type: sections
+  max_columns: 3
   sections:
   - type: grid
     cards:
@@ -611,23 +1716,28 @@ views:
           content: 'CRITICAL: Security Anomaly'
   - type: grid
     cards:
-    - type: heading
-      heading: Workload Trends
     - type: custom:mushroom-title-card
+      title: Workload Trends
       subtitle: 72-hour telemetry
-    - type: history-graph
+    - type: custom:mini-graph-card
+      name: Workload
+      hours_to_show: 72
+      points_per_hour: 1
+      line_width: 3
+      smoothing: true
+      show:
+        fill: fade
+        legend: true
+        labels: false
       entities:
       - entity: sensor.chrisinas_cpu_utilization_total
         name: CPU Load
       - entity: sensor.chrisinas_memory_usage_real
         name: RAM Usage
-      hours_to_show: 72
-      refresh_interval: 0
   - type: grid
     cards:
-    - type: heading
-      heading: System Diagnostics
     - type: custom:mushroom-title-card
+      title: System Diagnostics
       subtitle: Hardware telemetry
     - type: custom:mushroom-entity-card
       entity: update.chrisinas_dsm_update
@@ -640,9 +1750,8 @@ views:
       name: Zigbee Bridge
   - type: grid
     cards:
-    - type: heading
-      heading: Storage Diagnostics
     - type: custom:mushroom-title-card
+      title: Storage Diagnostics
       subtitle: Real-time sensor telemetry
     - type: custom:mushroom-template-card
       primary: Volume 1
@@ -665,3 +1774,29 @@ views:
       icon_color: '{{ ''green'' if is_state(''binary_sensor.chrisinas_drive_2_exceeded_max_bad_sectors'', ''off'') else ''red''
         }}'
   cards: []
+  title: Data Core
+  path: data-core
+  icon: mdi:server-network
+  show_icon_and_title: true
+  header:
+    card:
+      type: custom:mushroom-title-card
+      title: Data Core
+      subtitle: IT Infrastructure & Storage
+  background:
+    opacity: 10
+    alignment: center
+    size: cover
+    repeat: repeat
+    attachment: fixed
+    image:
+      media_content_id: media-source://image_upload/b4475668ebf74894dc383a0b2b0dced2
+      media_content_type: image/jpeg
+      metadata:
+        title: istockphoto-1490266794-640x640.jpg
+        thumbnail: /api/image/serve/b4475668ebf74894dc383a0b2b0dced2/256x256
+        media_class: image
+        navigateIds:
+        - {}
+        - media_content_type: app
+          media_content_id: media-source://image_upload

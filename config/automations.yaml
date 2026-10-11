@@ -148,3 +148,82 @@
             fine now. Thanks.
         action: notify.mobile_app_iphone_von_kim
   mode: restart
+- id: system_zigbee_offline_alert
+  alias: 'System: Zigbee network alert'
+  description: Warns when the Zigbee2MQTT bridge is offline for 5 minutes, and when
+    it is back.
+  triggers:
+  - trigger: state
+    entity_id: binary_sensor.zigbee2mqtt_bridge_connection_state
+    to: 'off'
+    for:
+      minutes: 5
+    id: offline
+  - trigger: state
+    entity_id: binary_sensor.zigbee2mqtt_bridge_connection_state
+    from: 'off'
+    to: 'on'
+    id: restored
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: offline
+      sequence:
+      - action: notify.mobile_app_christophers_iphone
+        data:
+          title: ZIGBEE NETWORK OFFLINE
+          message: Lights, sensors and switches are unreachable. Check the USB stick
+            and the Zigbee2MQTT add-on.
+          data:
+            push:
+              interruption-level: time-sensitive
+    - conditions:
+      - condition: trigger
+        id: restored
+      sequence:
+      - action: notify.mobile_app_christophers_iphone
+        data:
+          title: Zigbee network restored
+          message: All Zigbee devices are reachable again.
+  mode: single
+- id: system_low_battery_alert
+  alias: 'System: Low battery alert'
+  description: Notifies when a device battery drops below 20%, and every Saturday
+    while any are low.
+  triggers:
+  - trigger: state
+    entity_id: sensor.low_battery_devices
+    id: changed
+  - trigger: time
+    at: '10:00:00'
+    id: weekly
+  conditions:
+  - condition: numeric_state
+    entity_id: sensor.low_battery_devices
+    above: 0
+  - condition: or
+    conditions:
+    - condition: and
+      conditions:
+      - condition: trigger
+        id: changed
+      - condition: template
+        value_template: '{{ trigger.from_state is not none and trigger.from_state.state
+          | is_number and trigger.to_state.state | int(0) > trigger.from_state.state
+          | int(0) }}'
+    - condition: and
+      conditions:
+      - condition: trigger
+        id: weekly
+      - condition: time
+        weekday:
+        - sat
+  actions:
+  - action: notify.mobile_app_christophers_iphone
+    data:
+      title: LOW POWER
+      message: 'Replace batteries: {{ state_attr(''sensor.low_battery_devices'', ''devices'')
+        | join('', '') }}'
+  mode: single

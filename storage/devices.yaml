@@ -43,6 +43,15 @@
   identifiers:
   - - google_translate
     - 01KABB8AJJFBGA8CMZZVHTMH1J
+- id: 7fd49c51cac6cb6e2f2b2e66e9843b33
+  name: Bubble Card
+  manufacturer: Clooos
+  model: plugin
+  integrations:
+  - hacs
+  identifiers:
+  - - hacs
+    - '680112919'
 - id: 2e4e14f62bc92a7c076dcd1966a9be36
   name: HACS
   manufacturer: hacs.xyz
@@ -78,6 +87,24 @@
   identifiers:
   - - hacs
     - '580152298'
+- id: 32255c3793232c56ec41c91b44f97100
+  name: apexcharts-card
+  manufacturer: RomRider
+  model: plugin
+  integrations:
+  - hacs
+  identifiers:
+  - - hacs
+    - '331701152'
+- id: e40287352b05331fdc939a4e68f4683c
+  name: mini-graph-card
+  manufacturer: kalkih
+  model: plugin
+  integrations:
+  - hacs
+  identifiers:
+  - - hacs
+    - '151280062'
 - id: 331634acb2fa9da4d7aa5ead1479b6ab
   name: AirSonos
   manufacturer: Home Assistant Community Apps

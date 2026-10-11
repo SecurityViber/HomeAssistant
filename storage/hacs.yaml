@@ -1,9 +1,18 @@
 - repository: Aohzan/hass-polar
   category: integration
   version: 2.0.1
+- repository: Clooos/Bubble-Card
+  category: plugin
+  version: v3.4.1
+- repository: RomRider/apexcharts-card
+  category: plugin
+  version: v2.2.3
 - repository: hacs/integration
   category: integration
   version: 2.0.5
+- repository: kalkih/mini-graph-card
+  category: plugin
+  version: v0.13.0
 - repository: piitaya/lovelace-mushroom
   category: plugin
   version: v5.2.3

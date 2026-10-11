@@ -65,6 +65,26 @@
   options:
     conversation:
       should_expose: false
+- entity_id: automation.system_low_battery_alert
+  id: 9d09a28cbbce8f14685e96f5b7f68c3c
+  platform: automation
+  unique_id: system_low_battery_alert
+  original_name: 'System: Low battery alert'
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: automation.system_zigbee_network_alert
+  id: 91d7b4c7a2ebd8bb6c18c6e7c4925e12
+  platform: automation
+  unique_id: system_zigbee_offline_alert
+  original_name: 'System: Zigbee network alert'
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
 - entity_id: binary_sensor.0x00158d008bc1c1e1_vibration
   id: 84d05affd22de7232013cc7b8e79c0d0
   platform: mqtt
@@ -329,6 +349,16 @@
   unique_id: RINCON_74CA607E2D9601400-microphone
   device_id: cced51bd056667be1707cc84fabdc326
   original_name: Microphone
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: binary_sensor.master_caution
+  id: 04fe14b883a5b9be012544b01e6ac84a
+  platform: template
+  unique_id: master_caution
+  original_name: Master Caution
   aliases:
   - null
   options:
@@ -3284,6 +3314,16 @@
   options:
     conversation:
       should_expose: false
+- entity_id: sensor.dry_plants
+  id: ea86fcdc8a3495e110a109617bf74b10
+  platform: template
+  unique_id: dry_plants
+  original_name: Dry Plants
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
 - entity_id: sensor.euphorbia_leuconeura_battery
   id: e55563cd764715cfac7fac1d66c16634
   platform: mqtt
@@ -3963,6 +4003,16 @@
       suggested_display_precision: 0
     conversation:
       should_expose: false
+- entity_id: sensor.low_battery_devices
+  id: f6c7e40426eb481e3ca53b468481a6a9
+  platform: template
+  unique_id: low_battery_devices
+  original_name: Low Battery Devices
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
 - entity_id: sensor.matter_server_cpu_percent
   id: 27703cbeee0f017858a23a2d92ee44b9
   platform: hassio
@@ -4083,6 +4133,16 @@
   unique_id: 0xa4c138658ea42994_state_zigbee2mqtt
   device_id: 94d587e8bee0564ab127389bf82b697f
   original_name: State
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: sensor.pending_updates
+  id: b2ce31c788f23ec9400dff6cf88c8e13
+  platform: template
+  unique_id: pending_updates
+  original_name: Pending Updates
   aliases:
   - null
   options:
@@ -5261,11 +5321,33 @@
   options:
     conversation:
       should_expose: false
+- entity_id: update.apexcharts_card_update
+  id: 4eb33547564347f2efe02a64937cf7bb
+  platform: hacs
+  unique_id: '331701152'
+  device_id: 32255c3793232c56ec41c91b44f97100
+  original_name: Update
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
 - entity_id: update.bedroom_switch
   id: af6333f313918b41d45f9fe8f5be0632
   platform: mqtt
   unique_id: 0x08fd52fffe6ed25e_update_zigbee2mqtt
   device_id: 4932e8a2eb71479b6d54d6bf0c7f741b
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: update.bubble_card_update
+  id: 4817d85b5bcafb9dc1b3688f3f0855ed
+  platform: hacs
+  unique_id: '680112919'
+  device_id: 7fd49c51cac6cb6e2f2b2e66e9843b33
+  original_name: Update
   aliases:
   - null
   options:
@@ -5372,6 +5454,17 @@
   platform: hassio
   unique_id: core_matter_server_version_latest
   device_id: 0b982df585cec63e99f98a52110d969d
+  original_name: Update
+  aliases:
+  - null
+  options:
+    conversation:
+      should_expose: false
+- entity_id: update.mini_graph_card_update
+  id: 95bb8a50fe4e1aca99b6821f00513f7a
+  platform: hacs
+  unique_id: '151280062'
+  device_id: e40287352b05331fdc939a4e68f4683c
   original_name: Update
   aliases:
   - null
